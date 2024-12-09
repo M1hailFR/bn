@@ -1,0 +1,99 @@
+html {
+	@apply h-auto scroll-smooth;
+}
+
+body {
+	@apply min-h-dvh font-sans text-sm lg:text-lg font-semibold select-none overflow-x-hidden;
+	line-height: 1.2em;
+}
+
+#__bankruptcyNo-app {
+	@apply min-h-dvh flex flex-col;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-sans leading-[1.3em] lg:leading-[1.8em];
+}
+
+p {
+	@apply font-medium leading-[1.5em];
+}
+
+h1 {
+	@apply text-4xl lg:text-6xl text-left font-bold;
+}
+
+h2 {
+	@apply text-[22px] sm:text-[28px] lg:text-[36px] mb-7 lg:mb-[26px] font-bold;
+}
+
+h3 {
+	@apply text-lg lg:text-2xl font-bold;
+}
+
+h4 {
+	@apply text-lg lg:text-xl mb-2 text-left font-bold;
+}
+
+h5 {
+	@apply text-[18px] text-left font-medium;
+}
+
+h6 {
+	@apply text-[16px] font-medium;
+}
+mark {
+  @apply block text-secondary bg-transparent;
+}
+/* .container {
+	@apply px-4 sm:px-6 mx-auto w-full h-full;
+} */
+.container {
+	@apply mx-auto md:max-w-[990px] xl:max-w-[1440px] 2xl:max-w-[1640px] px-4 sm:px-6 w-full h-full;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	@apply appearance-none;
+	margin: 0;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+a {
+	@apply transition hover:opacity-90;
+}
+
+main {
+	@apply flex-1 min-h-dvh my-4;
+}
+
+section {
+	@apply my-[2dvh] mb-[4dvh] sm:mb-[20dvh] sm:mt-[16dvh] flex-1 md:min-h-[64dvh];
+}
+
+footer {
+	@apply flex-1 min-h-[50dvh] border border-gray-500;
+}
+
+.ui-scrollbars ::-webkit-scrollbar {
+	@apply bg-transparent w-0 h-2 rounded;
+}
+
+.ui-scrollbars ::-webkit-scrollbar-track {
+	@apply bg-white/50;
+}
+
+.ui-scrollbars ::-webkit-scrollbar-thumb {
+	@apply rounded bg-white/50 w-4 transition-all;
+}
+
+.ui-scrollbars ::-webkit-scrollbar-thumb:hover {
+	@apply bg-white/50 transition-all;
+}
