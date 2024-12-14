@@ -36,10 +36,10 @@
 		@apply transition-all duration-150 hover:opacity-90;
 		&.type {
 			&-primary {
-				@apply border-2 border-primary bg-primary text-white font-medium rounded-lg transition-all hover:bg-primary/80;
+				@apply border-2 border-primary/80 bg-primary font-semibold text-white rounded-lg transition-all hover:bg-primary/80;
 			}
 			&-outline {
-				@apply border-2 border-white font-semibold text-white rounded-lg transition-all hover:bg-white/80 hover:text-black;
+				@apply border-2 border-white/80 md:border-gray-100/80 font-semibold rounded-lg transition-all hover:bg-gray-100/80 hover:text-black;
 			}
 		}
 		&.size {

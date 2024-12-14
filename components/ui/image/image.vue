@@ -27,7 +27,7 @@ if (isSources) { MODERN_EXTENSTIONS.unshift(srcExt) }
 </script>
 
 <template>
-  <picture>
+  <picture class="">
     <template v-if="isSources">
       <source
         v-for="item in MODERN_EXTENSTIONS"
@@ -41,3 +41,4 @@ if (isSources) { MODERN_EXTENSTIONS.unshift(srcExt) }
       :alt="alt">
   </picture>
 </template>
+  

@@ -74,7 +74,7 @@ const afterLeave = (element) => {
       @click="toggle">
       <slot />
       <Icon
-        v-if="props.openIndicator"
+        v-if="props.openIndicator && cntLng.length"
         class="text-primary hidden md:block shrink-0 ml-auto group-hover:translate-y-1 lg:transition-transform duration-150"
         :class="{ 'rotate-180': isOpen }"
         name="chevron-down"

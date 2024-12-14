@@ -11,6 +11,10 @@ const props = defineProps({
     type: String,
     default: "primary",
   },
+  variant: {
+    type: String,
+    default: "variant1",
+  },
 });
 
 const { classes } = setBasicUiProps(props, "card-component");
@@ -18,14 +22,7 @@ const { classes } = setBasicUiProps(props, "card-component");
 
 <template>
   <div :class="['card-component', `type-${type}`, classes]">
-    <Image
-      v-if="data.image"
-      class="card-image"
-      :src="data.image"
-      :alt="data.title || ''"
-    />
-
-    <div class="content">
+    <div v-if="variant === 'variant1'" class="content">
       <div class="mb-8 mt-2">
         <h3 class="title">
           <Icon
@@ -37,7 +34,7 @@ const { classes } = setBasicUiProps(props, "card-component");
             "
             class="icon"
             :name="data.icon"
-            size="middle"
+            size="large"
           />
 
           <div v-if="data.index" class="index">
@@ -48,71 +45,58 @@ const { classes } = setBasicUiProps(props, "card-component");
         </h3>
         <h5 class="description">{{ data.text }}</h5>
       </div>
-      <div v-if="data.name" class="user-info">
-        <img
-          v-if="data.userImage"
-          class="user-image"
-          :src="data.userImage"
-          alt="Avatar"
-        />
-        <div class="user-details">
-          <p class="user-name">{{ data.name }}</p>
-          <p class="user-date">{{ data.date }}</p>
-        </div>
-      </div>
+    </div>
+    <div
+      v-if="variant === 'variant2'"
+      class="w-max pt-4 pb-4 px-4 sm:px-10 bg-white/10 backdrop-blur-sm rounded-lg flex flex-col items-end"
+    >
+      <p class="z-10 text-lg font-normal text-white">
+        {{ data.title }}
+      </p>
+      <h1
+        class="relative z-10 text-4xl sm:text-5xl xl:text-6xl font-semibold text-white flex items-center gap-2"
+      >
+        {{ data.value }}
+        <span v-if="data.symbol" class="text-3xl xl:text-6xl"
+          >{{ data.symbol }}
+        </span>
+      </h1>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .card-component {
-  @apply w-full relative lg:max-w-full lg:flex box-border overflow-hidden rounded-xl;
+  @apply relative flex box-border overflow-hidden rounded-xl;
 
   &.type-primary {
-    @apply bg-primary text-white relative z-[3];
+    @apply bg-primary text-white relative z-[3] w-full;
     .content {
-      @apply p-4 flex flex-col justify-between leading-normal;
+      @apply p-4 flex flex-col justify-center items-center leading-normal w-full h-full text-center max-w-[310px] mx-auto;
       .title {
-        @apply font-bold text-white flex items-center gap-2 mb-2;
+        @apply font-bold text-white flex flex-col items-center gap-2 mb-2;
         .index {
           @apply bg-white rounded-lg text-2xl font-bold text-black min-h-14 min-w-14  flex justify-center;
         }
       }
       .description {
-        @apply text-gray-200;
+        @apply text-gray-200 text-center;
       }
     }
   }
 
   &.type-outline {
-    @apply border border-gray-200;
+    @apply border border-gray-200 w-full;
     .content {
-      @apply p-4 flex flex-col justify-between leading-normal bg-white/50 relative z-[2] w-full h-full;
+      @apply p-4 flex flex-col justify-center items-center leading-normal bg-white/50 relative z-[2] w-full h-full text-center max-w-[310px] mx-auto;
       .title {
-        @apply font-bold xl:text-black flex items-center gap-2 mb-2;
+        @apply font-bold xl:text-black flex flex-col items-center gap-2 mb-2;
         .index {
           @apply bg-primary rounded-lg text-2xl font-bold text-white min-h-14 min-w-14 items-center flex justify-center;
         }
       }
       .description {
-        @apply text-black;
-      }
-    }
-  }
-
-  .card-image {
-    @apply h-full w-full z-[1] blur-[2px] backdrop-blur-lg xl:blur-0 absolute top-0 left-0 xl:relative xl:h-auto xl:w-48 flex-none text-center;
-  }
-
-  .user-info {
-    @apply flex items-center gap-4 mt-4;
-    .user-image {
-      @apply w-10 h-10 rounded-full;
-    }
-    .user-details {
-      @apply text-sm;
-      .user-name {
-        @apply font-bold leading-none;
+        @apply text-black text-center;
       }
     }
   }
