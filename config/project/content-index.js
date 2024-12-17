@@ -243,7 +243,7 @@ export const heros = [
     type: "video",
     title: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
-    video: "/videos/intro.mp4",
+    video: "/videos/intro2.mp4",
     stats: [
       { title: "сотрудников", symbol: "+", value: 990 },
       { title: "помогли", symbol: "+", value: 99980 },

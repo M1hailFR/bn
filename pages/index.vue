@@ -6,7 +6,7 @@ import Steps from "/components/views/main/steps";
 import Servise from "/components/views/main/servise";
 import Reviews from "/components/views/main/reviews";
 import Hero from "/components/parts/hero/hero";
-import Card from "/components/ui/card/card-stat";
+import Card from "/components/parts/card/card-stat";
 import Achievement from "/components/views/main/achievement";
 import { heros } from "/config/project/content-index";
 </script>

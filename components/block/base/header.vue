@@ -2,7 +2,9 @@
 import Icon from "/components/ui/icon/icon";
 import Image from "/components/ui/image/image";
 import Link from "/components/ui/link/link";
-import Divider from "~/components/ui/devider/divider.vue";
+import Divider from "/components/ui/devider/divider.vue";
+import Card from "/components/parts/card/card-stat";
+
 import { header, socials } from "/config/project/content-nav.js";
 
 import { usePopup } from "/store/popup.js";

@@ -1,6 +1,6 @@
 <script setup>
 import { steps } from "/config/project/content-index.js";
-import Card from "/components/ui/card/card";
+import Card from "/components/parts/card/card";
 </script>
 <template>
   <section>

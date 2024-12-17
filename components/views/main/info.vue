@@ -1,5 +1,5 @@
 <script setup>
-import Card from "/components/ui/card/card";
+import Card from "/components/parts/card/card";
 import { info } from "/config/project/content-index.js";
 </script>
 <template>

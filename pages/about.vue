@@ -1,7 +1,7 @@
 <script setup>
 import Intro from "/components/views/about/intro";
 import Hero from "/components/parts/hero/hero";
-import Card from "/components/ui/card/card-stat";
+import Card from "/components/parts/card/card-stat";
 import Blog from "/components/views/about/blog";
 import { heros } from "/config/project/content-index";
 import { blog } from "/config/project/content-about";

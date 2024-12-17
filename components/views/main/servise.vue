@@ -1,6 +1,6 @@
 <script setup>
 import { servise } from "/config/project/content-index.js";
-import Card from "/components/ui/card/card-stat";
+import Card from "/components/parts/card/card-stat";
 import Icon from "/components/ui/icon/icon.vue";
 import Image from "/components/ui/image/image.vue";
 </script>

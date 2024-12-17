@@ -105,8 +105,8 @@ const pageToTop = () => {
           <Menu :theme="theme" />
         </Header>
         <Video
-          v-if="showVideo"
-          videoSrc="/videos/intro.mp4"
+          v-show="showVideo"
+          videoSrc="/videos/intro2.mp4"
           autoplay="true"
           loop="true"
           muted="true"
@@ -114,7 +114,7 @@ const pageToTop = () => {
         />
         <Image
           v-if="!showVideo"
-          src="/images/main/work.jpg"
+          src="/images/main/intro.jpg"
           class="im w-full h-screen sm:max-h-dvh object-cover rounded-b-lg absolute top-0 left-0 z-[-1] blur-[2px] brightness-50 scale-[1.05]"
         />
         <main class="relative pt-8 pb-2 rounded-xl container">
