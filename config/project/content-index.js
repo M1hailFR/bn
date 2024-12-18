@@ -27,21 +27,21 @@ export const info = {
       image: "/images/main/work.jpg",
       type: "outline",
       title: "Гарантия возврата средств",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      text: "Гарантируем полный возврат средств, если не поможем в решении вашего вопроса. Банкротство физических лиц без риска: либо результат, либо деньги обратно. Работаем честно и открыто — ваши финансы в безопасности.",
     },
     {
       icon: "justice",
       image: "/images/main/hall.jpg",
       type: "outline",
       title: "Работаем законно",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      text: "Работаем строго в рамках закона, обеспечивая полное соблюдение ваших прав. Только легальные решения и прозрачный подход на каждом этапе сотрудничества.",
     },
     {
       icon: "renew",
       image: "",
       type: "primary",
       title: "Оплатим ваши долги",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      text: "Погасим ваши долги законным путем. Поможем избавиться от финансовой нагрузки, действуя честно, открыто и в рамках законодательства.",
     },
 
     {
@@ -49,15 +49,15 @@ export const info = {
       image: "",
       type: "primary",
       title: "Работаем по всей России",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      text: "Оказываем помощь в банкротстве физических лиц по всей России. Независимо от вашего региона, мы работаем законно, эффективно и дистанционно.",
     },
 
     {
       icon: "secure",
       image: "/images/main/assembly.jpg",
       type: "outline",
-      title: "Гарантия возврата средств",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      title: "Доверьте нам ведение вашего дела ",
+      text: "Чтобы законно и профессионально решить финансовые проблемы. Мы обеспечим полный контроль над процессом, индивидуальный подход и прозрачность на каждом этапе. С нами вы можете быть уверены в результате и своей финансовой безопасности.",
     },
   ],
 };
@@ -75,33 +75,33 @@ export const steps = {
       index: "02",
       type: "outline",
       title: "Подпишите договор",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      text: "Заключите официальный договор и получите законную защиту ваших интересов. Мы работаем открыто, прозрачно и соблюдаем все юридические нормы.",
     },
     {
       index: "03",
       type: "outline",
       title: "Доверьте нам ведение вашего дела",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      text: "Чтобы законно и профессионально решить финансовые проблемы. Мы обеспечим полный контроль над процессом, индивидуальный подход и прозрачность на каждом этапе. С нами вы можете быть уверены в результате и своей финансовой безопасности.",
     },
     {
       index: "04",
       type: "outline",
       title: "Мы подадим документы в суд",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      text: "Мы подадим все необходимые документы в суд и обеспечим правильное сопровождение процесса. Наши юристы гарантируют соблюдение всех юридических норм и защиту ваших интересов на каждом этапе.",
     },
 
     {
       index: "05",
       type: "outline",
       title: "Добьёмся несостоятельности",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      text: "Мы добьемся признания вашей несостоятельности в соответствии с законом, обеспечив полное юридическое сопровождение и защиту ваших прав на каждом этапе процесса.",
     },
 
     {
       index: "06",
       type: "outline",
       title: "Завершим списанием ваших долгов",
-      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. In veniam ut voluptatibus officiis, inventore facilis non incidunt error officia explicabo ex fugit ducimus itaque delectus quia illo aperiam esse minima.",
+      text: "Мы успешно завершим процесс списания ваших долгов, обеспечивая легальный и надежный подход к решению финансовых вопросов.",
     },
   ],
 };
