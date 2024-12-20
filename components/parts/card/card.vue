@@ -66,7 +66,7 @@ const { classes } = setBasicUiProps(props, "card-component");
 
 <style lang="scss" scoped>
 .card-component {
-  @apply w-full relative lg:max-w-full lg:flex box-border overflow-hidden rounded-xl;
+  @apply w-full  relative lg:max-w-full lg:flex box-border overflow-hidden rounded-xl;
 
   &.type-primary {
     @apply bg-primary text-white relative z-[3];

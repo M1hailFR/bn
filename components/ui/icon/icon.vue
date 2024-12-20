@@ -29,33 +29,33 @@
 
 <style lang="scss" scoped>
 	.icon-component {
-		@apply shrink-0 transition-all duration-150 hover:opacity-50;;
+		@apply shrink-0 transition-all duration-150 hover:opacity-50 ;
 		&.fill > * {
 			fill: inherit;
 		}
 		&.type {
-      &-default {
-        @apply p-2 rounded-xl;
-      }
+			&-default {
+				@apply p-1 rounded-xl mb-0.5 ;
+			}
 			&-primary {
-				@apply text-white bg-primary p-1 rounded-lg;
+				@apply p-1 text-white bg-primary  rounded-lg mb-0.5 ;
 			}
 			&-secondary {
-				@apply text-primary border-2 border-primary p-1 rounded-lg;
+				@apply p-1 text-primary border-2 border-primary  rounded-lg mb-0.5 ;
 			}
 		}
 		&.size {
 			&-small {
-				@apply w-8 h-8;
+				@apply w-6 h-6;
 			}
 			&-normal {
-				@apply w-10 h-10;
+				@apply w-8 h-8;
 			}
 			&-middle {
-				@apply w-12 h-12;
+				@apply w-10 h-10;
 			}
 			&-large {
-				@apply w-14 h-14;
+				@apply w-12 h-12;
 			}
 		}
 	}

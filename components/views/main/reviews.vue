@@ -5,7 +5,7 @@ import Button from "/components/ui/button/button";
 import { intro } from "/config/project/content-index.js";
 </script>
 <template>
-  <section>
+  <section class="container">
     <h2 class="block">{{ reviews.title }}</h2>
     
   </section>

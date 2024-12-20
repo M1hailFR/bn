@@ -5,8 +5,8 @@ import Icon from "/components/ui/icon/icon.vue";
 import Image from "/components/ui/image/image.vue";
 </script>
 <template>
-  <section>
-    <div class="section-container">
+  <section class="container">
+    <div class="">
       <h2>
         {{ servise.title }}
       </h2>

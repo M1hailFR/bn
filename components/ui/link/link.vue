@@ -51,14 +51,14 @@
 
 <style lang="scss" scoped>
 	.link-component {
-		@apply transition-all duration-700 ;
+		@apply transition-all duration-150 ;
 
 		&.type {
 			&-default {
 				@apply hover:text-secondary;
 			}
 			&-primary {
-				@apply text-white bg-primary rounded-lg hover:bg-gradient-primary transition-all duration-500 ;
+				@apply text-white bg-primary rounded-lg hover:bg-gradient-primary ;
 			}
 			&-secondary {
 				@apply relative text-primary rounded-lg overflow-hidden hover:bg-gradient-primary hover:opacity-50 hover:text-white;

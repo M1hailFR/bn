@@ -9,6 +9,7 @@ export const intro = {
     { title: "сотрудников", symbol: "+", value: 990 },
     { title: "помогли", symbol: "+", value: 4980 },
     { title: "офисов", symbol: "", value: 254 },
+    { title: "помогли", symbol: "+", value: 4980 },
   ],
 };
 

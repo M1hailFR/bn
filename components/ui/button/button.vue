@@ -33,13 +33,13 @@
 
 <style lang="scss" scoped>
 	.button-component {
-		@apply transition-all duration-150 hover:opacity-90;
+		@apply  rounded-lg font-semibold border-2 transition-colors duration-700 ;
 		&.type {
 			&-primary {
-				@apply border-2 border-primary/80 bg-primary font-semibold text-white rounded-lg transition-all hover:bg-primary/80;
+				@apply border-primary bg-primary text-white hover:bg-gray-400 hover:text-black hover:border-gray-400 ;
 			}
 			&-outline {
-				@apply border-2 border-white/80 md:border-gray-100/80 font-semibold rounded-lg transition-all hover:bg-gray-100/80 hover:text-black;
+				@apply border-white/80 md:border-gray-100 hover:bg-gray-400 hover:text-black hover:border-gray-400;
 			}
 		}
 		&.size {

@@ -3,8 +3,8 @@ import { steps } from "/config/project/content-index.js";
 import Card from "/components/parts/card/card";
 </script>
 <template>
-  <section>
-    <div class="section-container">
+  <section class="container">
+    <div class="">
       <h2>{{ steps.title }}</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full">

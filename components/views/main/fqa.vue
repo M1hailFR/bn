@@ -4,8 +4,8 @@ import { fqa } from "/config/project/content-index.js";
 </script>
 
 <template>
-  <section class="">
-    <div class="section-container">
+  <section class="container">
+    <div class="">
       <div>
         <h2>{{ fqa.title }}</h2>
         <h4 class="max-w-[800px] text-gray-900">{{ fqa.description }}</h4>
