@@ -1,15 +1,15 @@
 <script setup>
-import Intro from "/components/views/about/intro";
+import Intro from '/components/parts/intro/intro';
 import Hero from "/components/parts/hero/hero";
 import Card from "/components/parts/card/card-stat";
 import Blog from "/components/views/about/blog";
 import { heros } from "/config/project/content-index";
-import { blog } from "/config/project/content-about";
+import { blog, intro } from "/config/project/content-about";
 </script>
 
 <template>
   <div>
-    <Intro />
+    <Intro :data="intro" />
     <Hero :data="heros[2]">
       <template #content>
         <div
@@ -18,7 +18,7 @@ import { blog } from "/config/project/content-about";
           <Card
             v-for="stat in heros[2].stats"
             :key="stat"
-            variant="variant2"
+            variant="variant3"
             type="default"
             :data="stat"
           />

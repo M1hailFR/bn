@@ -10,10 +10,12 @@
 	// import Up from '/components/parts/up.vue'
 	// import Icon from '/components/ui/icon/icon.vue'
 	// import Link from '/components/ui/link/link.vue'
+	import { useApp } from '/store/app';
 	import Image from '/components/ui/image/image';
 	import Video from '/components/ui/video/video';
 	import Loader from '/components/ui/loader/modal';
 
+	const appStore = useApp();
 	const router = useRoute();
 	const route = useRoute();
 
@@ -32,6 +34,7 @@
 	const footerScrollTop = ref(0);
 
 	onMounted(() => {
+		appStore.initializeWindowState();
 		document.readyState === 'complete'
 			? startTransition()
 			: window.addEventListener('load', startTransition);
@@ -45,6 +48,7 @@
 	});
 
 	onUnmounted(() => {
+		appStore.destroyWindowStateListeners();
 		window.removeEventListener('scroll', () => {
 			requestAnimationFrame(() => {
 				handleScrollHeader();
@@ -129,11 +133,7 @@
 					<Menu :theme="theme" />
 				</Header>
 
-				<main
-					class="relative transition-all duration-700"
-					
-					>
-					
+				<main class="relative transition-all duration-700">
 					<NuxtPage />
 				</main>
 				<footer class="p-8 bg-teal-500 rounded-xl">footer</footer>

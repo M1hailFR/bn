@@ -1,7 +1,7 @@
 <script setup>
 	import Card from '/components/parts/card/card';
 	import Button from '/components/ui/button/button';
-	import { steps } from '/config/project/content-index.js';
+	import { fit } from '/config/project/content-index.js';
 	import { splitArrayIntoChunks } from '/utils/splitArrayIntoChunks';
 
 	import { useApp } from '/store/app';
@@ -9,23 +9,22 @@
 
 	const columns = computed(() => {
 		const count = appStore.windowW >= 1440 ? 3 : 2;
-		return splitArrayIntoChunks(steps.cards, count);
+		return splitArrayIntoChunks(fit.cards, count);
 	});
 </script>
-
 <template>
 	<section class="container mt-6">
 		<div class="flex flex-col lg:flex-row relative gap-x-8 gap-y-10 items-start">
 			<div class="lg:w-[50%] xl:w-1/3 block lg:sticky top-20 h-full mb-0">
-				<h2>{{ steps.title }}</h2>
+				<h2>{{ fit.title }}</h2>
 				<h5>
-					{{ steps.description }}
+					{{ fit.description }}
 				</h5>
 				<Button
 					type="primary"
 					size="normal"
 					class="mt-4"
-					>{{ steps.button1 }}</Button
+					>{{ fit.button1 }}</Button
 				>
 			</div>
 			<div
@@ -45,3 +44,5 @@
 		</div>
 	</section>
 </template>
+
+<style lang="scss" scoped></style>

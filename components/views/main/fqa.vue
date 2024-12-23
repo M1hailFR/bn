@@ -1,25 +1,35 @@
 <script setup>
-import Collapse from "/components/ui/collapse/collapse";
-import { fqa } from "/config/project/content-index.js";
+	import Collapse from '/components/ui/collapse/collapse';
+  import Button from '/components/ui/button/button';
+	import { fqa } from '/config/project/content-index.js';
 </script>
 
 <template>
-  <section class="container">
-    <div class="">
-      <div>
-        <h2>{{ fqa.title }}</h2>
-        <h4 class="max-w-[800px] text-gray-900">{{ fqa.description }}</h4>
-      </div>
-      <Collapse
-        v-for="(question, index) of fqa.questions"
-        :key="question.title"
-        :cntLng="question.text"
-      >
-        <h4 class="text-left">{{ index + 1 }}. {{ question.title }}</h4>
-        <template #content>
-          <p>{{ question.text }}</p>
-        </template>
-      </Collapse>
-    </div>
-  </section>
+	<section class="container">
+		<div class="flex flex-col lg:flex-row relative gap-x-8 gap-y-10 items-start">
+			<div class="lg:w-[50%] xl:w-1/3 block lg:sticky top-20 h-full mb-0">
+				<h2>{{ fqa.title }}</h2>
+				<h5>
+					{{ fqa.description }}
+				</h5>
+				<Button
+					type="primary"
+					size="normal"
+					class="mt-4"
+					>{{ fqa.button1 }}</Button
+				>
+			</div>
+			<div class="w-full">
+				<Collapse
+					v-for="(question, index) of fqa.questions"
+					:key="question.title"
+					:cntLng="question.text">
+					<h4 class="text-left">{{ index + 1 }}. {{ question.title }}</h4>
+					<template #content>
+						<h5>{{ question.text }}</h5>
+					</template>
+				</Collapse>
+			</div>
+		</div>
+	</section>
 </template>

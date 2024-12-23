@@ -20,17 +20,18 @@ h6 {
 	@apply font-sans leading-[1.4em] lg:leading-[1.8em];
 }
 
-p {
-	@apply font-medium leading-[1.5em];
+p,
+span {
+	@apply font-medium leading-[1.4em] text-[14px];
 }
 
 h1 {
-	@apply text-4xl lg:text-6xl text-left font-bold;
+	@apply text-[36px] lg:text-[36px] text-left font-bold;
 }
 
 h2 {
 	/* @apply text-[22px] sm:text-[28px] lg:text-[36px] mb-7 lg:mb-[26px] font-bold; */
-	@apply text-[28px] lg:text-5xl text-left leading-tight font-semibold mb-7 lg:mb-[40px];
+	@apply text-[28px] lg:text-[32px] text-left leading-tight font-semibold mb-7 lg:mb-[32px];
 }
 
 h3 {
@@ -42,7 +43,7 @@ h4 {
 }
 
 h5 {
-	@apply text-[18px] text-left font-medium;
+	@apply text-[14px] md:text-[18px] text-left font-medium;
 }
 
 h6 {
@@ -76,9 +77,9 @@ main {
 }
 
 section {
-	@apply pb-[4dvh] sm:pb-[8dvh] mb-[8dvh] flex-1 h-full;
+	@apply pb-[4dvh] sm:py-[8dvh] flex-1 h-full;
 	.section-container {
-		@apply p-3 md:px-8 md:py-10 w-full backdrop-blur-sm h-full;
+		@apply p-3 md:px-8 py-10 w-full backdrop-blur-sm h-full;
 	}
 }
 

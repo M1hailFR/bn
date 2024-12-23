@@ -3,9 +3,12 @@
 	import Image from '/components/ui/image/image';
 	import Link from '/components/ui/link/link';
 	import Divider from '/components/ui/devider/divider.vue';
+	import Dropdown from '/components/ui/dropdown/dropdown.vue';
+	import DropdownOption from '/components/ui/dropdown/option.vue';
 	import Card from '/components/parts/card/card-stat';
 
 	import { header, socials } from '/config/project/content-nav.js';
+	import { regions } from '/config/project/sources';
 
 	import { usePopup } from '/store/popup.js';
 	const popupStore = usePopup();
@@ -26,7 +29,7 @@
 	});
 	const scroll = ref(0);
 	const windowWidth = ref();
-
+	const region = ref({ city: 'Москва', region: '77' });
 	const isShow = computed(() => scroll.value === 0 || windowWidth.value <= 990);
 
 	onMounted(() => {
@@ -58,9 +61,8 @@
 	<header
 		ref="el"
 		:class="[theme, type]">
-		<!-- добавить transiition -->
 		<div
-			class="container flex items-center justify-between py-4 max-h-[64px] drop-shadow-md">
+			class="container relative z-[2] flex items-center justify-between py-4 max-h-[64px] drop-shadow-md">
 			<div class="flex gap-4 translate-x-[-8px]">
 				<div class="">
 					<Link href="/">
@@ -76,12 +78,20 @@
 						</div>
 					</Link>
 				</div>
-				<!-- <h6
-          class="hidden md:flex leading-[1em] mt-1 border-l pl-4"
-          v-html="header.type"
-        /> -->
 			</div>
-			<div class="hidden lg:flex gap-4 items-center justify-center">
+			<div class="hidden lg:flex gap-3 items-center justify-center text-black">
+				<Dropdown class="translate-x-[14px]">
+					{{ region.city }}
+					<template #options>
+						<DropdownOption
+							v-for="(item, index) of regions"
+							:key="index"
+							@click="region = item"
+							>
+							{{ item.city }}
+						</DropdownOption>
+					</template>
+				</Dropdown>
 				<Link
 					v-for="item in header.info"
 					:key="item"
@@ -89,7 +99,7 @@
 					:type="item.linkType"
 					essence="block"
 					:href="item.href"
-					class="flex items-center pl-2 pr-3 py-0.5 text-[14px] xl:text-[16px]">
+					class="flex items-center  text-[14px] xl:text-[16px]">
 					<Icon
 						v-if="item.icon"
 						:name="item.icon"
@@ -108,7 +118,7 @@
 			v-if="!scroll"
 			:theme="theme"
 			class="hidden lg:flex" />
-		<div class="hidden container lg:flex items-center gap-6 py-1">
+		<div class="hidden container relative z-[1] lg:flex items-center gap-6 py-1">
 			<div
 				v-if="!isShow"
 				class="transition-transform duration-500 opacity-1"
@@ -157,7 +167,7 @@
 
 <style lang="scss" scoped>
 	header {
-		@apply top-0 z-50 w-full transition  drop-shadow-md;
+		@apply top-0 z-50 w-full transition drop-shadow-md;
 		&.light {
 			@apply bg-white pt-1 text-black lg:translate-y-[-64px];
 		}

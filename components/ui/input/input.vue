@@ -44,12 +44,13 @@
 	<input
 		:type="nativeType"
 		:value="modelValue"
-		:class="classes"
+		:class="[classes, {'error': error}]"
 		class="h-full w-full"
 		:placeholder="placeholder"
 		@change="change"
 		@input="change"
 		v-mask />
+		
 </template>
 
 <style lang="scss" scoped>
@@ -59,13 +60,13 @@
 			&-primary {
 				@apply text-white bg-primary rounded-lg border-2 border-primary;
 				&::placeholder {
-					@apply text-white/50;
+					@apply text-white/70;
 				}
 			}
 			&-secondary {
-				@apply text-black bg-transparent border-2 border-primary rounded-lg;
+				@apply text-white bg-transparent border-2 border-white rounded-lg;
 				&::placeholder {
-					@apply text-black/50;
+					@apply text-white/70;
 				}
 			}
 		}
@@ -73,6 +74,12 @@
 			&-normal {
 				@apply text-base px-4 py-3;
 			}
+		}
+		&.error {
+			@apply border-red-600;
+			&::placeholder {
+					@apply text-red-400;
+				}
 		}
 	}
 </style>

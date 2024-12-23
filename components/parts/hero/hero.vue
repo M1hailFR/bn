@@ -41,16 +41,16 @@
 						</Button>
 					</div>
 				</div>
-				<div
+				<!-- <div
 					v-if="!data.video"
-					class="absolute top-0 left-0 md:hidden bg-white/50 w-full h-full" />
+					class="absolute top-1 left-1 md:hidden bg-white/50 w-full h-full rounded-lg" /> -->
 
 				<slot name="content" />
 
 				<Image
 					v-if="data.image"
 					:src="data.image"
-					class="z-[-1] blur-[2px] backdrop-blur-lg md:blur-0 absolute top-0 left-0 md:relative block w-full h-full md:h-[620px] xl:h-full rounded-xl overflow-hidden object-cover" />
+					class=" relative block w-full h-full md:h-[620px] xl:h-full rounded-xl overflow-hidden object-cover" />
 				<div
 					v-if="data.video"
 					class="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]">

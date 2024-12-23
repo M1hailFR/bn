@@ -1,34 +1,44 @@
 <script setup>
+	import Card from '/components/parts/card/card';
+	import Button from '/components/ui/button/button';
 	import { achievement } from '/config/project/content-index.js';
-	import Card from '/components/parts/card/card-stat';
-	import Icon from '/components/ui/icon/icon.vue';
-	import Image from '/components/ui/image/image.vue';
+	import { splitArrayIntoChunks } from '/utils/splitArrayIntoChunks';
+
+	import { useApp } from '/store/app';
+	const appStore = useApp();
+
+	const columns = computed(() => {
+		const count = appStore.windowW >= 1440 ? 3 : 2;
+		return splitArrayIntoChunks(achievement.cards, count);
+	});
 </script>
 <template>
-	<section class="container">
-		<div class="">
-			<h2>
-				{{ achievement.title }}
-			</h2>
+	<section class="container mt-6">
+		<div class="flex flex-col lg:flex-row relative gap-x-8 gap-y-10 items-start">
+			<div class="lg:w-[50%] xl:w-1/3 block lg:sticky top-20 h-full mb-0">
+				<h2>{{ achievement.title }}</h2>
+				<h5>
+					{{ achievement.description }}
+				</h5>
+				<Button
+					type="primary"
+					size="normal"
+					class="mt-4"
+					>{{ achievement.button1 }}</Button
+				>
+			</div>
 			<div
-				class="w-full mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center gap-x-8 gap-y-10 justify-center">
-				<Card
-					v-for="card in achievement.cards"
-					:key="card.title"
-					:type="card.type"
-					:data="card"
-					class="h-full w-full object-contain flex items-center jusitfy-center" />
+				class="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 items-start gap-4 justify-center">
 				<div
-					class="row-start-1 col-start-1 lg:row-start-2 lg:col-start-2 h-full flex relative items-center jusitfy-center rounded-lg overflow-hidden">
-					<Image
-						v-if="achievement.image"
-						class="z-[-1] blur-[1px] backdrop-blur-lg absolute top-0 left-0 w-full h-full"
-						:src="achievement.image"
-						:alt="achievement.title || ''" />
-					<h3 class="w-full text-center mb-0 relative z-10 py-4 px-2">
-						{{ achievement.text }}
-					</h3>
-					<div class="absolute top-0 left-0 bg-white/50 w-full h-full"></div>
+					class="flex flex-col gap-4"
+					v-for="(column, index) in columns"
+					:key="index">
+					<Card
+						v-for="card in column"
+						:key="card.title"
+						:type="card.type"
+						:data="card"
+						class="w-full first:row-start-2 sm:first:row-start-1" />
 				</div>
 			</div>
 		</div>

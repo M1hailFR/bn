@@ -58,10 +58,10 @@
 				@apply hover:text-secondary;
 			}
 			&-primary {
-				@apply text-white bg-primary rounded-lg hover:bg-gradient-primary ;
+				@apply text-white bg-primary rounded-lg hover:bg-gradient-primary pl-2 pr-3 py-0.5;
 			}
 			&-secondary {
-				@apply relative text-primary rounded-lg overflow-hidden hover:bg-gradient-primary hover:opacity-50 hover:text-white;
+				@apply relative text-primary rounded-lg overflow-hidden hover:bg-gradient-primary py-0.5 hover:opacity-50 hover:text-white;
 				&::after {
 					content: '';
 					@apply absolute top-0 left-0 block w-full h-full border-2 border-primary rounded-lg;

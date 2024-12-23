@@ -11,7 +11,7 @@ export const header = {
       iconSize: 'normal',
 		},
 		{
-			title: 'Бесплатная консультация',
+			title: 'Консультация',
 			href: '',
 			icon: 'fire',
       linkType: 'primary',

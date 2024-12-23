@@ -9,13 +9,11 @@
 </script>
 
 <template>
-	<section class="mb-0">
-		<div
-			v-for="post in data"
-			:key="post.title">
-			<Post :data="post" />
-		</div>
-	</section>
+	<div
+		v-for="post in data"
+		:key="post.title">
+		<Post :data="post" />
+	</div>
 </template>
 
 <style lang="scss" scoped></style>
