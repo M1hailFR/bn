@@ -83,7 +83,7 @@
 									:name="chls.buttonIcon"
 									size="small" 
                   class="cursor-pointer ml-1 inline-flex"/>
-								<h6 class="font-bold mb-0 ">
+								<h6 class="font-medium mb-0 ">
 									{{ chls.buttonTitle }}
 								</h6>
 							</Link>
@@ -102,18 +102,18 @@
 		// }
 		@apply transition-all duration-200;
 		p {
-			@apply text-[14px] xl:text-[16px] px-1 xl:px-2 py-2 pt-[5px] xl:pt-[4px] font-bold first:pl-0;
+			@apply text-[14px] xl:text-[16px]  px-1 xl:px-2 py-2 pt-[5px] xl:pt-[4px] font-medium first:pl-0;
 		}
 
 		&:hover {
 			@apply text-secondary;
 			.sub-level {
-				@apply visible opacity-100 bg-white drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)];
+				@apply visible opacity-100 bg-white drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] ;
 			}
 		}
 	}
 	.sub-level {
-		@apply absolute w-max left-[-8px] w-full invisible opacity-0 transition-all rounded-lg text-black;
+		@apply absolute w-max left-[-8px] w-full invisible opacity-0 transition-all rounded-lg text-black ;
 		&.i-dark {
 			@apply w-max;
 		}

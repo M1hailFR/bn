@@ -80,7 +80,7 @@
 	.dropdown-component {
 		@apply relative;
 		&-content {
-			@apply transition-all duration-200 flex items-center text-[14px] xl:text-[16px];
+			@apply transition-all duration-200 flex items-center text-[14px] xl:text-[16px] font-semibold;
 		}
 		&:hover {
 			@apply text-secondary visible;

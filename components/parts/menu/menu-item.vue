@@ -27,7 +27,7 @@
 			:name="data.icon"
 			size="normal" 
 			class="rounded-full bg-gray-100"/>
-			<h6 class="text-[14px] xl:text-[16px] max-w-[200px] leading-[1em] font-semibold">{{ data.title }}</h6>
+			<h6 class="text-[14px] xl:text-[16px] max-w-[200px] leading-[1em] font-medium">{{ data.title }}</h6>
 	</Link>
 </template>
 

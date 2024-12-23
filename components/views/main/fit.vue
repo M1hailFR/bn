@@ -21,6 +21,7 @@
 					{{ fit.description }}
 				</h5>
 				<Button
+					v-if="fit.button1"
 					type="primary"
 					size="normal"
 					class="mt-4"
