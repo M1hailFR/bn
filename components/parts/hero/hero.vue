@@ -77,7 +77,7 @@
 			}
 		}
 		.primary {
-			@apply bg-primary/80 text-white;
+			@apply bg-primary/60 text-white;
 			.content {
 				@apply flex flex-col gap-6 md:flex-row items-center relative md:flex-row-reverse;
 			}

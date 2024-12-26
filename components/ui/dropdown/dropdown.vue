@@ -16,7 +16,11 @@
 		openOnHover: {
 			type: Boolean,
 			default: false
-		}
+		},
+		icon: {
+			type: String,
+			default: 'fire'
+		},
 	});
 
 	const emit = defineEmits(['change']);
@@ -53,12 +57,12 @@
 			@click="toggle">
 			<Icon
 				class=""
-				name="fire"
+				:name="icon"
 				size="small" />
 			<slot />
 			<Icon
 				v-if="props.openIndicator"
-				class="chevron translate-x-[-4px]"
+				class="chevron translate-x-[-4px] mt-1"
 				name="chevron-down"
 				size="normal" />
 		</div>
@@ -78,9 +82,9 @@
 
 <style lang="scss" scoped>
 	.dropdown-component {
-		@apply relative;
+		@apply relative ;
 		&-content {
-			@apply transition-all duration-200 flex items-center text-[14px] xl:text-[16px] font-semibold;
+			@apply transition-all duration-200 flex items-center text-[14px] xl:text-[16px] font-medium;
 		}
 		&:hover {
 			@apply text-secondary visible;
@@ -88,12 +92,12 @@
 				@apply visible opacity-100 bg-white drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)];
 			}
 			.chevron {
-				@apply rotate-180 ;
+				@apply rotate-180;
 			}
 		}
 	}
 	.sub-level {
-		@apply absolute  w-max left-[-8px] w-full invisible opacity-0 transition-all rounded-lg text-black;
+		@apply absolute py-3 w-max left-[0px] w-full invisible opacity-0 transition-all rounded-lg text-black;
 		&.dark {
 			@apply w-max;
 		}
@@ -104,7 +108,7 @@
 			@apply w-max;
 		}
 		.sub-level-container {
-			@apply w-max py-4 max-h-[290px] overflow-auto;
+			@apply w-max  max-h-[290px] overflow-auto;
 		}
 	}
 </style>

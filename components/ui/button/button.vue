@@ -25,7 +25,8 @@
 <template>
 	<button
 		:type="nativeType"
-		:class="classes"
+		:class="[classes, disabled ? 'opacity-50 z-[-1]' : '']"
+		:disabled="disabled"
 		@click="emit('click')">
 		<slot />
 	</button>
@@ -33,13 +34,13 @@
 
 <style lang="scss" scoped>
 	.button-component {
-		@apply  rounded-lg font-semibold border-2 transition-colors duration-700 ;
+		@apply font-semibold transition-colors duration-150;
 		&.type {
 			&-primary {
-				@apply border-primary bg-primary text-white hover:bg-gray-400 hover:text-black hover:border-gray-400 ;
+				@apply rounded-lg border-primary bg-primary border-2 text-white hover:bg-gray-400 hover:text-black hover:border-gray-400;
 			}
 			&-outline {
-				@apply border-white/80 md:border-gray-100 hover:bg-gray-400 hover:text-black hover:border-gray-400;
+				@apply rounded-lg border-white/80 md:border-gray-100 border-2 hover:bg-gray-400 hover:text-black hover:border-gray-400;
 			}
 		}
 		&.size {
@@ -53,8 +54,8 @@
 				@apply text-sm w-max px-3 md:text-lg md:px-7 py-3;
 			}
 		}
-		&.state-disabled {
-			@apply opacity-80 cursor-not-allowed;
-		}
+		// &.state-disabled {
+		// 	@apply opacity-50;
+		// }
 	}
 </style>

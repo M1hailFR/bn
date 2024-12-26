@@ -49,7 +49,7 @@
 			transition: 'fade',
 			icon: '',
 			title: 'Меню',
-			logo: true,
+			logo: false,
 			socials: true,
 			link: true
 		};
@@ -64,7 +64,7 @@
 		<div
 			class="container relative z-[2] flex items-center justify-between py-4 max-h-[64px] drop-shadow-md">
 			<div class="flex gap-4 translate-x-[-8px]">
-				<div class="">
+				<div class="flex items-center">
 					<Link href="/">
 						<div class="inline-flex items-center gap-2">
 							<Icon
@@ -77,29 +77,30 @@
 								v-html="header.logoText" />
 						</div>
 					</Link>
+					<Dropdown
+						class="translate-x-[14px] px-4 bg-gray-100/50 rounded-lg hover:bg-white/10"
+						icon="geo">
+						{{ region.city }}
+						<template #options>
+							<DropdownOption
+								v-for="(item, index) of regions"
+								:key="index"
+								@click="region = item">
+								{{ item.city }}
+							</DropdownOption>
+						</template>
+					</Dropdown>
 				</div>
 			</div>
 			<div class="hidden lg:flex gap-3 items-center justify-center text-black">
-				<Dropdown class="translate-x-[14px]">
-					{{ region.city }}
-					<template #options>
-						<DropdownOption
-							v-for="(item, index) of regions"
-							:key="index"
-							@click="region = item"
-							>
-							{{ item.city }}
-						</DropdownOption>
-					</template>
-				</Dropdown>
 				<Link
-					v-for="item in header.info"
+					v-for="item in header.info.slice(0, -1)"
 					:key="item"
 					size="small"
 					:type="item.linkType"
 					essence="block"
 					:href="item.href"
-					class="flex items-center  text-[14px] xl:text-[16px]">
+					class="flex items-center text-[15px]  font-medium">
 					<Icon
 						v-if="item.icon"
 						:name="item.icon"
@@ -155,9 +156,21 @@
 						:href="social">
 						<Icon
 							:name="index"
-							size="middle"
+							size="normal"
 							class="cursor-pointer">
 						</Icon>
+					</Link>
+					<Link
+						size="small"
+						type="primary"
+						essence="block"
+						href=""
+						class="flex items-center text-[14px] font-medium ml-2">
+						<Icon
+							name="fire"
+							size="small"
+							class="cursor-pointer inline-flex" />
+						Войти
 					</Link>
 				</div>
 			</div>
