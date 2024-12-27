@@ -8,7 +8,7 @@ body {
 }
 
 #__bankruptcyNo-app {
-	@apply min-h-dvh flex flex-col;
+	@apply min-h-dvh flex flex-col overflow-x-hidden;
 }
 
 h1,

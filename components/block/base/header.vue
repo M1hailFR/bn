@@ -78,7 +78,7 @@
 						</div>
 					</Link>
 					<Dropdown
-						class="translate-x-[14px] px-4 bg-gray-100/50 rounded-lg hover:bg-white/10"
+						class="hidden lg:block translate-x-[14px] px-4 bg-gray-100/50 rounded-lg hover:bg-white/10"
 						icon="geo">
 						{{ region.city }}
 						<template #options>

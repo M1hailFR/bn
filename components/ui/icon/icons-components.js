@@ -20,6 +20,7 @@ import chat from '/components/icons/info/chat'
 import renew from '/components/icons/info/renew'
 import justice from '~/components/icons/info/justice'
 
+import line from '/components/icons/line'
 export default {
   // Arrows
   'chevron-down': chevronDown,
@@ -41,5 +42,7 @@ export default {
   chat,
   renew,
   justice,
-  notification
+  notification,
+  
+  line
 }
