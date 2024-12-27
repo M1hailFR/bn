@@ -35,6 +35,7 @@
 				</div>
 			</template>
 		</Hero>
+		<Reviews />
 		<Steps />
 		<!-- <Servise /> -->
 		<Info />
@@ -43,7 +44,7 @@
 		<Achievement />
 		<Hero :data="heros[1]" />
 
-		<!-- <Reviews /> -->
+		
 		<Fqa />
 	</div>
 </template>

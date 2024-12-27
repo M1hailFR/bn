@@ -119,7 +119,7 @@
 
 <template>
 	<Form
-		class="rounded-xl backdrop-blur-sm p-3 my-5 lg:w-1/2"
+		class="rounded-xl backdrop-blur-sm p-8 my-5 lg:w-1/2"
 		:loading="loading"
 		@submit="submit">
 		<h2

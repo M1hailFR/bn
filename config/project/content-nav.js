@@ -4,9 +4,16 @@ export const header = {
 	logo: 'fire',
 	info: [
 		{
-			title: '8 (900) 999 99 99',
+			title: '8 (900) 999 99 99 ',
 			href: '',
 			icon: 'chat',
+      linkType: '',
+      iconSize: 'normal',
+		},
+		{
+			title: 'Пн-Пт: 10:00 – 19:00',
+			href: '',
+			icon: 'renew',
       linkType: '',
       iconSize: 'normal',
 		},

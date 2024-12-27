@@ -1,16 +1,17 @@
 <script setup>
-	import Icon from '/components/ui/icon/icon';
 	import Menu from '/components/parts/popups/mobile-menu/menu';
+	import Info from '/components/parts/popups/info/info';
 	import Link from '/components/ui/link/link';
-
+	import Icon from '/components/ui/icon/icon';
 	import { usePopup } from '/store/popup.js';
 	const popupStore = usePopup();
 
 	import { header, socials } from '/config/project/content-nav.js';
-	const { classes, transition, icon, title, logo } = popupStore.payload;
+	const { classes, transition, icon, title, logo, link } = popupStore.payload;
 
 	const components = {
-		menu: Menu
+		menu: Menu,
+		info: Info
 	};
 
 	const close = () => {
@@ -32,46 +33,51 @@
 				v-if="popupStore.type && components[popupStore.type]"
 				:class="popupStore.payload.classes || 'popup-default'">
 				<!-- Popup header -->
-				<h4
+				<h2
 					v-if="popupStore.payload.title"
-					class="flex items-center ml-[-8px] font-bold text-left text-2xl"
-					:class="popupStore.payload.logo ? 'mt-10' : 'mt-4'">
+					class="flex items-center font-bold text-left mb-0 "
+					:class="popupStore.payload.logo ? 'mt-8' : 'mt-2'">
 					<Icon
 						v-if="popupStore.payload.icon"
 						:name="popupStore.payload.icon"
 						size="small"
 						class="cursor-pointer inline-flex" />
 					{{ popupStore.payload.title }}
-				</h4>
+				</h2>
 
 				<!-- logo -->
-				<Link
-					v-if="popupStore.payload.logo"
-					href="/"
-					class="flex items-center absolute top-2 left-2">
-					<Icon
-						:name="header.logo"
-						size="middle"
-						class="cursor-pointer ml-auto inline-flex">
-					</Icon>
-					<h6
-						class="mb-0 leading-[1em] font-bold"
-						v-html="header.logoText" />
-				</Link>
+				<div>
+					<Link
+						v-if="popupStore.payload.logo"
+						href="/"
+						class="flex items-center absolute top-2 left-2">
+						<Icon
+							:name="header.logo"
+							size="middle"
+							class="cursor-pointer ml-auto inline-flex">
+						</Icon>
+						<h6
+							class="mb-0 leading-[1em] font-bold"
+							v-html="header.logoText" />
+					</Link>
+				</div>
 
 				<Icon
-					class="absolute top-2 right-2 w-[14px] h-[14px] cursor-pointer"
-					name="fire"
+					class="absolute top-0 right-0 w-[20px] h-[20px] cursor-pointer"
+					name="close"
 					size="normal"
 					@click="close" />
 
 				<!-- Popup component -->
 				<component
 					class="w-full h-full"
-					:is="components[popupStore.type]" />
+					:is="components[popupStore.type]"
+					:data="popupStore.payload.data" />
 
 				<!-- Popup link консультация -->
-				<div class="flex gap-2">
+				<div
+					v-if="popupStore.payload.link"
+					class="flex gap-2">
 					<Link
 						v-for="(item, index) of header.info.slice(-2)"
 						:key="index"
@@ -116,10 +122,13 @@
 <style lang="scss" scoped>
 	.popup {
 		&-default {
-			@apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-w-[600px]  max-h-screen shadow-md px-4 pt-12 pb-4 bg-white sm:rounded-lg z-50 w-full h-full sm:h-auto;
+			@apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-w-[500px] max-h-screen shadow-sm border border-white px-8 pt-4 pb-8 bg-white sm:rounded-lg z-50 w-full h-full sm:h-auto;
 		}
 		&-menu {
-			@apply text-black fixed top-0 right-0 flex flex-col h-dvh px-6 pt-12 pb-4 bg-white sm:rounded-l z-50 w-full h-full sm:max-w-[400px] overflow-auto;
+			@apply text-black fixed top-0 right-0 flex flex-col h-dvh px-6 pt-4 pb-4 bg-white sm:rounded-l z-50 w-full h-full sm:max-w-[400px] overflow-auto;
+		}
+		&-video {
+			@apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-w-[900px] max-h-screen shadow-sm border border-white p-8 bg-white sm:rounded-lg z-50 w-full h-full sm:h-auto;
 		}
 	}
 </style>

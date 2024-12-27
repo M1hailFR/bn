@@ -12,7 +12,7 @@ const emit = defineEmits(['submit'])
 
 <template>
   <form
-    class="flex flex-col items-center gap-3 rounded-md"
+    class="flex flex-col gap-3 rounded-md"
     @submit.prevent>
     <slot />
     <Button

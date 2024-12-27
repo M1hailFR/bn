@@ -33,9 +33,19 @@
 		<div class="container flex flex-col justify-center gap-20 z-10 h-full">
 			<!-- Верхний блок -->
 			<div class="flex flex-col">
-				<h2 v-if="data.headline" class="font-semibold mb-0 text-white/80">{{ data.headline }}</h2>
-				<h1 v-if="data.title" class="max-w-[800px] font-bold text-white">{{ data.title }}</h1>
-				<h4 v-if="data.description" class="max-w-[600px] text-white/80">
+				<h2
+					v-if="data.headline"
+					class="font-semibold mb-2 text-white/80">
+					{{ data.headline }}
+				</h2>
+				<h1
+					v-if="data.title"
+					class=" font-bold text-white text-[36px] lg:text-5xl text-left font-bold tracking-wide">
+					{{ data.title }}
+				</h1>
+				<h4
+					v-if="data.description"
+					class="max-w-[600px] text-white/80">
 					{{ data.description }}
 				</h4>
 				<div
@@ -61,7 +71,6 @@
 					request-title="Заявка на получение предложения"
 					title="Бесплатная консультация"
 					@change="resetForm">
-					
 				</RequestForm>
 				<!-- Нижний блок -->
 			</div>
@@ -87,13 +96,13 @@
 
 		<Image
 			:src="data.image"
-			class="object-cover z-[8] absolute bottom-0 right-0 xl:right-20 w-auto max-h-[860px] brightness-[.75]" />
+			class="object-cover z-[8] absolute bottom-0 right-0 xl:right-20 max-w-[560px] max-h-[760px] brightness-[.75]" />
 	</section>
 </template>
 
 <style lang="scss" scoped>
 	.intro {
-		@apply relative flex items-center overflow-hidden py-10 min-h-[calc(100dvh-135px)] xl:min-h-[calc(100dvh-68px)];
+		@apply relative flex items-center overflow-hidden py-10 xl:min-h-[calc(100dvh-200px)];
 		// height: calc(100dvh - 68px);
 		background: linear-gradient(45deg, #bbbbbb 0%, #2a3b4d 100%);
 
@@ -115,17 +124,17 @@
 			}
 
 			&-1 {
-				@apply top-[750px] right-[1000px] w-[600px] h-[600px] opacity-[60%] bg-gradient-4;
+				@apply top-[550px] right-[1000px] w-[600px] h-[600px] opacity-[60%] bg-gradient-4;
 				filter: blur(16px);
 			}
 
 			&-2 {
-				@apply top-[600px] right-[400px] w-[800px] h-[800px] opacity-[60%] bg-gradient-4 brightness-[150%];
+				@apply top-[400px] right-[400px] w-[800px] h-[800px] opacity-[60%] bg-gradient-4 brightness-[150%];
 				filter: blur(26px);
 			}
 
 			&-3 {
-				@apply top-[400px] right-[-300px] w-[1000px] h-[1000px] opacity-[60%] bg-gradient-4 brightness-[150%];
+				@apply top-[200px] right-[-300px] w-[1000px] h-[1000px] opacity-[60%] bg-gradient-4 brightness-[150%];
 				filter: blur(16px);
 			}
 		}
