@@ -68,13 +68,13 @@
 		<!-- Variant 3 -->
 		<div
 			v-if="variant === 'variant3'"
-			class="inline-flex items-center gap-2 w-full p-3 sm:p-6 bg-white/10 backdrop-blur-sm rounded-lg">
+			class="inline-flex items-center gap-2 w-full  p-3 sm:p-6 bg-white/10 backdrop-blur-sm rounded-lg">
 			<Icon
 				:name="data.icon"
 				size="large"
 				class="cursor-pointer inline-flex bg-gray-500/50 rounded-full" />
 			<div>
-				<h4 class="block mb-0">{{ data.title }}</h4>
+				<h4 class="inline-flex mb-0 flex-wrap max-w-[220px]">{{ data.title }}</h4>
 				<span class="block">{{ data.text }}</span>
 			</div>
 		</div>

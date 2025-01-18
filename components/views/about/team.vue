@@ -1,5 +1,5 @@
 <script setup>
-	import { reviews } from '/config/project/content-index.js';
+	import { team } from '/config/project/content-about.js';
 	import Slider from '/components/parts/slider/slider';
 	import { useApp } from '/store/app';
 	const appStore = useApp();
@@ -15,26 +15,13 @@
 </script>
 <template>
 	<div>
-		<section class="container ">
+		<section class="container">
 			<div class="relative w-full h-auto"></div>
-			<h2 class="block">{{ reviews.title }}</h2>
+			<h2 class="block">{{ team.title }}</h2>
 			<div class="section-container bg-gray-100/60 rounded-xl">
 				<Slider
-					:data="reviews.comments"
-					:title="reviews.sliderTitle"
-					type="comments"
-					wrapper="flex-none w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
-					:itemsPerPage="itemsPerPage">
-				</Slider>
-			</div>
-		</section>
-		<section class="container pt-0">
-			<div class="relative w-full h-auto"></div>
-			<h2 class="block">{{ reviews.title2 }}</h2>
-			<div class="section-container bg-gray-100/60 rounded-xl">
-				<Slider
-					:data="reviews.videoComments"
-					type="video"
+					:data="team.cards"
+					type="team"
 					wrapper="flex-none w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
 					:itemsPerPage="itemsPerPage"
 					navBottom="true">

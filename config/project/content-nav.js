@@ -75,10 +75,10 @@ export const navigation = [
 		icon: 'fire',
 		chls: [
 			{
-				title: 'Банкротство',
+				title: 'Списание долгов',
 				href: '',
 				icon: '',
-				buttonTitle: 'Банкротство онлайн',
+				buttonTitle: 'списать',
 				buttonHref: '',
 				buttonIcon: 'fire',
 				childs: [
@@ -116,44 +116,10 @@ export const navigation = [
 			},
 
 			{
-				title: 'Урегулирование',
+				title: ' Урегулирование долгов',
 				href: '',
 				icon: '',
-				buttonTitle: 'Урегулировать',
-				buttonHref: '',
-				childs: [
-					{
-						title: 'Рефинансирование долга',
-						href: '',
-						icon: 'fire'
-					},
-					{
-						title: 'Реструктуризация долга',
-						href: '',
-						icon: 'fire'
-					},
-					{
-						title: 'Выкуп долга',
-						href: '',
-						icon: 'fire'
-					},
-					{
-						title: 'Договор с кредитором о дисконте',
-						href: '',
-						icon: 'fire'
-					},
-					{
-						title: 'Очистка кредитной истории',
-						href: '',
-						icon: 'fire'
-					}
-				]
-			},
-			{
-				title: 'Урегулирование',
-				href: '',
-				icon: '',
-				buttonTitle: 'Урегулировать',
+				buttonTitle: 'урегулировать',
 				buttonHref: '',
 				childs: [
 					{
@@ -189,66 +155,49 @@ export const navigation = [
 		title: 'Отзывы',
 		href: '',
 		icon: 'fire',
-		childs: [
-			{
-				title: 'Видео отзывы',
-				href: '',
-				icon: 'fire'
-			},
-			{
-				title: 'Ссылки на дела',
-				href: '',
-				icon: 'fire'
-			}
-		]
 	},
 	{
 		title: 'Стоимость',
 		href: '',
 		icon: 'fire',
-		childs: [
-			{
-				title: 'Калькулятор стоимости',
-				href: '',
-				icon: 'fire'
-			},
-			{
-				title: 'Расходы в процедуре банкротства',
-				href: '',
-				icon: 'fire'
-			}
-		]
+		// childs: [
+		// 	{
+		// 		title: 'Калькулятор стоимости',
+		// 		href: '',
+		// 		icon: 'fire'
+		// 	}
+		// ]
 	},
 	{
 		title: 'О компании',
-		href: '',
+		href: '/about',
 		icon: 'fire',
-		childs: [
-			{
-				title: 'О нас',
-				href: '/about',
-				icon: 'fire'
-			},
-			{
-				title: 'Команда',
-				href: '',
-				icon: 'fire'
-			},
-			{
-				title: 'Патенты и сертификаты',
-				href: '',
-				icon: 'fire'
-			},
-			{
-				title: 'Кейсы',
-				href: '',
-				icon: 'fire'
-			}
-		]
+		// childs: [
+		// 	{
+		// 		title: 'О нас',
+		// 		href: '/about',
+		// 		icon: 'fire'
+		// 	},
+		// 	{
+		// 		title: 'Команда',
+		// 		href: '',
+		// 		icon: 'fire'
+		// 	},
+		// 	{
+		// 		title: 'Патенты и сертификаты',
+		// 		href: '',
+		// 		icon: 'fire'
+		// 	},
+		// 	{
+		// 		title: 'Кейсы',
+		// 		href: '',
+		// 		icon: 'fire'
+		// 	}
+		// ]
 	},
 	{
 		title: 'Пресс центр',
-		href: '',
+		href: '/pressCenter',
 		icon: 'fire'
 	},
 	{

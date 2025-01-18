@@ -60,7 +60,6 @@
 		</div>
 		<div class="mt-3">
 			<Button
-				@click="nextSlide"
 				size="normall"
 				class="btn flex items-center text-sm"
 				type="">

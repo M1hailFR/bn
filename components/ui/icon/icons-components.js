@@ -21,6 +21,7 @@ import renew from '/components/icons/info/renew'
 import justice from '~/components/icons/info/justice'
 
 import line from '/components/icons/line'
+import speak from '/components/icons/outline/speak'
 export default {
   // Arrows
   'chevron-down': chevronDown,
@@ -44,5 +45,6 @@ export default {
   justice,
   notification,
   
-  line
+  line,
+  speak
 }

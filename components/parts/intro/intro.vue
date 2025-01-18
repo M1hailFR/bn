@@ -40,23 +40,25 @@
 				</h2>
 				<h1
 					v-if="data.title"
-					class=" font-bold text-white text-[36px] lg:text-5xl text-left font-bold tracking-wide">
+					class=" font-bold text-white text-[36px] lg:text-5xl lg:w-2/3 text-left font-bold tracking-wide  ">
 					{{ data.title }}
 				</h1>
 				<h4
 					v-if="data.description"
-					class="max-w-[600px] text-white/80">
+					class="max-w-[600px] text-white/80 mt-4">
 					{{ data.description }}
 				</h4>
 				<div
 					v-if="!data.form"
 					class="mt-5 flex flex-col gap-4 md:flex-row w-full text-white">
 					<Button
+						v-if="data.consultation"
 						type="primary"
 						size="middle"
 						>{{ data.consultation }}</Button
 					>
 					<Button
+						v-if="data.start"
 						type="outline"
 						size="middle"
 						>{{ data.start }}</Button
@@ -65,11 +67,12 @@
 				<!-- форма -->
 				<RequestForm
 					v-if="data.form"
-					class="bg-white/10"
+					class="bg-white/10 lg:w-1/2 w-full"
 					:form="form"
 					btnTitle="Оставить заявку"
 					request-title="Заявка на получение предложения"
 					title="Бесплатная консультация"
+					
 					@change="resetForm">
 				</RequestForm>
 				<!-- Нижний блок -->
@@ -83,7 +86,9 @@
 					:key="stat"
 					variant="variant3"
 					type="default"
-					:data="stat" />
+					:data="stat" 
+					class=""
+					/>
 			</div>
 		</div>
 
