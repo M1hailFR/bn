@@ -62,10 +62,10 @@
 				v-if="data.href"
 				:href="data.href"
 				type="default"
-				class="link">
+				class="link mt-2">
 				<h6
-					class="text-[14px] xl:text-[16px] max-w-[200px] leading-[1em] font-medium">
-					{{ data.btn }}
+					class="text-[14px] xl:text-[16px] max-w-[200px] leading-[1em] font-semibold ">
+					{{ data.btnPopup }}
 				</h6>
 				<Icon
 					name="chevron-down"

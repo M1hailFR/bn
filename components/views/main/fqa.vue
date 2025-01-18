@@ -2,6 +2,7 @@
 	import Collapse from '/components/ui/collapse/collapse';
   import Button from '/components/ui/button/button';
 	import { fqa } from '/config/project/content-index.js';
+	import Chat from '/components/parts/chat/chat.vue';
 </script>
 
 <template>
@@ -12,7 +13,9 @@
 				<h5>
 					{{ fqa.description }}
 				</h5>
+				<Chat />
 				<Button
+					v-if="fqa.button1"
 					type="primary"
 					size="normal"
 					class="mt-4"

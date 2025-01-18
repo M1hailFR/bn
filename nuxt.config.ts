@@ -36,7 +36,9 @@ export default defineNuxtConfig({
           href: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap",
         },
       ],
-      script: [],
+      script: [
+        { src: "https://api-maps.yandex.ru/2.1/?apikey=f29a726a-2ec7-4dec-99e6-bd7ec89f441f&lang=ru_RU", type: 'text/javascript' },
+      ],
       // @ts-ignore
       pwa: {
         manifest: {

@@ -3,6 +3,7 @@
 	import Image from '/components/ui/image/image.vue';
 	import Link from '/components/ui/link/link.vue';
 	import Menu from '/components/parts/menu/menu';
+	import Map from '/components/parts/map/map.vue';
 	import { header, socials } from '/config/project/content-nav.js';
 	import { regions } from '/config/project/sources';
 
@@ -12,10 +13,12 @@
 </script>
 
 <template>
-	<footer class="footer" ref="el">
+	<footer
+		class="footer"
+		ref="el">
 		<div class="container z-10">
-			<div class="flex justify-between gap-14">
-				<div class="w-1/4">
+			<div class="flex justify-between w-full gap-14">
+				<div class="max-w-[350px]">
 					<Link href="/">
 						<div class="inline-flex items-center gap-2">
 							<Icon
@@ -37,44 +40,47 @@
 					</h5>
 				</div>
 
-				<div class="w-full w-2/4">
+				<div class="flex gap-10 w-full">
 					<slot />
-				</div>
+					<div class="w-1/4">
+						<div class="flex">
+							<Link
+								v-for="(social, index) in socials"
+								:key="index"
+								:href="social">
+								<Icon
+									:name="index"
+									size="normal"
+									class="cursor-pointer">
+								</Icon>
+							</Link>
+						</div>
 
-				<div class="w-1/4">
-					<div class="flex">
-						<Link
-							v-for="(social, index) in socials"
-							:key="index"
-							:href="social">
-							<Icon
-								:name="index"
-								size="normal"
-								class="cursor-pointer">
-							</Icon>
-						</Link>
-					</div>
-
-					<div class="flex flex-col gap-1 items-start py-2">
-						<Link
-							v-for="item in header.info"
-							:key="item"
-							size="small"
-							:type="item.linkType"
-							essence="block"
-							:href="item.href"
-							class="flex items-center text-[15px] font-medium">
-							<Icon
-								v-if="item.icon"
-								:name="item.icon"
-								:size="item.iconSize"
-								class="cursor-pointer inline-flex" />
-							{{ item.title }}
-						</Link>
+						<div class="flex flex-col gap-1 items-start py-2">
+							<Link
+								v-for="item in header.info"
+								:key="item"
+								size="small"
+								:type="item.linkType"
+								essence="block"
+								:href="item.href"
+								class="flex items-center text-[15px] font-medium">
+								<Icon
+									v-if="item.icon"
+									:name="item.icon"
+									:size="item.iconSize"
+									class="cursor-pointer inline-flex" />
+								{{ item.title }}
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>
-
+			<div class="flex gap-10 w-full mt-10">
+				<div class="w-full max-h-[400px]">
+					<Map />
+				</div>
+			</div>
 			<div class="text-sm font-medium md:w-9/12 mt-20">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus harum,
 				quibusdam dolor facilis excepturi tempora expedita quia in maiores
@@ -85,6 +91,7 @@
 				&#169; {{ new Date().getFullYear() }} БанкротстваNET
 			</div>
 		</div>
+
 		<!-- Фоновые элементы -->
 		<div class="footer-flash">
 			<div class="footer-flash-1"></div>

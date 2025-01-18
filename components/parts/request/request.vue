@@ -128,7 +128,7 @@
 			{{ title }}
 		</h2>
 		<slot />
-		<div class="grid grid-cols-1 xl:grid-cols-2 gap-5 mt-5 mb-4 w-full">
+		<div class="grid grid-cols-1 xl:grid-cols-2 gap-3  w-full">
 			<template
 				v-for="(value, key) in schema"
 				:key="key">
