@@ -100,6 +100,7 @@
 		</div>
 
 		<Image
+			v-if="data.image"
 			:src="data.image"
 			class="object-cover z-[8] absolute bottom-0 right-0 xl:right-20 max-w-[560px] max-h-[760px] brightness-[.75]" />
 	</section>
