@@ -1,26 +1,21 @@
 export const intro = {
-	headline: 'Мы первые в рейтингах',
-	title: 'Банкротство физических лиц и урегулирование долгов с гарантией по договору',
-	description:
-		'Подбираем оптимальный вариант решения проблемы с долгами под ключ с гарантией результата по договору',
+	headline: 'О компании',
+	title:
+		'Команда с 10-летним опытом в списании и урегулировании задолженностей. Подбираем оптимальный вариант решения проблемы с долгами под ключ с гарантией результата по договору',
+	description: '',
 	consultation: 'Бесплатная консультация',
 	start: '',
 	image: '/images/intro/3.png',
   form: false,
 	stats: [
 		{
-			title: 'Защищаем имущество и доходы',
+			title: 'Более 1.3 млн дел обработал наш модуль',
 			text: '',
 			icon: 'fire'
 		},
-		{ title: 'Гаранитуем результат в договоре', text: '', icon: 'fire' },
-		{
-			title: 'Предоставляем рассрочку',
-			text: '',
-			icon: 'fire'
-		},
-		{ title: 'Решаем дела любой сложности', text: '', icon: 'fire' },
-    { title: '100% конфеденциалность', text: '', icon: 'fire' }
+		{ title: '1320 решений о списании получили', text: '', icon: 'fire' },
+		{ title: '470 дел урегулировали', text: '', icon: 'fire' },
+    { title: '100% Гарантия конфиденциальности', text: '', icon: 'fire' }
 	]
 };
 
@@ -66,6 +61,153 @@ export const team = {
     }
   ]
 }
+
+export const cases = {
+  title: 'Наши кейсы',
+  description: 'Качество подтверждено многолетней практикой',
+  
+  cards: [
+    {
+      image: '/images/cases/1.png',
+      button1: 'Хочу так же',
+      button2: 'Подробнее', 
+      title: 'Анна Петрова',
+      writtenOff: '1 200 000 ₽',
+      city: 'Москва',
+      time: '8 месяцев',
+      case: 'А41-12345/2023'
+    },
+    {
+      image: '/images/cases/1.png',
+      button1: 'Хочу так же',
+      button2: 'Подробнее',
+      title: 'Сергей Иванов',
+      writtenOff: '3 500 000 ₽', 
+      city: 'Санкт-Петербург',
+      time: '6 месяцев',
+      case: 'А56-78901/2023'
+    },
+    {
+      image: '/images/cases/1.png',
+      button1: 'Хочу так же',
+      button2: 'Подробнее',
+      title: 'Елена Смирнова',
+      writtenOff: '850 000 ₽',
+      city: 'Екатеринбург', 
+      time: '9 месяцев',
+      case: 'А60-34567/2023'
+    },
+    {
+      image: '/images/cases/1.png',
+      button1: 'Хочу так же',
+      button2: 'Подробнее',
+      title: 'Дмитрий Козлов',
+      writtenOff: '2 100 000 ₽',
+      city: 'Новосибирск',
+      time: '7 месяцев', 
+      case: 'А45-89012/2023'
+    },
+    {
+      image: '/images/cases/1.png',
+      button1: 'Хочу так же',
+      button2: 'Подробнее',
+      title: 'Ольга Морозова',
+      writtenOff: '1 800 000 ₽',
+      city: 'Казань',
+      time: '10 месяцев',
+      case: 'А45-89012/2023', 
+    },
+    {
+      image: '/images/cases/1.png',
+      button1: 'Хочу так же',
+      button2: 'Подробнее',
+      title: 'Максим Соколов',
+      writtenOff: '2 800 000 ₽',
+      city: 'Нижний Новгород',
+      time: '7 месяцев',
+      case: 'А43-67890/2023'
+    },
+    {
+      image: '/images/cases/1.png',
+      button1: 'Хочу так же',
+      button2: 'Подробнее',
+      title: 'Ирина Волкова',
+      writtenOff: '1 600 000 ₽',
+      city: 'Краснодар',
+      time: '9 месяцев',
+      case: 'А32-45678/2023'
+    },
+    {
+      image: '/images/cases/1.png',
+      button1: 'Хочу так же',
+      button2: 'Подробнее',
+      title: 'Артем Лебедев',
+      writtenOff: '4 200 000 ₽',
+      city: 'Ростов-на-Дону',
+      time: '8 месяцев',
+      case: 'А53-23456/2023'
+    },
+    {
+      image: '/images/cases/1.png',
+      button1: 'Хочу так же',
+      button2: 'Подробнее',
+      title: 'Наталья Кузнецова',
+      writtenOff: '2 300 000 ₽',
+      city: 'Самара',
+      time: '6 месяцев',
+      case: 'А55-34567/2023'
+    }
+  ]
+}
+
+export const patterns = {
+	title: 'Патенты и серефикаты ',
+	icon: 'secure',
+	description:
+		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+	// button1: 'Бесплатная консультация',
+	cards: [
+		{
+			icon: 'pdf',
+			type: 'outline',
+			title:
+				'Выписка из Единого государственного реестра юридических лиц',
+			text: '',
+      doc: ''
+		},
+
+		{
+			icon: 'pdf',
+			type: 'outline',
+			title:
+				'Лист записи ЕГРЮЛ'
+		},
+		{
+			icon: 'pdf',
+			type: 'outline',
+			title: 'Свидетельство о постановке на учет'
+		},
+
+		{
+			icon: 'pdf',
+			type: 'outline',
+			title:
+				'Устав НСОД'
+		},
+		{
+			icon: 'pdf',
+			type: 'outline',
+			title:
+				'Cертификат сколково'
+		},
+		{
+			icon: 'pdf',
+			type: 'outline',
+			title:
+				'Аккредитация Минцифры'
+		}
+	]
+};
 
 export const blog = [
   {

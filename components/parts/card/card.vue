@@ -65,7 +65,7 @@
 
 <style lang="scss" scoped>
 	.card-component {
-		@apply w-full h-max relative lg:max-w-full xl:flex box-border overflow-hidden rounded-xl;
+		@apply w-full h-max relative lg:max-w-full xl:flex box-border overflow-hidden rounded-xl hover:scale-[1.04] transition duration-300 ease-in-out;
 
 		&.type-primary {
 			@apply bg-primary text-white relative z-[3];

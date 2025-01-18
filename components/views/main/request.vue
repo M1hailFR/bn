@@ -32,7 +32,7 @@
 <template>
 	<section class="request">
 		<div class="section-container z-[8] relative">
-			<div class="content container flex gap-10 justify-end">
+			<div class="content container flex gap-10 justify-end w-full">
 				<div class="absolute bottom-[-60px] left-20 max-w-[560px] max-h-[760px]">
 					<Image
 						:src="data.image"
@@ -51,7 +51,7 @@
 						btnTitle="Оставить заявку"
 						request-title="Заявка на получение предложения"
 						title="Бесплатная консультация"
-						class="w-full bg-white/10"
+						class="w-full bg-white/10 max-w-[700px]"
 						@change="resetForm" />
 				</div>
 			</div>

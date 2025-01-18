@@ -78,7 +78,7 @@ export const navigation = [
 				title: 'Списание долгов',
 				href: '',
 				icon: '',
-				buttonTitle: 'списать',
+				buttonTitle: 'Cписать',
 				buttonHref: '',
 				buttonIcon: 'fire',
 				childs: [
@@ -118,8 +118,8 @@ export const navigation = [
 			{
 				title: ' Урегулирование долгов',
 				href: '',
-				icon: '',
-				buttonTitle: 'урегулировать',
+				icon: 'fire',
+				buttonTitle: 'Урегулировать',
 				buttonHref: '',
 				childs: [
 					{

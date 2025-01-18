@@ -33,16 +33,16 @@
 		<div class="container flex flex-col justify-center gap-20 z-10 h-full">
 			<!-- Верхний блок -->
 			<div class="flex flex-col">
-				<h2
-					v-if="data.headline"
-					class="font-semibold mb-2 text-white/80">
-					{{ data.headline }}
-				</h2>
 				<h1
-					v-if="data.title"
-					class=" font-bold text-white text-[36px] lg:text-5xl lg:w-2/3 text-left font-bold tracking-wide  ">
-					{{ data.title }}
+					v-if="data.headline"
+					class="font-bold text-white text-[36px] lg:text-5xl lg:w-2/3 text-left font-bold tracking-wide mb-2">
+					{{ data.headline }}
 				</h1>
+				<h2
+					v-if="data.title"
+					class="font-semibold mb-0 text-white/80 lg:w-2/3">
+					{{ data.title }}
+				</h2>
 				<h4
 					v-if="data.description"
 					class="max-w-[600px] text-white/80 mt-4">
@@ -72,7 +72,6 @@
 					btnTitle="Оставить заявку"
 					request-title="Заявка на получение предложения"
 					title="Бесплатная консультация"
-					
 					@change="resetForm">
 				</RequestForm>
 				<!-- Нижний блок -->
@@ -86,9 +85,8 @@
 					:key="stat"
 					variant="variant3"
 					type="default"
-					:data="stat" 
-					class=""
-					/>
+					:data="stat"
+					class="" />
 			</div>
 		</div>
 
