@@ -3,6 +3,8 @@
 	import Icon from '/components/ui/icon/icon.vue';
 	import CardComment from '/components/parts/card/card-comment';
 	import CardVideoComment from '/components/parts/card/card-video-comment';
+	import CardTeam from '/components/parts/card/card-team';
+	
 	const props = defineProps({
 		itemsPerPage: {
 			type: Number,
@@ -54,6 +56,16 @@
 	const prevSlide = () => {
 		currentSlide.value = Math.max(currentSlide.value - 1, 0);
 	};
+
+	const componentMap = {
+		comments: CardComment,
+		video: CardVideoComment,
+		team: CardTeam
+	};
+
+	const getComponent = computed(() => {
+		return componentMap[props.type] || CardComment;
+	});
 </script>
 
 <template>
@@ -99,11 +111,8 @@
 					v-for="(item, index) in data"
 					:key="index"
 					:class="[wrapper, `w-${100 / props.itemsPerPage}%`]">
-					<CardComment
-						v-if="type === 'comments'"
-						:data="item" />
-					<CardVideoComment
-						v-if="type === 'videoComment'"
+					<component
+						:is="getComponent"
 						:data="item" />
 				</div>
 			</div>

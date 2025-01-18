@@ -6,10 +6,11 @@
 	// import Popup from '/components/parts/popups/popup.vue'
 	// import OffCanvas from '/components/parts/off-canvas/off-canvas.vue'
 	// import Loader from '/components/parts/main/loader'
-	// import Footer from '/components/block/base/footer.vue'
+	import Footer from '/components/block/base/footer.vue';
 	// import Up from '/components/parts/up.vue'
 	// import Icon from '/components/ui/icon/icon.vue'
 	// import Link from '/components/ui/link/link.vue'
+	import { navigation } from '/config/project/content-nav.js';
 	import { useApp } from '/store/app';
 	import Image from '/components/ui/image/image';
 	import Video from '/components/ui/video/video';
@@ -75,11 +76,12 @@
 	const handleScrollHeader = () => {
 		getFooterScrollTop();
 		screenY.value = window.scrollY;
-		if (route.name.startsWith('index') || route.name.startsWith('about')) {
-			handleScrollHeaderUpdate();
-		} else {
-			handleScrollHeaderFooter();
-		}
+		handleScrollHeaderUpdate();
+		// if (route.name.startsWith('index') || route.name.startsWith('about')) {
+		// 	handleScrollHeaderUpdate();
+		// } else {
+		// 	handleScrollHeaderFooter();
+		// }
 	};
 
 	const handleScrollHeaderUpdate = () => {
@@ -130,13 +132,21 @@
 					ref="header"
 					:theme="theme"
 					:type="theme === 'transparent' ? 'relative' : 'fixed'">
-					<Menu :theme="theme" />
+					<Menu
+						:theme="theme"
+						:navigation="navigation"
+						type="header" />
 				</Header>
 
 				<main class="relative transition-all duration-700">
 					<NuxtPage />
 				</main>
-				<footer class="p-8 bg-teal-500 rounded-xl">footer</footer>
+				<Footer>
+					<Menu
+						:theme="theme"
+						:navigation="navigation"
+						type="footer" />
+				</Footer>
 				<Popup />
 			</div>
 		</transition>

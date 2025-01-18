@@ -5,12 +5,13 @@ import Card from "/components/parts/card/card-stat";
 import Blog from "/components/views/about/blog";
 import { heros } from "/config/project/content-index";
 import { blog, intro } from "/config/project/content-about";
+import Team from "/components/views/about/team";
 </script>
 
 <template>
   <div>
     <Intro :data="intro" />
-    <Hero :data="heros[2]">
+    <!-- <Hero :data="heros[2]">
       <template #content>
         <div
           class="flex flex-wrap pt-16 xl:pt-0 lg:w-full gap-3 justify-start lg:justify-end"
@@ -24,8 +25,9 @@ import { blog, intro } from "/config/project/content-about";
           />
         </div>
       </template>
-    </Hero>
+    </Hero> -->
+    <Team />
     <Blog :data="blog" />
-    <Hero :data="heros[0]" />
+    <Hero :data="heros[1]" />
   </div>
 </template>

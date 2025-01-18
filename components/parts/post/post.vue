@@ -36,12 +36,12 @@
           </Button>
         </div> -->
 				</div>
-				<div class="sticky top-32 w-full h-full">
+				<div class="sticky top-32 w-full h-fit">
 					<h2 class="hidden lg:block lg:max-w-[700px]">{{ data.title }}</h2>
 					<Image
 						v-if="data.image"
 						:src="data.image"
-						class="rounded-xl w-full md:h-[300px] lg:h-full block overflow-hidden object-cover" />
+						class="rounded-xl w-full md:h-[300px] lg:h-[500px] block overflow-hidden object-cover" />
 				</div>
 			</div>
 		</div>
@@ -60,7 +60,7 @@
 		.primary {
 			@apply bg-primary;
 			.content {
-				@apply flex flex-col gap-6 lg:flex-row relative flex-row-reverse text-gray-100;
+				@apply flex flex-col gap-6 lg:flex-row relative w-full h-full flex-row-reverse text-gray-100;
 			}
 		}
 	}
