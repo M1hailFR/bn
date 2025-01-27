@@ -1,14 +1,13 @@
 <script setup>
-import Intro from '/components/parts/intro/intro';
-import Hero from "/components/parts/hero/hero";
-import Card from "/components/parts/card/card-stat";
-import Blog from "/components/views/about/blog";
-import Team from "/components/views/about/team";
-import Patterns from "/components/views/about/patterns";
-import Cases from "/components/views/about/cases";
-import { heros } from "/config/project/content-index";
-import { blog, intro } from "/config/project/content-about";
-
+import Intro from '/components/parts/intro/intro'
+import Hero from '/components/parts/hero/hero'
+import Card from '/components/parts/card/card-stat'
+import Blog from '/components/views/about/blog'
+import Team from '/components/views/about/team'
+import Patterns from '/components/views/about/patterns'
+import Cases from '/components/views/about/cases'
+import { heros } from '/config/project/content-index'
+import { blog, intro } from '/config/project/content-about'
 </script>
 
 <template>

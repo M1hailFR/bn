@@ -1,6 +1,6 @@
 <script setup>
-import Intro from '/components/parts/intro/intro';
-import { intro } from "/config/project/content-pressCenter";
+import Intro from '/components/parts/intro/intro'
+import { intro } from '/config/project/content-pressCenter'
 </script>
 
 <template>

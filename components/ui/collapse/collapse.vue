@@ -9,8 +9,8 @@ const props = defineProps({
   },
   cntLng: {
     type: Array,
-    default: []
-  }
+    default: [],
+  },
 })
 
 const { classes } = setBasicUiProps(props, 'collapse-component')

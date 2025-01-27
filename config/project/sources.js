@@ -71,7 +71,6 @@ export const regions = [
   { city: 'Республика Дагестан', value: '05' },
   { city: 'Севастополь', value: '92' },
   { city: 'Республика Крым', value: '91' },
-];
-
+]
 
 export default { contacts, logo, socials }

@@ -2,18 +2,17 @@
 const props = defineProps({
   src: {
     type: String,
-    required: true
+    required: true,
   },
   alt: {
     type: String,
-    default: ''
+    default: '',
   },
   modern: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 })
-
 
 const EXTENSTIONS = ['jpg', 'jpeg', 'png', 'gif']
 const MODERN_EXTENSTIONS = ['webp', 'avif']
@@ -23,7 +22,9 @@ const srcExt = srcAsArray.pop()
 const srcPath = srcAsArray.shift()
 
 const isSources = props.modern && EXTENSTIONS.find((a) => a === srcExt)
-if (isSources) { MODERN_EXTENSTIONS.unshift(srcExt) }
+if (isSources) {
+  MODERN_EXTENSTIONS.unshift(srcExt)
+}
 </script>
 
 <template>
@@ -33,12 +34,11 @@ if (isSources) { MODERN_EXTENSTIONS.unshift(srcExt) }
         v-for="item in MODERN_EXTENSTIONS"
         :key="item"
         :srcset="srcPath + '.' + item"
-        :type="'image/' + item">
+        :type="'image/' + item" />
     </template>
     <img
       class="block h-full w-full object-cover"
       :src="src"
-      :alt="alt">
+      :alt="alt" />
   </picture>
 </template>
-  

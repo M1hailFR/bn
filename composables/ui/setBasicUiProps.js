@@ -13,12 +13,14 @@ const SIZES = {
   normal: 'normal',
   middle: 'middle',
   large: 'large',
-  'extra-large': 'extra-large'
+  'extra-large': 'extra-large',
 }
 
 const paramsAsJoinedString = (name, value) => {
   let string = ` ${name}`
-  if (value) { string += `-${value}` }
+  if (value) {
+    string += `-${value}`
+  }
   return string
 }
 
@@ -34,11 +36,13 @@ export const setBasicUiProps = (props, componentClass) => {
     if (props.disabled) {
       classesAsString += paramsAsJoinedString('state-disabled')
     }
-    if (props.error) { classesAsString += paramsAsJoinedString('state-error') }
+    if (props.error) {
+      classesAsString += paramsAsJoinedString('state-error')
+    }
     return classesAsString
   })
 
   return {
-    classes
+    classes,
   }
 }

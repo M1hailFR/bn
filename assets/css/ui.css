@@ -1,37 +1,39 @@
 .ui-btn {
-    @apply text-sm font-semibold rounded-lg;
-    &[type="button"] {
-        @apply bg-gray-300
-    }
-    &:disabled {
-         opacity: .4;
-    }
+  @apply text-sm font-semibold rounded-lg;
+  &[type='button'] {
+    @apply bg-gray-300;
+  }
+  &:disabled {
+    opacity: 0.4;
+  }
 }
 .ui-list hr {
-    @apply w-full h-[3px] rounded border-none;
-    background: linear-gradient(86.6deg, #FF0F87 -23.87%, #4612CC 124.07%), #C4C4C4;
+  @apply w-full h-[3px] rounded border-none;
+  background: linear-gradient(86.6deg, #ff0f87 -23.87%, #4612cc 124.07%),
+    #c4c4c4;
 }
 .ui-list-marker div {
-    @apply flex items-center gap-[20px];
-    &::before {
-         content: "";
-         display: block;
-         width: 8px;
-         height: 22px;
-         background: linear-gradient(86.6deg, #FF0F87 -23.87%, #4612CC 124.07%), #C4C4C4;
-     }
+  @apply flex items-center gap-[20px];
+  &::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 22px;
+    background: linear-gradient(86.6deg, #ff0f87 -23.87%, #4612cc 124.07%),
+      #c4c4c4;
+  }
 }
 
 .ui-input {
   @apply text-sm;
   &.error {
-      @apply bg-red-800;
+    @apply bg-red-800;
   }
   input {
-      @apply w-full h-full bg-transparent rounded border px-4 py-1 sm:py-3 mt-1 outline-none;
-      &:focus::placeholder {
-           opacity: 0;
-      }
+    @apply w-full h-full bg-transparent rounded border px-4 py-1 sm:py-3 mt-1 outline-none;
+    &:focus::placeholder {
+      opacity: 0;
+    }
   }
 }
 

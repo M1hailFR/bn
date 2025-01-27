@@ -46,8 +46,8 @@ export default {
   renew,
   justice,
   notification,
-  
+
   pdf,
   line,
-  speak
+  speak,
 }
