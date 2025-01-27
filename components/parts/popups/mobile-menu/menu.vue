@@ -1,9 +1,9 @@
 <script setup>
-import Icon from "/components/ui/icon/icon.vue";
-import Image from "/components/ui/image/image.vue";
-import Link from "/components/ui/link/link.vue";
-import Collapse from "/components/ui/collapse/collapse";
-import { navigation } from "/config/project/content-nav.js";
+import Icon from '/components/ui/icon/icon.vue'
+import Image from '/components/ui/image/image.vue'
+import Link from '/components/ui/link/link.vue'
+import Collapse from '/components/ui/collapse/collapse'
+import { navigation } from '/config/project/content-nav.js'
 // import Logotype from '/components/parts/main/logo.vue'
 
 // import config from '/config/env'
@@ -18,15 +18,13 @@ import { navigation } from "/config/project/content-nav.js";
     <Collapse
       v-for="(nav, index) of navigation"
       :key="nav"
-      :cntLng="nav.childs || nav.chls"
-    >
+      :cntLng="nav.childs || nav.chls">
       <Link :href="nav.href">
-        <h4 class="flex items-center ">
+        <h4 class="flex items-center">
           <Icon
             :name="nav.icon"
             size="small"
-            class="cursor-pointer ml-auto inline-flex"
-          />
+            class="cursor-pointer ml-auto inline-flex" />
           {{ nav.title }}
         </h4>
       </Link>
@@ -37,8 +35,7 @@ import { navigation } from "/config/project/content-nav.js";
             v-for="link in nav?.childs"
             :key="link"
             :href="link.href"
-            class="flex felx-col mb-1 pl-[8px]"
-          >
+            class="flex felx-col mb-1 pl-[8px]">
             {{ link.title }}
           </Link>
         </div>
@@ -48,10 +45,9 @@ import { navigation } from "/config/project/content-nav.js";
             v-for="(nav, index) of nav.chls"
             :key="nav"
             :cntLng="nav.childs"
-            class=""
-          >
+            class="">
             <Link :href="nav.href">
-              <h4 class="flex items-center  pl-[8px]">
+              <h4 class="flex items-center pl-[8px]">
                 <!-- <Icon
                   :name="nav.icon"
                   size="small"
@@ -64,8 +60,7 @@ import { navigation } from "/config/project/content-nav.js";
               <Link
                 v-for="link in nav.childs"
                 :key="link"
-                class="flex felx-col mb-1 pl-[8px]"
-              >
+                class="flex felx-col mb-1 pl-[8px]">
                 {{ link.title }}
               </Link>
             </template>

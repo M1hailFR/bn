@@ -1,14 +1,16 @@
 <template>
-  <div class="divider-companent" :class="theme" />
+  <div
+    class="divider-companent"
+    :class="theme" />
 </template>
 
 <script setup>
 const props = defineProps({
   theme: {
     type: String,
-    default: "light",
+    default: 'light',
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>
@@ -22,6 +24,6 @@ const props = defineProps({
   @apply bg-gray-100/50;
 }
 .dark {
-    @apply bg-gray-100/50;
-  }
+  @apply bg-gray-100/50;
+}
 </style>

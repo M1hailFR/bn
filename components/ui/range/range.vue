@@ -25,7 +25,7 @@ const props = defineProps({
   visible: {
     type: Boolean,
     default: true,
-  }
+  },
 })
 
 const rangeSlider = ref(null)
@@ -60,7 +60,7 @@ watch(
     requestAnimationFrame(() => {
       update()
     })
-  }
+  },
 )
 </script>
 
@@ -115,7 +115,7 @@ watch(
   }
 }
 
-@supports selector(:focus-visible) {
+@supports selector(: focus-visible) {
   .range-component {
     input[type='range'] {
       &:focus::-webkit-slider-thumb {

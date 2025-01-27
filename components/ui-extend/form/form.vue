@@ -17,10 +17,11 @@ const emit = defineEmits(['submit'])
     <slot />
     <Button
       class="w-full"
-      
       @click="emit('submit')">
       <slot name="message"> Оставить заявку </slot>
     </Button>
-    <p>Нажимая на кнопку вы даете согласие на обработку своих персональных данных</p>
+    <p>
+      Нажимая на кнопку вы даете согласие на обработку своих персональных данных
+    </p>
   </form>
 </template>
