@@ -34,7 +34,7 @@ const resetForm = () => {
     <div class="section-container z-[8] relative max-w-[1440px] m-auto">
       <div class="content container flex gap-10 justify-end w-full">
         <div
-          class="absolute left-20 max-w-[560px] max-h-[760px] bottom-[-130px]">
+          class="absolute left-40 max-w-[350px] bottom-[-130px]">
           <Image
             :src="data.image"
             class="z-[8] bottom-0 left-20 xl:right-20 brightness-[.75]" />

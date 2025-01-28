@@ -48,12 +48,12 @@ const schema = reactive({
     inputType: 'secondary',
     error: '',
   },
-  email: {
-    type: 'email',
-    placeholder: 'Ваша почта',
-    inputType: 'secondary',
-    error: '',
-  },
+  // email: {
+  //   type: 'email',
+  //   placeholder: 'Ваша почта',
+  //   inputType: 'secondary',
+  //   error: '',
+  // },
   reg: {
     type: 'options',
     placeholder: 'Желаемый регион',

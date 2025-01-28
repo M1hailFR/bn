@@ -8,6 +8,7 @@ import Servise from '/components/views/main/servise'
 import Reviews from '/components/views/main/reviews'
 import Hero from '/components/parts/hero/hero'
 import Card from '/components/parts/card/card-stat'
+import It from '/components/views/main/it'
 import {
   intro,
   heros,
@@ -37,11 +38,12 @@ onMounted(() => {
     <Reviews />
     <Request :data="request" />
     <Steps :data="steps" />
+    <It />
     <!-- <Servise /> -->
-    <Info />
+    <!-- <Info /> -->
 
     <InfoBlock :data="achievement" />
     <Fqa />
-    <InfoBlock :data="infoBlock" />
+    <!-- <InfoBlock :data="infoBlock" /> -->
   </div>
 </template>
