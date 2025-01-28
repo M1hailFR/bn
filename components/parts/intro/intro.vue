@@ -31,12 +31,12 @@ const resetForm = () => {
 <template>
   <section class="intro">
     <div
-      class="container flex flex-col justify-center gap-20 z-10 h-full pt-[64px]">
+      class="container flex flex-col justify-center gap-40 z-10 h-full pt-[72px]">
       <!-- Верхний блок -->
       <div class="flex flex-col">
         <h1
           v-if="data.headline"
-          class="font-bold text-white text-[26px] lg:text-5xl lg:w-2/3 text-left font-bold tracking-wide mb-2 leading-[1em]">
+          class="font-bold text-white text-[26px] lg:text-6xl max-w-[700px]  text-left font-bold tracking-wide mb-10 leading-[1em]">
           {{ data.headline }}
         </h1>
         <h2
@@ -46,7 +46,7 @@ const resetForm = () => {
         </h2>
         <h4
           v-if="data.description"
-          class="max-w-[400px] text-white/80 mt-4">
+          class="max-w-[400px] text-white/80 mt-2">
           {{ data.description }}
         </h4>
         <div
@@ -112,7 +112,7 @@ const resetForm = () => {
 
 <style lang="scss" scoped>
 .intro {
-  @apply relative flex items-center overflow-hidden py-10 xl:min-h-[calc(100dvh-200px)];
+  @apply relative flex items-center overflow-hidden py-10 xl:min-h-[calc(100dvh)];
   // height: calc(100dvh - 68px);
   background: linear-gradient(45deg, #bbbbbb 0%, #2a3b4d 100%);
 

@@ -1,10 +1,10 @@
 export const header = {
-  logoText: '<mark>Pro</mark>Списание',
+  logoText: '<mark>Pro.</mark>Списание',
   type: 'Банкротство и урегулирование долгов',
   logo: 'fire',
   info: [
     {
-      title: '8 (900) 999 99 99 ',
+      title: '+ 7 495 476-43-09',
       href: '',
       icon: 'chat',
       linkType: '',

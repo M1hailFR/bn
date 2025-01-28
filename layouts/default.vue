@@ -147,7 +147,7 @@ const pageToTop = () => {
         </Footer>
 
         <Popup />
-        <Socials />
+        <Socials class="hidden sm:block"/>
       </div>
     </transition>
   </Loader>

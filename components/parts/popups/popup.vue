@@ -36,7 +36,7 @@ const close = () => {
         <h2
           v-if="popupStore.payload.title"
           class="flex items-center font-bold text-left mb-0"
-          :class="popupStore.payload.logo ? 'mt-8' : 'mt-2'">
+          :class="popupStore.payload.logo ? 'mt-8' : 'mt-2 mb-2'">
           <Icon
             v-if="popupStore.payload.icon"
             :name="popupStore.payload.icon"
@@ -57,7 +57,7 @@ const close = () => {
               class="cursor-pointer ml-auto inline-flex">
             </Icon>
             <h6
-              class="mb-0 leading-[1em] font-bold"
+              class="mb-0 leading-[1em] font-bold "
               v-html="header.logoText" />
           </Link>
         </div>

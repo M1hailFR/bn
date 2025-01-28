@@ -137,20 +137,12 @@ const openMenu = () => {
 
       <div
         class="hidden lg:flex items-center justify-between flex-1 transition-transform duration-500">
-        <slot />
+        <div class="flex-1 flex justify-center">
+          <slot />
+        </div>
 
         <div class="flex items-center justify-end">
-          <!-- <Link
-						v-for="(social, index) in socials"
-						:key="index"
-						:href="social">
-						<Icon
-							:name="index"
-							size="normal"
-							class="cursor-pointer">
-						</Icon>
-					</Link> -->
-          <div class="flex items-center justify-center gap-2">
+          <div class="flex items-center justify-center gap-4">
             <div class="hidden xl:flex flex-col items-start justify-center">
               <Link
                 v-for="item in header.info"

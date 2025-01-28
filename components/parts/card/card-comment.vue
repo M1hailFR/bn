@@ -25,7 +25,7 @@ const openComment = () => {
   const payload = {
     transition: 'fade',
     icon: '',
-    title: 'Отзывы клиентов о БанкротствеNet',
+    title: 'Отзывы клиентов о Pro.Списание',
     logo: false,
     socials: false,
     link: false,
