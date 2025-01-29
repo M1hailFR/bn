@@ -29,7 +29,7 @@ const resetForm = () => {
 </script>
 
 <template>
-  <section class="intro">
+  <section class="intro" id="main">
     <div
       class="container flex flex-col justify-center gap-40 z-10 h-full pt-[72px]">
       <!-- Верхний блок -->
@@ -101,7 +101,7 @@ const resetForm = () => {
     <Image
       v-if="data.image"
       :src="data.image"
-      class="object-cover z-[8] absolute bottom-0 right-0 xl:right-20 max-w-[560px] max-h-[760px] brightness-[.75]" />
+      class="object-cover z-[8] absolute bottom-0 right-0 xl:right-20 max-w-[720px] max-h-[920px] brightness-[.9]" />
 
     <Image
       v-if="data.bg"
@@ -114,7 +114,7 @@ const resetForm = () => {
 .intro {
   @apply relative flex items-center overflow-hidden py-10 xl:min-h-[calc(100dvh)];
   // height: calc(100dvh - 68px);
-  background: linear-gradient(45deg, #bbbbbb 0%, #2a3b4d 100%);
+  background: linear-gradient(45deg, #00e1ff 0%, #75b1f1 100%);
 
   // @media screen and (min-width: 990px) {
   // 	min-height: calc(100dvh - 135px);
@@ -122,8 +122,8 @@ const resetForm = () => {
 
   &::after {
     content: '';
-    @apply absolute top-28 right-0 block w-9/12 h-2/5 opacity-50 pointer-events-none bg-gradient-3;
-    filter: blur(100px);
+    @apply absolute top-[-8px] z-[9] inset-0 block w-full h-[100px] opacity-50 pointer-events-none bg-gray-900;
+    filter: blur(50px);
   }
 
   &-flash {
@@ -134,17 +134,17 @@ const resetForm = () => {
     }
 
     &-1 {
-      @apply top-[550px] right-[1000px] w-[600px] h-[600px] opacity-[60%] bg-gradient-4;
+      @apply top-[550px] right-[1000px] w-[600px] h-[600px] opacity-[60%] bg-gradient-primary;
       filter: blur(16px);
     }
 
     &-2 {
-      @apply top-[400px] right-[400px] w-[800px] h-[800px] opacity-[60%] bg-gradient-4 brightness-[150%];
+      @apply top-[400px] right-[400px] w-[800px] h-[800px] opacity-[60%] bg-gradient-primary brightness-[150%];
       filter: blur(26px);
     }
 
     &-3 {
-      @apply top-[200px] right-[-300px] w-[1000px] h-[1000px] opacity-[60%] bg-gradient-4 brightness-[150%];
+      @apply top-[200px] right-[-300px] w-[1000px] h-[1000px] opacity-[60%] bg-gradient-primary brightness-[150%];
       filter: blur(16px);
     }
   }

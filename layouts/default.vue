@@ -139,12 +139,12 @@ const pageToTop = () => {
         <main class="relative transition-all duration-700">
           <NuxtPage />
         </main>
-        <Footer>
+        <Footer id="footer">
           <Menu
             :theme="theme"
             :navigation="navigation"
             type="footer" />
-        </Footer>
+        </Footer >
 
         <Popup />
         <Socials class="hidden sm:block"/>

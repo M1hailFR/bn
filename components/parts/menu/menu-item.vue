@@ -10,6 +10,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  icon: {
+    type: Boolean,
+    default: true,
+  },
 })
 
 const styleLinkByTheme = computed(() =>
@@ -23,7 +27,7 @@ const styleLinkByTheme = computed(() =>
     :href="data.href"
     type="default">
     <Icon
-      v-if="data.icon"
+      v-if="data.icon && icon"
       :name="data.icon"
       size="normal"
       class="rounded-full bg-gray-100 text-black" />

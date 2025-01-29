@@ -29,11 +29,13 @@ const props = defineProps({
 
           <div class="mt-10 flex flex-col xl:flex-row justify-start gap-3">
             <Button
+              v-if="intro.consultation"
               type="primary"
               size="middle">
               {{ intro.consultation }}
             </Button>
             <Button
+              v-if="intro.start"
               type="outline"
               size="middle"
               class="">

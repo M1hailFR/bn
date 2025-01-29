@@ -1,5 +1,6 @@
 html {
   @apply h-auto scroll-smooth;
+  scroll-padding-top: 64px;
 }
 
 body {

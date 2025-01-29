@@ -14,8 +14,8 @@ const itemsPerPage = computed(() =>
 )
 </script>
 <template>
-  <div>
-    <section class="container">
+  <div >
+    <section class="container" id="reviews">
       <div class="relative w-full h-auto"></div>
       <h2 class="block">{{ reviews.title }}</h2>
       <div class="section-container bg-gray-100/60 rounded-xl">

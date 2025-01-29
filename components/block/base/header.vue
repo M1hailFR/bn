@@ -193,7 +193,7 @@ header {
     @apply bg-white pt-1 text-black fixed;
   }
   &.transparent {
-    @apply bg-transparent pt-1 text-white fixed pt-8;
+    @apply bg-transparent pt-1 text-white fixed pt-8 ;
   }
   // &.dark {
   // 	@apply bg-black/50 text-white backdrop-blur-lg border-gray-100/10 pt-1;

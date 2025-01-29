@@ -60,96 +60,104 @@ export const logo = {
 
 export const navigation = [
   {
-    title: 'Услуги',
-    href: '',
-    icon: 'fire',
-    chls: [
-      {
-        title: 'Списание долгов',
-        href: '',
-        icon: '',
-        buttonTitle: 'Cписать',
-        buttonHref: '',
-        buttonIcon: 'fire',
-        childs: [
-          {
-            title: 'Судебное банкротство',
-            href: '',
-            icon: 'fire',
-          },
-          {
-            title: 'Банкротство через МФЦ',
-            href: '',
-            icon: 'fire',
-          },
-          {
-            title: 'Обновление кредитной истории после банкротства',
-            href: '',
-            icon: 'fire',
-          },
-          {
-            title: 'Списание долгов по сроку исковой давности',
-            href: '',
-            icon: 'fire',
-          },
-          {
-            title: 'Списание Безнадежной кредиторской задолженности',
-            href: '',
-            icon: 'fire',
-          },
-          {
-            title: 'Закрытие долгов у судебных приставов',
-            href: '',
-            icon: 'fire',
-          },
-        ],
-      },
-
-      {
-        title: ' Урегулирование долгов',
-        href: '',
-        icon: '',
-        buttonTitle: 'Урегулировать',
-        buttonIcon: 'fire',
-        buttonHref: '',
-        childs: [
-          {
-            title: 'Рефинансирование долга',
-            href: '',
-            icon: 'fire',
-          },
-          {
-            title: 'Реструктуризация долга',
-            href: '',
-            icon: 'fire',
-          },
-          {
-            title: 'Выкуп долга',
-            href: '',
-            icon: 'fire',
-          },
-          {
-            title: 'Договор с кредитором о дисконте',
-            href: '',
-            icon: 'fire',
-          },
-          {
-            title: 'Очистка кредитной истории',
-            href: '',
-            icon: 'fire',
-          },
-        ],
-      },
-    ],
+    title: 'Главная',
+    href: '/',
+    hash: '#main',
+    icon: '',
   },
+  // {
+  //   title: 'Услуги',
+  //   href: '',
+  //   icon: '',
+  //   chls: [
+  //     {
+  //       title: 'Списание долгов',
+  //       href: '',
+  //       icon: '',
+  //       buttonTitle: 'Cписать',
+  //       buttonHref: '',
+  //       buttonIcon: '',
+  //       childs: [
+  //         {
+  //           title: 'Судебное банкротство',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //         {
+  //           title: 'Банкротство через МФЦ',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //         {
+  //           title: 'Обновление кредитной истории после банкротства',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //         {
+  //           title: 'Списание долгов по сроку исковой давности',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //         {
+  //           title: 'Списание Безнадежной кредиторской задолженности',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //         {
+  //           title: 'Закрытие долгов у судебных приставов',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //       ],
+  //     },
+
+  //     {
+  //       title: ' Урегулирование долгов',
+  //       href: '',
+  //       icon: '',
+  //       buttonTitle: 'Урегулировать',
+  //       buttonIcon: '',
+  //       buttonHref: '',
+  //       childs: [
+  //         {
+  //           title: 'Рефинансирование долга',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //         {
+  //           title: 'Реструктуризация долга',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //         {
+  //           title: 'Выкуп долга',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //         {
+  //           title: 'Договор с кредитором о дисконте',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //         {
+  //           title: 'Очистка кредитной истории',
+  //           href: '',
+  //           icon: '',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     title: 'Отзывы',
     href: '',
+    hash: '#reviews',
     icon: 'fire',
   },
   {
     title: 'Стоимость',
     href: '',
+    hash: '#cost',
     icon: 'fire',
     // childs: [
     // 	{
@@ -161,8 +169,9 @@ export const navigation = [
   },
   {
     title: 'О компании',
-    href: '/about',
+    href: '/',
     icon: 'fire',
+    hash: '#steps',
     // childs: [
     // 	{
     // 		title: 'О нас',
@@ -186,15 +195,22 @@ export const navigation = [
     // 	}
     // ]
   },
-  {
-    title: 'Пресс центр',
-    href: '/pressCenter',
-    icon: 'fire',
-  },
+  // {
+  //   title: 'Пресс центр',
+  //   href: '/pressCenter',
+  //   icon: 'fire',
+  // },
+  // {
+  //   title: 'FQA',
+  //   href: '',
+  //   icon: 'fire',
+  //   hash: '#fqa',
+  // },
   {
     title: 'Контакты',
     href: '',
     icon: 'fire',
+    hash: '#footer',
   },
 ]
 

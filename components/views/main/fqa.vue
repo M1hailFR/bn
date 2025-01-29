@@ -6,7 +6,7 @@ import Chat from '/components/parts/chat/chat.vue'
 </script>
 
 <template>
-  <section class="container">
+  <section class="container" id="fqa">
     <div
       class="flex flex-col lg:flex-row relative gap-x-8 gap-y-10 items-start">
       <div class="lg:w-[50%] xl:w-1/3 block lg:sticky top-20 h-full mb-0">
