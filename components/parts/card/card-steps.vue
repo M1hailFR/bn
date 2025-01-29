@@ -68,13 +68,13 @@ const { classes } = setBasicUiProps(props, 'card-component')
 
   &.type-default {
     .content {
-      @apply p-4 flex flex-col justify-center items-center relative z-[2] w-full h-full;
+      @apply p-4 flex flex-col justify-center items-start relative z-[2] w-full h-full;
       &::before {
         content: '';
         @apply lg:hidden xl:block absolute top-[20px] left-[23%] w-[140px] sm:w-[220px] rounded-xl h-[18px]  bg-gray-100;
       }
       .title {
-        @apply font-bold xl:text-black flex items-center gap-2 mb-2;
+        @apply font-bold xl:text-black flex items-center gap-2 mb-2 ;
         .index {
           @apply bg-primary rounded-lg text-2xl font-bold text-white min-h-14 min-w-14 items-center flex justify-center;
         }

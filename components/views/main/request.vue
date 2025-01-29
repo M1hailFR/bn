@@ -30,7 +30,7 @@ const resetForm = () => {
 </script>
 
 <template>
-  <section class="request">
+  <section class="request" id="cost">
     <div class="section-container z-[8] relative max-w-[1440px] m-auto">
       <div class="content container flex gap-10 justify-end w-full">
         <div

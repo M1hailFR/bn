@@ -12,6 +12,10 @@ const props = defineProps({
     type: String,
     default: '/',
   },
+  hash: {
+    type: String,
+    default: '',
+  },
   activeClass: {
     type: String,
     default: '',
@@ -43,7 +47,7 @@ const isExternal =
   <router-link
     v-else
     :class="[classes, essence]"
-    :to="{ path: href }"
+    :to="{ path: href, hash: hash }"
     :active-class="activeClass">
     <slot />
   </router-link>
@@ -55,7 +59,7 @@ const isExternal =
 
   &.type {
     &-default {
-      @apply hover:text-secondary;
+      @apply hover:text-primary;
     }
     &-primary {
       @apply text-white bg-primary rounded-lg hover:bg-gradient-primary;

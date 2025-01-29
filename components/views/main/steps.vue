@@ -20,7 +20,7 @@ const columnst = computed(() => {
 </script>
 
 <template>
-  <section class="container">
+  <section class="container" id="steps">
     <div class="lg:w-[50%] xl:w-1/3 block">
       <h2>{{ data.title }}</h2>
     </div>

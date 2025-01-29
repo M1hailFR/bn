@@ -23,7 +23,7 @@ const secondHalf = info.cards.slice(halfIndex)
           class="cursor-pointer mt-1 inline-flex rotate-[-90deg]" />
       </Link>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full ">
         <!-- Первая колонка -->
         <div class="flex flex-col gap-4">
           <Card
