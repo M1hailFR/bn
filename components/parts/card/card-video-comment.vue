@@ -27,7 +27,7 @@ const openComment = () => {
     classes: 'popup-video',
     transition: 'fade',
     icon: '',
-    title: '',
+    title: 'Видеоотзывы наших клиентов',
     logo: false,
     socials: false,
     link: false,
@@ -59,6 +59,7 @@ const openComment = () => {
 
     <div class="p-3 pt-1">
       <div>
+        <h5 class="font-semibold mt-2">{{ data.title }}</h5>
         <h5 class="preview">{{ data.text }}</h5>
         <div class="flex my-2">
           <div
@@ -79,6 +80,12 @@ const openComment = () => {
           <span class="text-sm">Списано</span>
           <span class="text-sm whitespace-nowrap ml-auto font-bold">{{
             data.discard
+          }}</span>
+        </div>
+        <div class="flex items-center pb-2">
+          <span class="text-sm">Дело</span>
+          <span class="text-sm whitespace-nowrap ml-auto font-bold">{{
+            data.case
           }}</span>
         </div>
       </div>

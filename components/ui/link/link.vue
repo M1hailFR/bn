@@ -10,7 +10,7 @@ const props = defineProps({
   },
   href: {
     type: String,
-    default: '/',
+    default: '',
   },
   hash: {
     type: String,
@@ -33,7 +33,8 @@ const { classes } = setBasicUiProps(props, 'link-component')
 const isExternal =
   props.href.startsWith('http') ||
   props.href.trim().startsWith('mailto') ||
-  props.href.trim().startsWith('tel')
+  props.href.trim().startsWith('tel') ||
+  props.href.includes('documents')
 </script>
 
 <template>

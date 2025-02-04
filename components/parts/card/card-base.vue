@@ -96,7 +96,7 @@
 	const descriptionClasses = computed(() => {
 		return {
 			description: true,
-			'text-gray-200': props.type === 'primary',
+			'text-white': props.type === 'primary',
 			'text-black': props.type === 'outline'
 		};
 	});

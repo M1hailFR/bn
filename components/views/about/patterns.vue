@@ -1,5 +1,5 @@
 <script setup>
-import Card from '/components/parts/card/card'
+import Card from '/components/parts/card/card-base'
 import Button from '/components/ui/button/button'
 import { patterns } from '/config/project/content-about.js'
 import { splitArrayIntoChunks } from '/utils/splitArrayIntoChunks'
@@ -33,6 +33,7 @@ const columns = computed(() => {
             :key="card.title"
             :type="card.type"
             :data="card"
+            :link="true"
             class="w-full first:row-start-2 sm:first:row-start-1" />
         </div>
       </div>

@@ -22,6 +22,10 @@ const props = defineProps({
     type: String,
     default: 'flex-none px-4', // Дополнительные классы для карточек
   },
+  btn: {
+    type: String,
+    default: '',
+  },
   type: {
     type: String,
     default: '',
@@ -77,6 +81,14 @@ const getComponent = computed(() => {
       class="flex justify-between items-center w-full relative z-10 my-2 translate-x-[8px]">
       <h5 class="block max-w-[200px] leading-[1.4em]">{{ title }}</h5>
       <div class="flex gap-2 pr-4">
+        <Button
+          v-if="btn"
+          class="shadow-md p-0 h-8  md:h-10 text-sm px-2"
+          size=""
+          type="primary"
+          >
+          {{ btn }}
+        </Button>
         <Button
           class="shadow-md p-0 h-8 w-8 md:h-10 md:w-10"
           @click="prevSlide"

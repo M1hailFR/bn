@@ -102,7 +102,7 @@ const openComment = () => {
         }
       }
       .description {
-        @apply text-gray-200;
+        @apply text-white;
       }
     }
   }

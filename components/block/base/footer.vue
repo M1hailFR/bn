@@ -36,11 +36,11 @@
 						eum.
 					</h5>
 					<div class="flex flex-row gap-4 justify-between mt-6	">
-						<slot />
+
 						<div>
-							<div class="flex flex-col gap-1 items-start py-2">
+							<div class="flex flex-col gap-1 items-start ">
 								<Link
-									v-for="item in header.info"
+									v-for="item in header.footerInfo"
 									:key="item"
 									size="small"
 									:type="item.linkType"
@@ -54,15 +54,16 @@
 										:size="item.iconSize"
 										class="cursor-pointer inline-flex"
 									/>
-									{{ item.title }}
+									{{ item.title }}: {{ item.text }}
 								</Link>
 							</div>
-							<div class="flex">
+							<div class="flex mt-4">
 								<Link v-for="(social, index) in socials" :key="index" :href="social">
 									<Icon :name="index" size="normal" class="cursor-pointer"> </Icon>
 								</Link>
 							</div>
 						</div>
+            <slot />
 					</div>
 				</div>
 

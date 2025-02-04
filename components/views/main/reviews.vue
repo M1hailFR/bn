@@ -14,8 +14,8 @@ const itemsPerPage = computed(() =>
 )
 </script>
 <template>
-  <div >
-    <section class="container" id="reviews">
+  <div id="reviews">
+    <section class="container">
       <div class="relative w-full h-auto"></div>
       <h2 class="block">{{ reviews.title }}</h2>
       <div class="section-container bg-gray-100/60 rounded-xl">
@@ -24,7 +24,8 @@ const itemsPerPage = computed(() =>
           :title="reviews.sliderTitle"
           type="comments"
           wrapper="flex-none w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
-          :itemsPerPage="itemsPerPage">
+          :itemsPerPage="itemsPerPage"
+          :btn="reviews.btn">
         </Slider>
       </div>
     </section>
@@ -37,7 +38,8 @@ const itemsPerPage = computed(() =>
           type="video"
           wrapper="flex-none w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
           :itemsPerPage="itemsPerPage"
-          navBottom="true">
+          navBottom="true"
+          :btn="reviews.btnVideo">
         </Slider>
       </div>
     </section>
