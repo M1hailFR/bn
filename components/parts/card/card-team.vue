@@ -59,6 +59,7 @@ const openComment = () => {
     <div class="p-3 pt-2">
       <div>
         <h4 class="whitespace-nowrap font-semibold mb-0">{{ data.title }}</h4>
+        <h5 class="font-semibold leading-[1.4em] mt-1 max-w-[240px]">{{ data.position }}</h5>
         <h5 class="preview">{{ data.text }}</h5>
       </div>
       <div class="mt-3">
@@ -84,7 +85,7 @@ const openComment = () => {
     @apply pt-2 line-clamp-4;
   }
   .image {
-    @apply relative block w-full h-full rounded-t-xl object-cover transition-all duration-300;
+    @apply relative block w-full h-full rounded-t-xl object-cover transition-all duration-300 max-h-[400px];
   }
   .btn-play {
     @apply absolute text-white/90 bottom-4 left-4 bg-gray-200/60 w-12 h-12 rounded-full z-10 flex justify-center;

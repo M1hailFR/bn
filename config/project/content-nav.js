@@ -2,6 +2,7 @@ export const header = {
   logoText: '<mark>Pro.</mark>Списание',
   type: 'Банкротство и урегулирование долгов',
   logo: 'fire',
+  email: 'prospisane@innovaticalab.ru',
   info: [
     {
       title: '+ 7 495 476-43-09',
@@ -22,7 +23,7 @@ export const header = {
     {
       title: 'Личный кабинет',
       href: '',
-      icon: 'fire',
+      icon: 'login',
       linkType: 'primary',
       iconSize: 'small',
     },
@@ -30,11 +31,56 @@ export const header = {
       title: 'Консультация',
       href: '',
       icon: 'fire',
-      linkType: 'primary',
+      linkType: '',
       iconSize: 'small',
     },
   ],
   href: '/',
+  footerInfo: [
+    {
+      title: 'Почта',
+      text: 'prospisane@innovaticalab.ru',
+      icon: '',
+      href: 'mailto:prospisane@innovaticalab.ru',
+      linkType: '',
+      iconSize: 'small',
+    },
+    {
+      title: 'Телефон',
+      text: '+7 495 476-43-09',
+      icon: '',
+      linkType: '',
+      iconSize: 'small',
+    },
+    {
+      title: 'График работы',
+      text: '10:00-19:00',
+      icon: '',
+      linkType: '',
+      iconSize: 'small',
+    },
+    {
+      title: 'Адрес',
+      text: ' г. Москва,  Проспект Мира 105, строение 1, БЦ «Типография №2»  5 этаж, м. ВДНХ',
+      icon: '',
+      linkType: '',
+      iconSize: 'small',
+    },
+    {
+      title: 'ИНН',
+      text: '7730283347',
+      icon: '',
+      linkType: '',
+      iconSize: 'small',
+    },
+    {
+      title: 'ОГРН',
+      text: '1227700450889',
+      icon: '',
+      linkType: '',
+      iconSize: 'small',
+    },
+  ],
 }
 
 export const contacts = {
@@ -48,9 +94,8 @@ export const services = {
 }
 
 export const socials = {
-  telegram: '/',
-  whatsapp: '/',
-  viber: '/',
+  telegram: 'https://t.me/+79689267037',
+  whatsapp: 'https://wa.me/79689267037'
 }
 
 export const logo = {
@@ -168,7 +213,7 @@ export const navigation = [
     // ]
   },
   {
-    title: 'О компании',
+    title: 'Практика',
     href: '/',
     icon: 'fire',
     hash: '#steps',

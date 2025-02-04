@@ -19,7 +19,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       none: 'none',
-      primary: '#2A3B4D',
+      primary: '#7fc7ff', //#2A3B4D
       secondary: '#7fc7ff',
       white: 'white',
       black: 'black',
@@ -52,7 +52,7 @@ module.exports = {
       'gradient-1': 'linear-gradient(45deg, #2A3B4D 0%, rgba(0,59,47) 100%);',
       'gradient-2': 'linear-gradient(45deg, rgba(0,59,47) 0%, #2A3B4D 100%)',
       'gradient-3': 'linear-gradient(45deg, #5C5C5C 0%, #2A3B4D 100%)',
-      'gradient-4': 'linear-gradient(90deg, #2A3B4D 0%, #bbbbbb 100%)',
+      'gradient-4': 'linear-gradient(90deg, #7fc7ff 0%, #bbbbbb 100%)',
       'gradient-5': 'linear-gradient(45deg, rgba(0,59,47) 0%, #2A3B4D 100%)',
     },
     boxShadow: {

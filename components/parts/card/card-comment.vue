@@ -53,7 +53,6 @@ const openComment = () => {
         <span class="hidden md:block text-sm font-bold">{{ data.rate }}</span>
         <span class="text-sm whitespace-nowrap ml-auto">{{ data.author }}</span>
       </div>
-
       <h5 class="preview">{{ data.text }}</h5>
     </div>
     <div class="mt-3">

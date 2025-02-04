@@ -68,7 +68,7 @@ const { classes } = setBasicUiProps(props, 'card-component')
 
   &.type-default {
     .content {
-      @apply p-4 flex flex-col justify-center items-start relative z-[2] w-full h-full;
+      @apply p-4 flex flex-col justify-center items-center relative z-[2] w-full h-full;
       &::before {
         content: '';
         @apply lg:hidden xl:block absolute top-[20px] left-[23%] w-[140px] sm:w-[220px] rounded-xl h-[18px]  bg-gray-100;
