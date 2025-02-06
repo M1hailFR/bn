@@ -37,10 +37,10 @@ const openForm = () => {
     const payload = {
       transition: 'fade',
       icon: '',
-      title: 'Заявка на получение предложения',
+      title: 'Получить скидку 20% ',
       logo: true,
       socials: true,
-      link: true,
+      link: false,
       form: true,
       hideTitle: true,
       hideText: true,

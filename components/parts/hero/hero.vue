@@ -28,10 +28,10 @@
 			const payload = {
 				transition: 'fade',
 				icon: '',
-				title: 'Заявка на получение предложения',
+				title: 'Бесплатная консультация',
 				logo: true,
 				socials: true,
-				link: true,
+				link: false,
 				form: true,
 				hideTitle: true,
 				hideText: true,

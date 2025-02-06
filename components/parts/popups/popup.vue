@@ -17,7 +17,8 @@
 		link,
 		form,
 		hideTitle,
-		hideText
+		hideText,
+    fullImage,
 	} = popupStore.payload;
 
 	const components = {
@@ -64,8 +65,8 @@ const resetForm = () => {
 				<!-- Popup header -->
 				<h2
 					v-if="popupStore.payload.title"
-					class="flex items-center font-bold text-left mb-0"
-					:class="popupStore.payload.logo ? 'mt-8' : 'mt-2 mb-2'"
+					class="flex items-center font-bold justify-center mb-0"
+					:class="popupStore.payload.logo ? 'mt-12' : 'mt-2 mb-2'"
 				>
 					<Icon
 						v-if="popupStore.payload.icon"
@@ -108,14 +109,16 @@ const resetForm = () => {
 					:data="popupStore.payload.data"
 					:hideTitle="popupStore.payload.hideTitle"
 					:hideText="popupStore.payload.hideText"
+					:fullImage="popupStore.payload.fullImage"
 				/>
+
 				<RequestForm
 					v-if="popupStore.payload.form"
 					class="text-black W-full"
 					:form="popupForm"
 					btnTitle="Оставить заявку"
 					request-title="Заявка на получение предложения"
-					title="Бесплатная консультация"
+					title=""
 					@change="resetForm"
 				>
 				</RequestForm>

@@ -40,6 +40,7 @@
 						:data="card"
 						:modal="true"
 						:button="true"
+            :image="false"
 						:payload="payload"
 						class="w-full first:row-start-2 sm:first:row-start-1"
 					/>
