@@ -1,71 +1,57 @@
 <script setup>
 	import Link from '/components/ui/link/link.vue';
 	import Icon from '/components/ui/icon/icon.vue';
-	import MenuItem from '~/components/parts/menu/menu-item.vue';
+	import MenuItem from '/components/parts/menu/menu-item';
 	import Button from '/components/ui/button/button';
 	import { useApp } from '/store/app';
+
 	const appStore = useApp();
+	const router = useRoute();
 
 	const props = defineProps({
-		navigation: {
-			type: Array,
-			default: []
-		},
-		theme: {
-			type: String,
-			default: 'light'
-		},
-		type: {
-			type: String,
-			default: 'header'
-		}
+		navigation: { type: Array, default: [] },
+		theme: { type: String, default: 'light' },
+		type: { type: String, default: 'header' }
 	});
-	const arr = ref({
-		title: 'Навигация',
-		childs: []
-	});
+
+	const arr = ref({ title: 'Навигация', childs: [] });
+	const activeSection = ref('');
 
 	const footerNavigation = computed(() => {
 		return props.navigation.reduce((acc, item) => {
-			if (item.chls) {
-				acc.push(...item.chls);
-			} else {
-				arr.value.childs.push(item);
-			}
+			item.chls ? acc.push(...item.chls) : arr.value.childs.push(item);
 			return acc;
 		}, []);
 	});
+
 	const styleTopLevel = computed(() =>
 		props.theme === 'light' ? 'primary' : 'secondary'
 	);
 
-	const activeSection = ref('');
-
 	const handleScroll = () => {
-		const sections = props.navigation.map((link) =>
-			document.getElementById(link.hash?.replace('#', ''))
-		);
-		sections.forEach((section) => {
+		if (router.path !== '/') {
+			activeSection.value = '';
+			return;
+		}
+
+		props.navigation.forEach((link) => {
+			const section = document.getElementById(link.hash?.replace('#', ''));
 			if (!section) return;
 
 			const rect = section.getBoundingClientRect();
-			const offset = 150;
-			// Используем значение из store напрямую через appStore.windowS
-
-			if (rect.top <= offset && rect.bottom >= offset) {
+			if (rect.top <= 150 && rect.bottom >= 150) {
 				activeSection.value = section.id;
 			}
 		});
 	};
 
+	watch(() => appStore.windowS, handleScroll);
 	watch(
-		() => appStore.windowS,
-		() => handleScroll()
+		() => router.path,
+		() => (activeSection.value = '')
 	);
 
-	onMounted(() => {
-		handleScroll();
-	});
+	onMounted(handleScroll);
 </script>
 
 <template>
@@ -77,12 +63,18 @@
 				class="level-item relative"
 				:class="`i-${theme}`"
 			>
-				<Link :href="item.href" :hash="item.hash" type="default">
+				<Link
+					:href="item.href"
+					:hash="item.hash"
+					type="default"
+					:activeClass="item.hash ? '' : 'text-secondary scale-[1.2] mt-[-2px]'"
+				>
 					<p
 						class=""
 						:class="{
-							'text-secondary  scale-[1.2] mt-[-2px]':
-								activeSection === item.hash?.replace('#', '')
+							'text-secondary scale-[1.2] mt-[-2px]':
+								(item.hash && activeSection === item.hash?.replace('#', '')) ||
+								(!item.hash && $route.path === item.href)
 						}"
 					>
 						{{ item.title }}
@@ -112,11 +104,8 @@
 									type="default"
 								>
 									<Icon v-if="chls.icon" :name="chls.icon" size="normal" />
-									<h5 class="font-bold">
-										{{ chls.title }}
-									</h5>
+									<h5 class="font-bold">{{ chls.title }}</h5>
 								</Link>
-
 								<div class="flex flex-1 flex-col gap-y-2">
 									<MenuItem
 										v-for="chl in chls.childs"
@@ -125,7 +114,6 @@
 										:theme="theme"
 									/>
 								</div>
-
 								<Link
 									v-if="chls.buttonTitle"
 									:href="chls.buttonHref"
@@ -139,9 +127,7 @@
 										size="small"
 										class="cursor-pointer ml-1 inline-flex"
 									/>
-									<h6 class="font-medium mb-0">
-										{{ chls.buttonTitle }}
-									</h6>
+									<h6 class="font-medium mb-0">{{ chls.buttonTitle }}</h6>
 								</Link>
 							</div>
 						</div>
@@ -149,7 +135,7 @@
 				</div>
 			</li>
 		</menu>
-		<menu class="flex gap-10 w-full" v-if="type === 'footer'">
+		<menu class="flex flex-col" v-if="type === 'footer'">
 			<li
 				v-for="(item, index) of footerNavigation.concat(arr)"
 				:key="index"
@@ -157,16 +143,17 @@
 				:class="`i-${theme}`"
 			>
 				<div class="flex flex-col gap-y-1">
-					<h5 class="font-bold">{{ item.title }}</h5>
-
+					<h4 class="font-bold mb-2">{{ item.title }}</h4>
 					<div v-if="item.childs" class="" :class="`i-${theme}`">
-						<div class="gap-y-3 flex flex-col">
+						<div class="gap-y-[16px] flex flex-col">
 							<MenuItem
 								v-for="(child, index) of item.childs"
 								:key="index"
 								:data="child"
 								:theme="theme"
 								:icon="false"
+								:type="type"
+								:hash="child.hash"
 							/>
 						</div>
 					</div>
@@ -178,14 +165,10 @@
 
 <style lang="scss" scoped>
 	.level-item {
-		// & > * {
-		// 	@apply text-[14px];
-		// }
 		@apply transition-all duration-200;
 		p {
-			@apply text-[14px] xl:text-[16px] py-2  first:pl-0;
+			@apply text-[14px] xl:text-[16px] py-2 first:pl-0;
 		}
-
 		&:hover {
 			@apply text-secondary;
 			.sub-level {
@@ -195,12 +178,8 @@
 	}
 	.sub-level {
 		@apply absolute w-max left-[-8px] w-full invisible opacity-0 transition-all rounded-lg text-black;
-		&.i-dark {
-			@apply w-max;
-		}
-		&.i-light {
-			@apply w-max;
-		}
+		&.i-dark,
+		&.i-light,
 		&.i-transparent {
 			@apply w-max;
 		}

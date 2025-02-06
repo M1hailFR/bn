@@ -22,6 +22,10 @@
 			type: Boolean,
 			default: false
 		},
+		buttonLink: {
+			type: String,
+			default: ''
+		},
 		button: {
 			type: Boolean,
 			default: false
@@ -59,7 +63,6 @@
 			flex: true,
 			'items-center': true,
 			'gap-2': true,
-			'mb-2': true,
 			'text-white': props.type === 'primary',
 			'xl:text-black': props.type === 'outline'
 		};
@@ -120,13 +123,21 @@
 </script>
 
 <template>
-	<component :is="CardWrapper" :class="cardClasses" @click="openComment" :type="type" :href="data.href">
-		<Image
-			v-if="data.image"
-			class="card-image"
-			:src="data.image"
-			:alt="data.title || ''"
-		/>
+	<component
+		:is="CardWrapper"
+		:class="cardClasses"
+		@click="openComment"
+		:type="type"
+		:href="data.href"
+	>
+		<div>
+			<Image
+				v-if="data.image"
+				class="card-image blur-[1px]"
+				:src="data.image"
+				:alt="data.title || ''"
+			/>
+		</div>
 
 		<div :class="contentClasses">
 			<div class="my-2">
@@ -141,11 +152,21 @@
 					<div v-if="data.index" :class="indexClasses">
 						{{ data.index }}
 					</div>
-
-					{{ data.title }}
+					<h5 v-if="data.title" :class="titleClasses">
+						{{ data.title }}
+					</h5>
+					<!-- <h4 v-if="data.writtenOff" :class="data.more ? '' : 'text-4xl'">
+						Списано {{ data.writtenOff }}
+					</h4> -->
 				</h5>
 				<h5 :class="descriptionClasses">{{ data.text }}</h5>
+
+				<h4 v-if="data.writtenOff">Списано {{ data.writtenOff }}</h4>
+				<h4 v-if="data.totalWrittenOff" v-html="data.totalWrittenOff" class="text-4xl"/>
+				<h5 v-if="data.city" :class="descriptionClasses">{{ data.city }}</h5>
+				<h5 v-if="data.time" :class="descriptionClasses">{{ data.time }}</h5>
 			</div>
+
 			<div v-if="data.name" class="user-info">
 				<img
 					v-if="data.userImage"
@@ -158,16 +179,30 @@
 					<p class="user-date">{{ data.date }}</p>
 				</div>
 			</div>
-			<Button v-if="button && data.start" type="outline" size="noraml" class="w-max px-2 py-1">{{
-				data.start
-			}}</Button>
+			<div class="flex gap-2 justify-between">
+				<Button
+					v-if="button && data.start"
+					:type="data.type"
+					size="noraml"
+					class="w-max px-3 py-2 text-base"
+					>{{ data.start }}</Button
+				>
+				<Link
+					v-if="data.more"
+					:href="data.href"
+					type="secondary"
+					sizes="small"
+					class="w-max px-3 py-2 text-sm"
+					>{{ data.more }}</Link
+				>
+			</div>
 		</div>
 	</component>
 </template>
 
 <style lang="scss" scoped>
 	.card-component {
-		@apply w-full h-max relative lg:max-w-full xl:flex box-border overflow-hidden rounded-xl hover:scale-[1.04] transition duration-300 ease-in-out;
+		@apply w-full overflow-hidden rounded-xl scale-[.98] hover:scale-[1] transition duration-300 ease-in-out h-max;
 
 		&.type-primary {
 			@apply bg-primary text-white relative z-[3] border-none;
@@ -182,7 +217,7 @@
 		}
 
 		.card-image {
-			@apply block h-[128px] relative xl:h-full w-full xl:w-48 flex-none text-center;
+			@apply block relative  max-h-[230px] w-full  flex-none text-center backdrop-blur-lg;
 		}
 
 		.user-info {

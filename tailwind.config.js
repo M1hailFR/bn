@@ -48,12 +48,13 @@ module.exports = {
     },
     backgroundImage: {
       'gradient-primary':
-        'linear-gradient(45deg, rgba(0,109,119) 16%, #00CFC7 84%);',
+        'linear-gradient(45deg, #0084d1 16%, #00bcff 84%);',
       'gradient-1': 'linear-gradient(45deg, #2A3B4D 0%, rgba(0,59,47) 100%);',
       'gradient-2': 'linear-gradient(45deg, rgba(0,59,47) 0%, #2A3B4D 100%)',
       'gradient-3': 'linear-gradient(45deg, #5C5C5C 0%, #2A3B4D 100%)',
       'gradient-4': 'linear-gradient(90deg, #7fc7ff 0%, #bbbbbb 100%)',
       'gradient-5': 'linear-gradient(45deg, rgba(0,59,47) 0%, #2A3B4D 100%)',
+      'gradient-6': 'linear-gradient(90deg, #ffeb3b 0%, #9e9e9e 100%)',
     },
     boxShadow: {
       base: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',

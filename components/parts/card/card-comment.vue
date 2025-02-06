@@ -14,9 +14,9 @@ const getStarClass = (index, rate) => {
   const halfStar = rate - fullStars >= 0.5
 
   if (index <= fullStars) {
-    return 'bg-primary'
+    return 'bg-[#ffeb3b]'
   } else if (index === fullStars + 1 && halfStar) {
-    return 'bg-gradient-4'
+    return 'bg-gradient-6'
   } else {
     return 'bg-gray-100'
   }

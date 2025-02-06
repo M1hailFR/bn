@@ -66,16 +66,16 @@ const isExternal =
       @apply text-white bg-primary rounded-lg hover:bg-gradient-primary;
     }
     &-secondary {
-      @apply relative text-primary rounded-lg overflow-hidden hover:bg-gradient-primary py-0.5 hover:opacity-50 hover:text-white;
+      @apply relative text-primary rounded-lg overflow-hidden hover:bg-gradient-primary hover:text-white;
       &::after {
         content: '';
-        @apply absolute top-0 left-0 block w-full h-full border-2 border-primary rounded-lg;
+        @apply absolute top-0 left-0 block w-full h-full border-2 border-primary rounded-lg  hover:border-none;
       }
     }
   }
   &:is(.block).size {
     &-normal {
-      @apply text-base font-medium px-4 pt-3 pb-2.5;
+      @apply text-xs font-medium px-4 pt-3 pb-2.5;
     }
     &-middle {
       @apply text-lg font-medium px-7 pt-3 pb-2.5;

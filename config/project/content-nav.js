@@ -3,6 +3,11 @@ export const header = {
   type: 'Банкротство и урегулирование долгов',
   logo: 'fire',
   email: 'prospisane@innovaticalab.ru',
+  phone: '+7 495 476-43-09',
+  address:
+    'г. Москва,  Проспект Мира 105, строение 1, БЦ «Типография №2»  5 этаж, м. ВДНХ',
+  inn: '7730283347',
+  ogrn: '1227700450889',
   info: [
     {
       title: '+ 7 495 476-43-09',
@@ -38,47 +43,38 @@ export const header = {
   href: '/',
   footerInfo: [
     {
-      title: 'Почта',
+      title: '',
+      text: '+7 495 476-43-09',
+      icon: '',
+      linkType: '',
+      iconSize: 'large',
+      class: 'text-2xl font-semibold block mb-2',
+    },
+    {
+      title: '',
       text: 'prospisane@innovaticalab.ru',
       icon: '',
       href: 'mailto:prospisane@innovaticalab.ru',
       linkType: '',
       iconSize: 'small',
+      class: 'block mb-2',
     },
-    {
-      title: 'Телефон',
-      text: '+7 495 476-43-09',
-      icon: '',
-      linkType: '',
-      iconSize: 'small',
-    },
+
     {
       title: 'График работы',
       text: '10:00-19:00',
       icon: '',
       linkType: '',
       iconSize: 'small',
+      class: 'text-white',
     },
     {
-      title: 'Адрес',
+      title: '',
       text: ' г. Москва,  Проспект Мира 105, строение 1, БЦ «Типография №2»  5 этаж, м. ВДНХ',
       icon: '',
       linkType: '',
       iconSize: 'small',
-    },
-    {
-      title: 'ИНН',
-      text: '7730283347',
-      icon: '',
-      linkType: '',
-      iconSize: 'small',
-    },
-    {
-      title: 'ОГРН',
-      text: '1227700450889',
-      icon: '',
-      linkType: '',
-      iconSize: 'small',
+      class: 'text-sm not-italic',
     },
   ],
 }
@@ -95,7 +91,7 @@ export const services = {
 
 export const socials = {
   telegram: 'https://t.me/+79689267037',
-  whatsapp: 'https://wa.me/79689267037'
+  whatsapp: 'https://wa.me/79689267037',
 }
 
 export const logo = {
@@ -195,28 +191,34 @@ export const navigation = [
   // },
   {
     title: 'Отзывы',
-    href: '',
+    href: '/',
     hash: '#reviews',
     icon: 'fire',
   },
   {
-    title: 'Стоимость',
-    href: '',
-    hash: '#cost',
-    icon: 'fire',
-    // childs: [
-    // 	{
-    // 		title: 'Калькулятор стоимости',
-    // 		href: '',
-    // 		icon: 'fire'
-    // 	}
-    // ]
-  },
-  {
-    title: 'Практика',
+    title: 'О нас',
     href: '/',
     icon: 'fire',
     hash: '#steps',
+  },
+  // {
+  //   title: 'Стоимость',
+  //   href: '',
+  //   hash: '#cost',
+  //   icon: 'fire',
+  //   childs: [
+  //   	{
+  //   		title: 'Калькулятор стоимости',
+  //   		href: '',
+  //   		icon: 'fire'
+  //   	}
+  //   ]
+  // },
+  {
+    title: 'Практика',
+    href: '/practice',
+    icon: 'fire',
+    hash: '',
     // childs: [
     // 	{
     // 		title: 'О нас',

@@ -30,14 +30,14 @@ const resetForm = () => {
 </script>
 
 <template>
-  <section class="request" id="cost">
-    <div class="section-container z-[8] relative max-w-[1440px] m-auto">
-      <div class="content container flex gap-10 justify-end w-full">
+  <section class="request py-0" id="cost">
+    <div class="section-container py-0 z-[8] relative max-w-[1440px] m-auto">
+      <div class="content container py-0 flex gap-10 justify-end w-full">
         <div
-          class="absolute left-40 max-w-[350px] bottom-[-130px]">
+          class="absolute left-20 max-w-[580px] bottom-[-140px]">
           <Image
             :src="data.image"
-            class="z-[8] bottom-0 left-20 xl:right-20 brightness-[.75]" />
+            class="z-[8] bottom-0 left-20 xl:right-20 brightness-[.85]" />
         </div>
 
         <div class="flex flex-col text-white relative xl:left-[148px]">
@@ -69,7 +69,7 @@ const resetForm = () => {
 
 <style lang="scss" scoped>
 .request {
-  @apply relative flex items-center justify-end overflow-hidden py-10 xl:min-h-[calc(70dvh-200px)];
+  @apply relative flex items-center justify-end overflow-hidden py-10 xl:min-h-[calc(60dvh-200px)];
   background: linear-gradient(45deg, #bbbbbb 0%, #2a3b4d 100%);
 
   &::after {

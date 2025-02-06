@@ -29,11 +29,14 @@ const resetForm = () => {
 </script>
 
 <template>
-  <section class="intro" id="main">
+  <section
+    class="intro"
+    id="main"
+    :class="data.fullh ? 'xl:min-h-[calc(100dvh)]' : 'h-full'">
     <div
-      class="container flex flex-col justify-center gap-40 z-10 h-full pt-[72px]">
+      class="container flex flex-col justify-center gap-40 relative z-[11] h-full pt-[72px]">
       <!-- Верхний блок -->
-      <div class="flex flex-col">
+      <div class="flex flex-col ">
         <h1
           v-if="data.headline"
           class="font-bold text-white text-[26px] lg:text-6xl max-w-[700px]  text-left font-bold tracking-wide mb-10 leading-[1em]">
@@ -50,8 +53,8 @@ const resetForm = () => {
           {{ data.description }}
         </h4>
         <div
-          v-if="!data.form"
-          class="mt-5 flex flex-col gap-4 md:flex-row w-full text-white">
+          v-if="!data.form "
+          class="py-6 mt-3 flex flex-col gap-4 md:flex-row w-full text-white">
           <Button
             v-if="data.consultation"
             type="primary"
@@ -60,7 +63,7 @@ const resetForm = () => {
           >
           <Button
             v-if="data.start"
-            type="outline"
+            type="primary"
             size="middle"
             >{{ data.start }}</Button
           >
@@ -112,17 +115,12 @@ const resetForm = () => {
 
 <style lang="scss" scoped>
 .intro {
-  @apply relative flex items-center overflow-hidden py-10 xl:min-h-[calc(100dvh)];
-  // height: calc(100dvh - 68px);
+  @apply relative flex items-center overflow-hidden py-10;
   background: linear-gradient(45deg, #00e1ff 0%, #75b1f1 100%);
-
-  // @media screen and (min-width: 990px) {
-  // 	min-height: calc(100dvh - 135px);
-  // }
 
   &::after {
     content: '';
-    @apply absolute top-[-8px] z-[9] inset-0 block w-full h-[100px] opacity-50 pointer-events-none bg-gray-900;
+    @apply absolute top-[-16px] left-0 scale-150 right-0 z-[10] inset-0 block w-full h-[100px] opacity-50 pointer-events-none bg-black;
     filter: blur(50px);
   }
 
