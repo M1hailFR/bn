@@ -141,7 +141,7 @@ export const heros = [
     fullImage: '/images/main/work2.jpg', //
     start: 'Заказать звонок',
     modal: true,
-    modaldescription: 'Наши специалисты списали более 1.2 млрд. ₽ долгов',
+    modaldescription: '',
     stats: [
       { time: '08.01.2025', title: '967 171,77 ₽', text: '№A40-239528-2023', href: 'https://kad.arbitr.ru/Card/d7479ec7-18ee-4405-81c9-ec4febea1ffb' },
       { time: '09.12.2024', title: '3 420 907 ₽', text: '№А40-16997/2024', href: 'https://kad.arbitr.ru/Card/8da25340-17a3-4f38-b8fb-ac08934dd1fa' },

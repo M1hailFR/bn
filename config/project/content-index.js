@@ -2,15 +2,15 @@ export const intro = {
   headline: 'Финансовая свобода начинается здесь',
   title: 'Банкротство и урегулирование долгов',
   description: 'Оставьте свой номер телефона сейчас и получи скидку 20% ',
-  modaldescription: 'Оставьте номер телефона и получи скидку 20% ',
+  modaldescription: '',
   consultation: '',
   start: 'Заказать звонок',
   image: '', //images/intro/1.png
   bg: '/images/intro/intro8.jpg',
   form: false,
   fullh: true,
-  hash: '#cost',
-  // modal: true,
+  // hash: '#cost',
+  modal: true,
   stats: [
     {
       title: 'От 3840 руб./мес.',
@@ -244,7 +244,7 @@ export const it = {
       text: 'Модуль позволяет классифицировать большой объем документов и выбрать правильную стратегию работы при банкротстве.',
       start: 'Смотреть документ',
       href: '/documents/Интеллектуальный_модуль.PDF',
-      popupImage: '/images/it/module.png',
+      image: '/images/it/module.png',
       btnPopup: 'Скачать документ',
     },
     {
@@ -254,7 +254,7 @@ export const it = {
       text: 'Компании-конкуренты только позиционируют наличие личного кабинета, но фактически ПО отсутствует.',
       start: 'Смотреть документ',
       href: '/documents/Личный_кабинет.PDF',
-      popupImage: '/images/it/lk.png',
+      image: '/images/it/lk.png',
       btnPopup: 'Скачать документ',
     },
     {
@@ -264,7 +264,7 @@ export const it = {
       text: 'Сервис позволяет взаимодействовать с судами общей юрисдикции, отменять судебные приказы, обмениваться информацией.',
       start: 'Смотреть документ',
       href: '/documents/Сервис_для_взаимодействия_с_ИС_ГАС_Правосудие.PDF',
-      popupImage: '/images/it/pravo.png',
+      image: '/images/it/pravo.png',
       btnPopup: 'Скачать документ',
     },
   ],
@@ -336,7 +336,7 @@ export const achievement = {
     'Преодолевайте финансовые вызовы и достигайте новых высот вместе с нами!',
   button1: 'Начать',
   modal: true,
-  modaldescription: 'Преодолевайте финансовые вызовы и достигайте новых высот!',
+  modaldescription: '',
   cards: [
     {
       icon: 'notification',

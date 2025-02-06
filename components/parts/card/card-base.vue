@@ -33,6 +33,10 @@
 		button: {
 			type: Boolean,
 			default: false
+		},
+		image: {
+			type: Boolean,
+			default: true
 		}
 	});
 
@@ -110,7 +114,7 @@
 
 	const openComment = () => {
 		if (props.modal) {
-			const payload = {...props.payload, data: props.data}
+			const payload = {...props.payload, data: props.data, fullImage: true}
 			popupStore.open('info', payload);
 		}
 	};
@@ -128,7 +132,7 @@
 	>
 		<div>
 			<Image
-				v-if="data.image"
+				v-if="data.image && image"
 				class="card-image blur-[1px]"
 				:src="data.image"
 				:alt="data.title || ''"

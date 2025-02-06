@@ -31,10 +31,10 @@ const openForm = () => {
       title: 'Заявка на получение предложения',
       logo: true,
       socials: true,
-      link: true,
+      link: false,
       form: true,
       hideTitle: true,
-      hideText: true,
+      hideText: false,
       data: props.data,
     }
     popupStore.open('info', payload)

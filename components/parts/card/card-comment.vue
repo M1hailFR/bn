@@ -30,6 +30,7 @@
 			socials: false,
 			link: false,
 			hideTitle: false,
+			hideText: false,
 			data: props.data
 		};
 		popupStore.open('info', payload);

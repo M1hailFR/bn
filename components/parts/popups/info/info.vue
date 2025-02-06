@@ -15,6 +15,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  fullImage: {
+    type: Boolean,
+    default: false,
+  },
 })
 const getStarClass = (index, rate) => {
   const fullStars = Math.floor(rate)
@@ -33,15 +37,17 @@ const getStarClass = (index, rate) => {
 <template>
   <div>
     <div
-      v-if="data.image  && !data.videoUrl"
+      v-if="data?.image && !data?.videoUrl"
       class="relative transition-all rounded-xl duration-700 overflow-hidden mt-2">
       <Image
-        :src="data.popupImage && !data.videoUrl"
-        class="relative block  object-contain  transition-all duration-300"
-        :class="data.popupImage ? '' : 'max-h-[450px]'" />
+        :src="data.image"
+        class="relative block object-contain transition-all duration-300"
+        :class="fullImage ? '' : 'max-h-[450px]'"
+        />
     </div>
+
     <div
-      v-if="data.videoUrl"
+      v-if="data?.videoUrl"
       class="w-full h-full rounded-lg overflow-hidden">
       <iframe
         :src="data.videoUrl"
@@ -58,9 +64,9 @@ const getStarClass = (index, rate) => {
     </h4>
 
     <h5
-      v-if="data.position"
+      v-if="data?.position"
       class="font-semibold leading-[1.4em]">
-      {{ data.position }}
+      {{ data?.position }}
     </h5>
     <h5
       v-if="!hideText"
@@ -68,19 +74,19 @@ const getStarClass = (index, rate) => {
       {{ data.text }}
     </h5>
     <h5
-      v-if="data.description && !data.modaldescription"
+      v-if="data?.description && !data?.modaldescription && !hideText"
       class="pt-2">
       {{ data.description }}
     </h5>
     <h3
-      v-if="data.modaldescription"
+      v-if="data?.modaldescription"
       class="pt-2 max-w-[370px] leading-[1.2em]">
-      {{ data.modaldescription }}
+      {{ data?.modaldescription }}
     </h3>
 
     <div
       class="flex items-center"
-      v-if="data.rate">
+      v-if="data?.rate">
       <span class="text-sm font-semibold">Оценка: </span>
       <div class="flex">
         <div
@@ -97,30 +103,30 @@ const getStarClass = (index, rate) => {
 
     <div
       class="text-sm whitespace-nowrap font-semibold pb-1"
-      v-if="data.author">
-      Автор: {{ data.author }}
+      v-if="data?.author">
+      Автор: {{ data?.author }}
     </div>
 
     <div
       class="text-sm whitespace-nowrap font-semibold pb-1"
-      v-if="data.discard">
-      Списано: {{ data.discard }}
+      v-if="data?.discard">
+      Списано: {{ data?.discard }}
     </div>
 
     <div
       class="text-sm whitespace-nowrap font-semibold pb-1"
-      v-if="data.case">
-      Дело: {{ data.case }}
+      v-if="data?.case">
+      Дело: {{ data?.case }}
     </div>
 
     <Link
-      v-if="data.href"
-      :href="data.href"
+      v-if="data?.href"
+      :href="data?.href"
       type="default"
-      class="link mt-2">
+      class="link mt-6">
       <h6
         class="text-[14px] xl:text-[16px] max-w-[200px] leading-[1em] font-semibold">
-        {{ data.btnPopup }}
+        {{ data?.btnPopup }} {{ data.fullImage }}
       </h6>
       <Icon
         name="chevron-down"
