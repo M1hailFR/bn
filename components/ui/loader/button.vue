@@ -9,7 +9,9 @@ const props = defineProps({
 </script>
 
 <template>
+  {{ loading }}
   <div
+
     v-if="loading"
     class="relative w-[148px] h-[44px]">
     <div class="gooey">
@@ -30,7 +32,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .gooey {
-  @apply absolute top-1/2 left-1/2 w-[142px] h-[40px] bg-white filter contrast-[20];
+  @apply absolute top-1/2 left-1/2 w-[142px] h-[40px] bg-white filter contrast-[5];
   margin: -20px 0 0 -71px;
   &-dot {
     @apply absolute w-[16px] h-[16px] top-[12px] left-[15px] bg-black rounded-full blur-[4px] transform translate-x-0;

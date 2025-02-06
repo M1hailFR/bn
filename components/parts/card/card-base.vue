@@ -10,6 +10,10 @@
 			type: Object,
 			default: () => ({})
 		},
+    payload: {
+      type: Object,
+      default: () => ({})
+    },
 		type: {
 			type: String,
 			default: 'primary'
@@ -72,7 +76,7 @@
 		return {
 			icon: true,
 			'text-primary': props.type === 'primary',
-			'bg-primary': props.type === 'primary',
+			'bg-white': props.type === 'primary',
 			'text-white': props.type === 'outline',
 			'bg-primary': props.type === 'outline'
 		};
@@ -106,15 +110,7 @@
 
 	const openComment = () => {
 		if (props.modal) {
-			const payload = {
-				transition: 'fade',
-				icon: '',
-				title: 'Что отличает нас от конкурентов',
-				logo: false,
-				socials: false,
-				link: false,
-				data: props.data
-			};
+			const payload = {...props.payload, data: props.data}
 			popupStore.open('info', payload);
 		}
 	};

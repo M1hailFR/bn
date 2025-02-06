@@ -2,10 +2,12 @@
 import Form from '/components/ui-extend/form/form.vue'
 import Input from '/components/ui/input/input.vue'
 import Select from '/components/ui/select/select.vue'
-import Loader from '/components/ui/loader/button.vue'
-import { usePopup } from '/store/popup.js'
+import Loader from '/components/ui/loader/modal.vue'
 import { regions } from '/config/project/sources'
-const popupStore = usePopup()
+import { usePopup } from '/store/popup.js';
+
+const popupStore = usePopup();
+
 const props = defineProps({
   form: {
     type: Object,
@@ -48,12 +50,12 @@ const schema = reactive({
     inputType: 'secondary',
     error: '',
   },
-  // email: {
-  //   type: 'email',
-  //   placeholder: 'Ваша почта',
-  //   inputType: 'secondary',
-  //   error: '',
-  // },
+  email: {
+    type: 'email',
+    placeholder: 'Ваша почта',
+    inputType: 'secondary',
+    error: '',
+  },
   reg: {
     type: 'options',
     placeholder: 'Желаемый регион',
@@ -84,47 +86,75 @@ const { change } = setBasicUiDataBindings(emit)
 
 const loading = ref(false)
 const formRequested = ref(false)
-if (process.client) {
-  formRequested.value = sessionStorage?.getItem('formRequested')
-}
 
 const { validate, hasErrors } = setBasicUiValidation(props.form, schema)
+
+const clearForm = () => {
+  Object.keys(props.form).forEach(key => {
+    props.form[key] = ''
+  })
+  console.log(props.form)
+}
+
 const submit = async () => {
   await validate()
   if (hasErrors.value) return
 
-  // loading.value = true
-  change('')
+  loading.value = true
+  try {
+    const response = await fetch('https://b24-dw0k7p.bitrix24.ru/rest/1/5mh3ta16zfcfhp1a/crm.lead.add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fields: {
+          TITLE: props.requestTitle ? props.requestTitle : 'Заявка с сайта для покупателей',
+          NAME: props.form.name,
+          PHONE: [{
+            VALUE: props.form.phone,
+            VALUE_TYPE: 'WORK'
+          }],
+          EMAIL: [{
+            VALUE: props.form.email || '',
+            VALUE_TYPE: 'WORK'
+          }],
+          UF_CRM_REGION: props.form.reg || '',
+          UF_CRM_FLOW: props.form.flow || ''
+        }
+      })
+    })
 
-  // await sendInTelegram(
-  // 	props.form,
-  // 	schema,
-  // 	props.requestTitle,
-  // 	props.additionalData
-  // )
-  // 	.then(() => {
-  // 		// sessionStorage.setItem('formRequested', 'true')
-  // 		// formRequested.value = true
-  // 	})
-  // 	.finally(() => {
-  // 		popupStore.close();
-  // 		popupStore.open('success');
-  // 		// loading.value = false
-  // 		// sessionStorage.setItem('formRequested', 'false')
-  // 		// formRequested.value = false
-  // 	});
+    const result = await response.json()
+
+    if (result.result > 0) {
+      formRequested.value = true
+
+      clearForm()
+      popupStore.close();
+
+    } else {
+      throw new Error('Ошибка при отправке данных')
+    }
+  } catch (error) {
+
+  } finally {
+    loading.value = false
+  }
+
+  change('')
 }
 watch(() => {})
 </script>
 
 <template>
   <Form
-    class="rounded-xl backdrop-blur-sm p-8 my-5"
+    class="rounded-xl backdrop-blur-sm p-6 my-5 bg-primary/80"
     :loading="loading"
     @submit="submit">
     <h2
       v-if="title"
-      class="text-left leading-[1em] text-white mb-0">
+      class="text-left leading-[1em] mb-0">
       {{ title }}
     </h2>
     <slot />
@@ -157,7 +187,7 @@ watch(() => {})
       </template>
     </div>
     <template #message>
-      <Loader :loader="loading">
+      <Loader :loading="loading" class="w-10 h-10 p-0">
         {{ btnTitle }}
       </Loader>
     </template>

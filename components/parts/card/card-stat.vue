@@ -72,14 +72,14 @@ const { classes } = setBasicUiProps(props, 'card-component')
     <Link
       v-if="variant === 'variant3'"
       :href="data.href"
-      class="inline-flex items-center gap-2 w-full p-3 sm:p-6 bg-white/10 backdrop-blur-sm rounded-lg">
+      class="inline-flex items-center gap-2 w-full p-3 sm:p-8 bg-white/10 backdrop-blur-sm rounded-lg">
       <Icon
         v-if="data.icon"
         :name="data.icon"
         size="large"
         class="cursor-pointer inline-flex bg-gray-500/50 rounded-full" />
       <div>
-        <h4 class="inline-flex mb-0 flex-wrap">{{ data.title }}</h4>
+        <h3 class="inline-flex mb-0 flex-wrap">{{ data.title }}</h3>
         <span class="block">{{ data.text }}</span>
         <span class="block text-sm">{{ data.time }}</span>
       </div>
@@ -89,7 +89,7 @@ const { classes } = setBasicUiProps(props, 'card-component')
 
 <style lang="scss" scoped>
 .card-component {
-  @apply relative flex box-border overflow-hidden rounded-xl hover:scale-[1.1] transition duration-300 ease-in-out;
+  @apply relative flex box-border overflow-hidden rounded-xl scale-[.96] hover:scale-[1] transition duration-300 ease-in-out;
 
   &.type-primary {
     @apply bg-primary text-white relative z-[3] w-full;

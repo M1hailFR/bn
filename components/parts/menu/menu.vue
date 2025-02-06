@@ -135,7 +135,7 @@
 				</div>
 			</li>
 		</menu>
-		<menu class="flex flex-col" v-if="type === 'footer'">
+		<menu class="flex" v-if="type === 'footer'">
 			<li
 				v-for="(item, index) of footerNavigation.concat(arr)"
 				:key="index"

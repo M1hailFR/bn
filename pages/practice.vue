@@ -6,32 +6,32 @@
 	import Patterns from '/components/views/about/patterns';
 	import Cases from '/components/views/practice/cases';
 	import { heros } from '/config/project/content-practice';
-	import { intro } from '/config/project/content-practice';
 	import Differences from '/components/views/main/differences';
+	import InfoBlock from '/components/parts/infoBlock/infoBlock';
+	import { achievement } from '/config/project/content-index';
 </script>
 
 <template>
 	<div>
-		<Intro :data="intro" />
-
-		<Differences />
-		<Hero :data="heros[2]">
+		<Hero :data="heros[0]" variant="intro" class="text-white">
 			<template #content>
 				<div
-					class="flex flex-wrap lg:w-full gap-3 justify-start lg:justify-end"
+					class="flex flex-wrap text-white lg:w-full gap-1 justify-start lg:justify-end"
 				>
 					<Card
-						v-for="stat in heros[2].stats"
+						v-for="stat in heros[0].stats"
 						:key="stat"
 						variant="variant3"
 						type="default"
 						:data="stat"
+            class=""
 					/>
 				</div>
 			</template>
 		</Hero>
+		<!-- <Differences /> -->
 		<Cases />
-
+    <!-- <InfoBlock :data="achievement" hash="achievement" /> -->
 		<!-- <Intro :data="intro" />
 
     <Patterns />

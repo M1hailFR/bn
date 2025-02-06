@@ -5,7 +5,7 @@ export const header = {
   email: 'prospisane@innovaticalab.ru',
   phone: '+7 495 476-43-09',
   address:
-    'г. Москва,  Проспект Мира 105, строение 1, БЦ «Типография №2»  5 этаж, м. ВДНХ',
+    'г. Москва,  Проспект Мира 105, строение 1, БЦ «Московская Типография»  5 этаж, м. ВДНХ',
   inn: '7730283347',
   ogrn: '1227700450889',
   info: [
@@ -71,6 +71,24 @@ export const header = {
     {
       title: '',
       text: ' г. Москва,  Проспект Мира 105, строение 1, БЦ «Типография №2»  5 этаж, м. ВДНХ',
+      icon: '',
+      linkType: '',
+      iconSize: 'small',
+      class: 'text-sm not-italic',
+    },
+    {
+      title: '',
+      href: '',
+      text: 'Политика конфиденциальности',
+      icon: '',
+      linkType: '',
+      iconSize: 'small',
+      class: 'text-sm not-italic',
+    },
+    {
+      title: '',
+      href: '',
+      text: 'Пользовательское соглашение',
       icon: '',
       linkType: '',
       iconSize: 'small',

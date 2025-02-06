@@ -13,7 +13,7 @@ const props = defineProps({
 const form = reactive({
   name: '',
   phone: '',
-  email: '',
+  // email: '',
   // phone: '',
   // reg: '',
   // flow: 'Общий юридический'
@@ -22,7 +22,7 @@ const form = reactive({
 const resetForm = () => {
   form.name = ''
   form.phone = ''
-  form.email = ''
+  // form.email = ''
   // form.phone = '';
   // form.reg = '';
   // form.flow = 'Общий юридический';

@@ -1,7 +1,9 @@
 <script setup>
-import Card from '/components/parts/card/card'
+import Card from '/components/parts/card/card-base'
 import Button from '/components/ui/button/button'
 import { splitArrayIntoChunks } from '/utils/splitArrayIntoChunks'
+import { usePopup } from '/store/popup.js'
+const popupStore = usePopup()
 
 const props = defineProps({
   data: {
@@ -17,6 +19,28 @@ const props = defineProps({
     default: '',
   },
 })
+
+const openForm = () => {
+  if (props.data.hash) {
+    window.location.href = props.data.hash
+  }
+  if (props.data.modal) {
+    const payload = {
+      transition: 'fade',
+      icon: '',
+      title: 'Заявка на получение предложения',
+      logo: true,
+      socials: true,
+      link: true,
+      form: true,
+      hideTitle: true,
+      hideText: true,
+      data: props.data,
+    }
+    popupStore.open('info', payload)
+  }
+}
+
 import { useApp } from '/store/app'
 const appStore = useApp()
 
@@ -28,7 +52,9 @@ const columns = computed(() => {
 
 <template>
   <div>
-    <section class="container mt-6" :id="hash">
+    <section
+      class="container mt-6"
+      :id="hash">
       <div
         class="flex flex-col lg:flex-row relative gap-x-8 gap-y-10 items-start"
         :class="reverse ? 'lg:flex-row-reverse' : ''">
@@ -42,6 +68,7 @@ const columns = computed(() => {
             type="primary"
             size="normal"
             class="mt-4"
+            @click="openForm"
             >{{ data.button1 }}</Button
           >
         </div>
