@@ -13,7 +13,7 @@ import { blog, intro } from '/config/project/content-about'
 <template>
   <div>
     <Intro :data="intro" />
-    <!-- <Hero :data="heros[2]">
+    <!-- <Hero :data="heros[2]" class="">
       <template #content>
         <div
           class="flex flex-wrap pt-16 xl:pt-0 lg:w-full gap-3 justify-start lg:justify-end"

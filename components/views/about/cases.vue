@@ -6,6 +6,7 @@ import { cases } from '/config/project/content-about.js'
 <template>
   <div>
     <section class="container">
+
       <div class="w-full block">
         <h2 class="">{{ cases.title }}</h2>
         <h5>

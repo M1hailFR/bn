@@ -80,7 +80,7 @@ main {
 section {
   @apply pb-[4dvh] py-10 flex-1 h-full ;
   .section-container {
-    @apply p-3 md:px-8 pt-5 pb-5 w-full h-full backdrop-blur-sm;
+    @apply p-3 md:px-8 pt-5 pb-5 w-full h-full ;
   }
 }
 

@@ -10,6 +10,17 @@
 			default: () => ({})
 		}
 	});
+
+  const payload = {
+		transition: 'fade',
+		icon: '',
+		title: 'Уникальные разработки',
+		logo: false,
+		socials: false,
+		link: false,
+		hideTitle: true,
+		hideText: true
+	};
 </script>
 
 <template>
@@ -27,8 +38,9 @@
 						:key="card.title"
 						:type="card.type"
 						:data="card"
-						:link="true"
+						:modal="true"
 						:button="true"
+						:payload="payload"
 						class="w-full first:row-start-2 sm:first:row-start-1"
 					/>
 				</div>

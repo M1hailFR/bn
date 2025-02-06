@@ -2,7 +2,9 @@
 	import Image from '/components/ui/image/image.vue';
 	import Button from '/components/ui/button/button';
 	import Video from '/components/ui/video/video';
-	import { intro } from '/config/project/content-index.js';
+	import { usePopup } from '/store/popup.js';
+	const popupStore = usePopup();
+
 	const props = defineProps({
 		type: {
 			type: String,
@@ -11,30 +13,66 @@
 		data: {
 			type: Object,
 			default: () => {}
+		},
+		variant: {
+			type: String,
+			default: ''
 		}
 	});
+
+	const openForm = () => {
+		if (props.data.hash) {
+			window.location.href = props.data.hash;
+		}
+		if (props.data.modal) {
+			const payload = {
+				transition: 'fade',
+				icon: '',
+				title: 'Заявка на получение предложения',
+				logo: true,
+				socials: true,
+				link: true,
+				form: true,
+				hideTitle: true,
+				hideText: true,
+				data: props.data
+			};
+			popupStore.open('info', payload);
+		}
+	};
 </script>
 <template>
-	<section class="hero overflow-hidden w-full min-h-full">
+	<section class="hero overflow-hidden w-full min-h-full relative">
 		<div
 			class="section-container gap-8 min-h-[60dvh] flex items-center w-full"
 			:class="data.type"
 		>
 			<div class="container content">
 				<div
-					class="md:w-2/3 lg:w-full relative z-[1] flex flex-col justify-between mr-auto"
+					class="md:w-2/3 flex flex-col justify-between mr-auto z-[1]"
+					:class="variant === 'intro' ? 'sticky top-0 text-white' : 'relative '"
 				>
-					<h2>{{ data.title }}</h2>
-					<h3>
-						{{ data.text }}
-					</h3>
+					<div>
+						<h2
+							:class="
+								variant === 'intro'
+									? 'font-bold text-white text-[26px] lg:text-6xl max-w-[700px]  text-left font-bold tracking-wide mb-4 leading-[1em]'
+									: ''
+							"
+						>
+							{{ data.title }}
+						</h2>
+						<h3 :class="variant === 'intro' ? 'text-white' : ''">
+							{{ data.text }}
+						</h3>
+					</div>
 
 					<div class="mt-10 flex flex-col xl:flex-row justify-start gap-3">
-						<Button v-if="intro.consultation" type="primary" size="middle">
-							{{ intro.consultation }}
+						<Button v-if="data.consultation" type="primary" size="middle">
+							{{ data.consultation }}
 						</Button>
-						<Button v-if="intro.start" type="outline" size="middle" class="">
-							{{ intro.start }}
+						<Button v-if="data.start" type="primary" size="middle" @click="openForm">
+							{{ data.start }}
 						</Button>
 					</div>
 				</div>
@@ -49,31 +87,27 @@
 					:src="data.image"
 					class="relative block w-full h-full md:h-[620px] xl:h-full rounded-xl overflow-hidden object-cover"
 				/>
-				<div
-					v-if="data.video"
-					class="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]"
-				>
-					<Video
-						:videoSrc="data.video"
-						autoplay="true"
-						loop="true"
-						muted="true"
-						type="hero"
-						class="h-full"
-					>
-					</Video>
-				</div>
-				<div
-					v-if="data.fullImage"
-					class="fullImage absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]"
-				>
-					<Image
-						:src="data.fullImage"
-						type="hero"
-						class="h-full "
-					/>
-				</div>
 			</div>
+		</div>
+		<div
+			v-if="data.video"
+			class="absolute top-0 left-0 w-full h-full overflow-hidden z-[-1]"
+		>
+			<Video
+				:videoSrc="data.video"
+				autoplay="true"
+				loop="true"
+				muted="true"
+				type="hero"
+				class="h-full"
+			>
+			</Video>
+		</div>
+		<div
+			v-if="data.fullImage"
+			class="fullImage absolute top-0 left-0 w-full h-full z-[-1] brightness-[.65] blur-[2px] scale-110"
+		>
+			<Image :src="data.fullImage" type="hero" class="h-full" />
 		</div>
 	</section>
 </template>
@@ -98,11 +132,11 @@
 				@apply flex flex-col gap-6 lg:flex-row items-center justify-between;
 			}
 		}
-    .fullImage {
-      @apply text-black;
+		.fullImage {
+			@apply text-black;
 			.content {
-				@apply flex flex-col gap-6 lg:flex-row items-center justify-between max-h-[400px] overflow-y-scroll mt-20;
+				@apply flex flex-col gap-6 lg:flex-row justify-between overflow-y-scroll max-h-[400px];
 			}
-    }
+		}
 	}
 </style>

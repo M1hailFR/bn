@@ -3,6 +3,8 @@ import Button from '/components/ui/button/button'
 import Image from '/components/ui/image/image'
 import Card from '/components/parts/card/card-stat'
 import RequestForm from '/components/parts/request/request'
+import { usePopup } from '/store/popup.js'
+const popupStore = usePopup()
 
 const props = defineProps({
   data: {
@@ -26,6 +28,27 @@ const resetForm = () => {
   // form.reg = '';
   // form.flow = 'Общий юридический';
 }
+
+const openForm = () => {
+  if (props.data.hash) {
+    window.location.href = props.data.hash
+  }
+  if (props.data.modal) {
+    const payload = {
+      transition: 'fade',
+      icon: '',
+      title: 'Заявка на получение предложения',
+      logo: true,
+      socials: true,
+      link: true,
+      form: true,
+      hideTitle: true,
+      hideText: true,
+      data: props.data,
+    }
+    popupStore.open('info', payload)
+  }
+}
 </script>
 
 <template>
@@ -36,10 +59,10 @@ const resetForm = () => {
     <div
       class="container flex flex-col justify-center gap-40 relative z-[11] h-full pt-[72px]">
       <!-- Верхний блок -->
-      <div class="flex flex-col ">
+      <div class="flex flex-col">
         <h1
           v-if="data.headline"
-          class="font-bold text-white text-[26px] lg:text-6xl max-w-[700px]  text-left font-bold tracking-wide mb-10 leading-[1em]">
+          class="font-bold text-white text-[26px] lg:text-6xl max-w-[700px] text-left font-bold tracking-wide mb-4 leading-[1em]">
           {{ data.headline }}
         </h1>
         <h2
@@ -53,7 +76,7 @@ const resetForm = () => {
           {{ data.description }}
         </h4>
         <div
-          v-if="!data.form "
+          v-if="!data.form"
           class="py-6 mt-3 flex flex-col gap-4 md:flex-row w-full text-white">
           <Button
             v-if="data.consultation"
@@ -65,6 +88,7 @@ const resetForm = () => {
             v-if="data.start"
             type="primary"
             size="middle"
+            @click="openForm"
             >{{ data.start }}</Button
           >
         </div>
@@ -83,7 +107,7 @@ const resetForm = () => {
 
       <div
         v-if="data.stats"
-        class="flex flex-wrap w-full gap-6 justify-start text-white">
+        class="flex flex-wrap w-full gap-3 justify-start text-white">
         <Card
           v-for="stat in data.stats"
           :key="stat"
