@@ -1,6 +1,7 @@
 <script setup>
 import Image from '/components/ui/image/image.vue'
 import Icon from '/components/ui/icon/icon.vue'
+import Link from '~/components/ui/link/link.vue';
 
 const props = defineProps({
   data: {
@@ -68,8 +69,9 @@ const { classes } = setBasicUiProps(props, 'card-component')
     </div>
 
     <!-- Variant 3 -->
-    <div
+    <Link
       v-if="variant === 'variant3'"
+      :href="data.href"
       class="inline-flex items-center gap-2 w-full p-3 sm:p-6 bg-white/10 backdrop-blur-sm rounded-lg">
       <Icon
         v-if="data.icon"
@@ -79,8 +81,9 @@ const { classes } = setBasicUiProps(props, 'card-component')
       <div>
         <h4 class="inline-flex mb-0 flex-wrap">{{ data.title }}</h4>
         <span class="block">{{ data.text }}</span>
+        <span class="block text-sm">{{ data.time }}</span>
       </div>
-    </div>
+    </Link>
   </div>
 </template>
 

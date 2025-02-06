@@ -203,7 +203,7 @@ export const patterns = {
     {
       icon: 'pdf',
       type: 'outline',
-      title: 'Cертификат сколково',
+      title: 'Cертификат Сколково',
       href: '/documents/Сервис_для_взаимодействия_с_ИС_ГАС_Правосудие.PDF',
     },
     {

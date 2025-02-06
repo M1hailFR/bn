@@ -13,9 +13,9 @@
 		const halfStar = rate - fullStars >= 0.5;
 
 		if (index <= fullStars) {
-			return 'bg-primary';
+			return 'bg-[#ffeb3b]';
 		} else if (index === fullStars + 1 && halfStar) {
-			return 'bg-gradient-4';
+			return 'bg-gradient-6';
 		} else {
 			return 'bg-gray-100';
 		}
@@ -44,12 +44,9 @@
 					allowfullscreen
 				></iframe>
 			</div>
-      <h4
-				v-if="data.title"
-				class="whitespace-nowrap font-semibold mt-4">
+			<h4 v-if="data.title" class="whitespace-nowrap font-semibold mt-4">
 				{{ data.title }}
 			</h4>
-
 
 			<h5 v-if="data.position" class="font-semibold leading-[1.4em]">
 				{{ data.position }}
@@ -61,7 +58,7 @@
 				{{ data.description }}
 			</h5>
 
-      <div class="flex items-center" v-if="data.rate">
+			<div class="flex items-center" v-if="data.rate">
 				<span class="text-sm font-semibold">Оценка: </span>
 				<div class="flex">
 					<div
@@ -77,24 +74,18 @@
 				<span class="ml-1 text-sm font-bold">{{ data.rate }}</span>
 			</div>
 
-			<div
-				class="text-sm whitespace-nowrap font-semibold pb-1"
-				v-if="data.author"
-			>
+			<div class="text-sm whitespace-nowrap font-semibold pb-1" v-if="data.author">
 				Автор: {{ data.author }}
 			</div>
 
-      <div
+			<div
 				class="text-sm whitespace-nowrap font-semibold pb-1"
 				v-if="data.discard"
 			>
 				Списано: {{ data.discard }}
 			</div>
 
-      <div
-				class="text-sm whitespace-nowrap font-semibold pb-1"
-				v-if="data.case"
-			>
+			<div class="text-sm whitespace-nowrap font-semibold pb-1" v-if="data.case">
 				Дело: {{ data.case }}
 			</div>
 

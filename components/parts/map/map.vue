@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full h-[400px] rounded-xl overflow-hidden">
+  <div class="relative w-full h-[332px] rounded-xl overflow-hidden">
     <div
       id="map"
       class="w-full h-full rounded-xl shadow-lg"></div>

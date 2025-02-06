@@ -78,14 +78,14 @@ main {
 }
 
 section {
-  @apply pb-[4dvh] py-10 flex-1 h-full;
+  @apply pb-[4dvh] py-10 flex-1 h-full ;
   .section-container {
-    @apply p-3 md:px-8 pt-5 pb-5 w-full backdrop-blur-sm h-full;
+    @apply p-3 md:px-8 pt-5 pb-5 w-full h-full backdrop-blur-sm;
   }
 }
 
 footer {
-  @apply flex-1 min-h-[50dvh] border border-gray-500;
+  @apply flex-1 relative overflow-hidden py-6 h-full border border-gray-500;
 }
 
 .ui-scrollbars ::-webkit-scrollbar {

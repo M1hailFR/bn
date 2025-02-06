@@ -34,7 +34,7 @@ const columns = computed(() => {
             <Card
               v-for="card in column"
               :key="card.title"
-              :type="card.type"
+              type="outline"
               :data="card"
               :modal="true"
               class="w-full first:row-start-2 sm:first:row-start-1" />
