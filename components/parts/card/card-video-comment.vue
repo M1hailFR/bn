@@ -31,7 +31,7 @@ const openComment = () => {
     logo: false,
     socials: false,
     link: false,
-    hideTitle: true,
+    hideTitle: false,
     data: props.data,
   }
   popupStore.open('info', payload)

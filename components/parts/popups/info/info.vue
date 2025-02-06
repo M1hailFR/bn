@@ -33,10 +33,10 @@ const getStarClass = (index, rate) => {
 <template>
   <div>
     <div
-      v-if="data.image || (data.popupImage && !data.videoUrl)"
+      v-if="data.image  && !data.videoUrl"
       class="relative transition-all rounded-xl duration-700 overflow-hidden mt-2">
       <Image
-        :src="data.image || data.popupImage"
+        :src="data.popupImage && !data.videoUrl"
         class="relative block  object-contain  transition-all duration-300"
         :class="data.popupImage ? '' : 'max-h-[450px]'" />
     </div>
@@ -54,7 +54,7 @@ const getStarClass = (index, rate) => {
     <h4
       v-if="!hideTitle"
       class="font-semibold mt-4">
-      {{ data.title }} {{ hideTitle }}
+      {{ data.title }}
     </h4>
 
     <h5
