@@ -71,6 +71,7 @@
 			flex: true,
 			'items-center': true,
 			'gap-2': true,
+			'mb-2': props.data.text,
 			'text-white': props.type === 'primary',
 			'xl:text-black': props.type === 'outline'
 		};
