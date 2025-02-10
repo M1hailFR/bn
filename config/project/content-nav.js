@@ -78,7 +78,7 @@ export const header = {
     },
     {
       title: '',
-      href: '',
+      href: '/documents/Общие_условия_лицензионного_договора.PDF',
       text: 'Политика конфиденциальности',
       icon: '',
       linkType: '',
@@ -87,7 +87,7 @@ export const header = {
     },
     {
       title: '',
-      href: '',
+      href: '/documents/Общие_условия_лицензионного_договора.PDF',
       text: 'Пользовательское соглашение',
       icon: '',
       linkType: '',

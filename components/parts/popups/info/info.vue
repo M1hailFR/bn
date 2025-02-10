@@ -74,7 +74,7 @@ const getStarClass = (index, rate) => {
       {{ data.text }}
     </h5>
     <h5
-      v-if="data?.description && !data?.modaldescription && !hideText"
+      v-if="data?.description && !data?.modaldescription"
       class="pt-2">
       {{ data.description }}
     </h5>

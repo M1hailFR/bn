@@ -71,9 +71,9 @@ const openForm = () => {
           {{ data.title }}
         </h2>
         <h4
-          v-if="data.description"
+          v-if="data.desc"
           class="max-w-[400px] text-white/80 mt-2">
-          {{ data.description }}
+          {{ data.desc }}
         </h4>
         <div
           v-if="!data.form"

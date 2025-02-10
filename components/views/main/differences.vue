@@ -26,7 +26,8 @@
 		socials: false,
 		link: false,
 		hideTitle: true,
-		hideText: true
+		hideText: true,
+		
 	};
 </script>
 
