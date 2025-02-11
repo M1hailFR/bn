@@ -136,7 +136,7 @@ const openMenu = () => {
       </div>
 
       <div
-        class="hidden lg:flex items-center justify-between flex-1 transition-transform duration-500">
+        class="hidden lg:flex items-center justify-between lg:flex-1 transition-transform duration-500">
         <div class="flex-1 flex justify-center">
           <slot />
         </div>
@@ -190,10 +190,10 @@ const openMenu = () => {
 header {
   @apply top-0 z-50 w-full drop-shadow-md py-1 lg:transition-all;
   &.light {
-    @apply bg-white pt-1 text-black fixed;
+    @apply bg-white lg:pt-1 text-black fixed;
   }
   &.transparent {
-    @apply bg-transparent pt-1 text-white fixed pt-8 ;
+    @apply bg-transparent pt-1 text-white fixed md:pt-8 w-full;
   }
   // &.dark {
   // 	@apply bg-black/50 text-white backdrop-blur-lg border-gray-100/10 pt-1;

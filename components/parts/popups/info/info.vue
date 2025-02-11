@@ -48,13 +48,14 @@ const getStarClass = (index, rate) => {
 
     <div
       v-if="data?.videoUrl"
-      class="w-full h-full rounded-lg overflow-hidden">
+      class="rounded-lg overflow-hidden w-full">
       <iframe
         :src="data.videoUrl"
-        width="836"
-        height="480"
+
+
         allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
         frameborder="0"
+        class="w-full lg:h-[400px] h-[200px]"
         allowfullscreen></iframe>
     </div>
     <h4

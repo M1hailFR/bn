@@ -16,7 +16,7 @@
 		<Hero :data="heros[0]" variant="intro" class="text-white">
 			<template #content>
 				<div
-					class="flex flex-wrap text-white lg:w-full gap-1 justify-start lg:justify-end"
+					class="flex flex-wrap text-white lg:w-full gap-1 justify-start lg:justify-end max-h-[240px] lg:max-h-[400px] overflow-y-scroll"
 				>
 					<Card
 						v-for="stat in heros[0].stats"

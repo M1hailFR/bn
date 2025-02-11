@@ -27,7 +27,7 @@
 		link: false,
 		hideTitle: true,
 		hideText: true,
-		
+
 	};
 </script>
 
