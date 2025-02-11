@@ -119,14 +119,14 @@
 </script>
 
 <template>
-	<Loader :loading="loading" classes="h-dvh w-dvh">
+	<Loader :loading="loading" classes="h-dvh w-full">
 		<transition name="fade" mode="in-out">
 			<div class="relative overflow-visible w-full h-full" v-show="isShow">
 				<Header ref="header" :theme="theme">
 					<Menu :theme="theme" :navigation="navigation" type="header" />
 				</Header>
 
-				<main class="relative transition-all duration-700">
+				<main class="transition-all duration-700">
 					<NuxtPage />
 				</main>
 				<div class="w-full h-full mt-10">

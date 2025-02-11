@@ -80,12 +80,12 @@
 					v-if="!data.video"
 					class="absolute top-1 left-1 md:hidden bg-white/50 w-full h-full rounded-lg" /> -->
 
-				<slot name="content" />
+        <slot name="content"  />
 
 				<Image
 					v-if="data.image"
 					:src="data.image"
-					class="relative block w-full h-full md:h-[620px] xl:h-full rounded-xl overflow-hidden object-cover"
+					class="relative block w-full h-full md:h-[620px] xl:h-full rounded-xl overflow-hidden object-cover "
 				/>
 			</div>
 		</div>
@@ -135,7 +135,7 @@
 		.fullImage {
 			@apply text-black;
 			.content {
-				@apply flex flex-col gap-6 lg:flex-row justify-between overflow-y-scroll max-h-[400px];
+				@apply flex flex-col gap-6 lg:flex-row justify-between overflow-y-scroll h-full lg:max-h-[400px];
 			}
 		}
 	}

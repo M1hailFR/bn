@@ -50,8 +50,8 @@ onMounted(() => {
         </div>
       </template>
     </Hero> -->
-    <InfoBlock :data="bankruptcy" />
-    <InfoBlock :data="settlement" />
+    <!-- <InfoBlock :data="bankruptcy" />
+    <InfoBlock :data="settlement" /> -->
     <Reviews />
 
     <Request :data="request" />

@@ -118,7 +118,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex flex-col h-[500px] w-[350px] bg-white rounded-lg shadow-lg">
+  <div class="flex flex-col h-[500px] mt-4 lg:w-[350px] bg-white rounded-lg shadow-lg">
     <!-- Шапка чата -->
     <div class="flex items-center p-4 border-b">
       <div
@@ -169,7 +169,7 @@ onMounted(() => {
         <!-- <button
 					type="submit"
 					class="px-4 py-2 bg-blue-600 text-black rounded-lg hover:bg-blue-700 transition">
-					
+
 				</button> -->
       </form>
     </div>

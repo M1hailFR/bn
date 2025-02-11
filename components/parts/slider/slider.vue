@@ -79,7 +79,7 @@ const getComponent = computed(() => {
     <!-- Заголовок и кнопки управления -->
     <div
       class="flex justify-between items-center w-full relative z-10 my-2 translate-x-[8px]">
-      <h5 class="block max-w-[200px] leading-[1.4em]">{{ title }}</h5>
+      <h5 class="hidden sm:block max-w-[200px] leading-[1.4em]">{{ title }}</h5>
       <div class="flex gap-2 pr-4">
         <Button
           v-if="btn"
