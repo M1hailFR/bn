@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   app: {
     rootId: '__ProWriteDowns-app',
     head: {
-      title: 'ProСписание | Банкротство и урегулирование долгов',
+      title: 'Pro.Списание | Федеральный сервис списания долгов',
       htmlAttrs: {
         lang: 'en',
         prefix: 'og:http://ogp.me/ns#',
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:title',
-          content: 'ProСписание | Банкротство и урегулирование долгов',
+          content: 'ProСписание | Федеральный сервис списания долгов',
         },
         {
           property: 'og:description',
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap',
         },
       ],
       script: [

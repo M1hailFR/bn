@@ -2,14 +2,7 @@
 	import Header from '/components/block/base/header';
 	import Menu from '/components/parts/menu/menu';
 	import Popup from '/components/parts/popups/popup';
-	// import FixedHeader from '/components/block/base/fixedHeader.vue'
-	// import Popup from '/components/parts/popups/popup.vue'
-	// import OffCanvas from '/components/parts/off-canvas/off-canvas.vue'
-	// import Loader from '/components/parts/main/loader'
 	import Footer from '/components/block/base/footer.vue';
-	// import Up from '/components/parts/up.vue'
-	// import Icon from '/components/ui/icon/icon.vue'
-	// import Link from '/components/ui/link/link.vue'
 	import { navigation } from '/config/project/content-nav.js';
 	import { useApp } from '/store/app';
 	import Socials from '/components/parts/socials/socials';
@@ -22,11 +15,6 @@
 
 	const loading = ref(true);
 	const isShow = ref(false);
-	const showScrolling = ref(false);
-	const mobileViewport = ref(false);
-	const SCROLL_LINE = 500;
-
-	const showVideo = computed(() => router.path === '/');
 
 	const theme = ref(route.name.startsWith('index') ? 'transparent' : 'light');
 	const header = ref(null);

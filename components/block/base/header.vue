@@ -6,13 +6,14 @@ import Divider from '/components/ui/devider/divider.vue'
 import Dropdown from '/components/ui/dropdown/dropdown.vue'
 import DropdownOption from '/components/ui/dropdown/option.vue'
 import Card from '/components/parts/card/card-stat'
-
+import { useApp } from '/store/app'
 import { header, socials } from '/config/project/content-nav.js'
 import { regions } from '/config/project/sources'
 
 import { usePopup } from '/store/popup.js'
-const popupStore = usePopup()
 
+const popupStore = usePopup()
+const appStore = useApp()
 const props = defineProps({
   theme: {
     type: String,
@@ -27,20 +28,12 @@ const props = defineProps({
     default: 'static',
   },
 })
-const scroll = ref(0)
-const windowWidth = ref()
-const region = ref({ city: 'Москва', region: '77' })
-const isShow = computed(() => scroll.value === 0 || windowWidth.value <= 990)
 
-onMounted(() => {
-  windowWidth.value = window.innerWidth
-  scroll.value = window.scrollY
-  window.addEventListener('scroll', () => {
-    scroll.value = window.scrollY
-  })
-  window.addEventListener('resize', () => {
-    windowWidth.value = window.innerWidth
-  })
+const region = ref({ city: 'Москва', region: '77' })
+const isShow = computed(() => appStore.windowS === 0 || appStore.windowW <= 990)
+
+const currentlogo = computed(() => {
+  return appStore.windowS !== 0 ? `${header.logo}.png` : `${header.logo}-white.png`
 })
 
 const openMenu = () => {
@@ -61,68 +54,12 @@ const openMenu = () => {
   <header
     ref="el"
     :class="[theme, type]">
-    <!-- <div
-			class="container relative z-[2] flex items-center justify-between py-4 max-h-[64px] drop-shadow-md">
-			<div class="flex gap-4 translate-x-[-8px]">
-				<div class="flex items-center">
-					<Link href="/">
-						<div class="inline-flex items-center gap-2">
-							<Icon
-								name="fire"
-								size="large"
-								class="cursor-pointer ml-auto inline-flex">
-							</Icon>
-							<h4
-								class="mb-0 leading-[.9em]"
-								v-html="header.logoText" />
-						</div>
-					</Link>
-					<Dropdown
-						class="hidden lg:block translate-x-[14px] px-4 bg-gray-100/50 rounded-lg hover:bg-white/10"
-						icon="geo">
-						{{ region.city }}
-						<template #options>
-							<DropdownOption
-								v-for="(item, index) of regions"
-								:key="index"
-								@click="region = item">
-								{{ item.city }}
-							</DropdownOption>
-						</template>
-					</Dropdown>
-				</div>
-			</div>
-			<div class="hidden lg:flex gap-3 items-center justify-center text-black">
-				<Link
-					v-for="item in header.info.slice(0, -1)"
-					:key="item"
-					size="small"
-					:type="item.linkType"
-					essence="block"
-					:href="item.href"
-					class="flex items-center text-[15px]  font-medium">
-					<Icon
-						v-if="item.icon"
-						:name="item.icon"
-						:size="item.iconSize"
-						class="cursor-pointer inline-flex" />
-					{{ item.title }}
-				</Link>
-			</div>
-			<Icon
-				name="menu"
-				size="normal"
-				class="cursor-pointer ml-auto flex lg:hidden"
-				@click="openMenu" />
-		</div> -->
-    <!-- <Divider
-			v-if="scroll"
-			:theme="theme"
-			class="hidden lg:flex" /> -->
     <div class="container relative z-[1] flex items-center gap-6 py-1">
-      <div class="transition-transform duration-500 opacity-1">
+      <div class="flex items-center gap-2 transition-transform duration-500 opacity-1">
         <Link href="/">
-          <div class="inline-flex items-center gap-2">
+          <div
+            v-if="header.icon"
+            class="inline-flex items-center gap-2">
             <Icon
               name="fire"
               size="middle"
@@ -132,7 +69,27 @@ const openMenu = () => {
               class="mb-0 leading-[.9em]"
               v-html="header.logoText" />
           </div>
+          <div
+            v-if="header.logo"
+            class="inline-flex items-center gap-2">
+            <Image
+              :src="currentlogo"
+              class="h-10" />
+          </div>
         </Link>
+        <Dropdown
+          class="hidden lg:block translate-x-[14px] px-4 bg-gray-100/30 rounded-lg hover:bg-white/10"
+          icon="geo">
+          {{ region.city }}
+          <template #options>
+            <DropdownOption
+              v-for="(item, index) of regions"
+              :key="index"
+              @click="region = item">
+              {{ item.city }}
+            </DropdownOption>
+          </template>
+        </Dropdown>
       </div>
 
       <div
