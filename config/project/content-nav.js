@@ -1,7 +1,7 @@
 export const header = {
   logoText: '<mark>Pro.</mark>Списание',
   type: 'Банкротство и урегулирование долгов',
-  logo: 'fire',
+  logo: '/images/logo',
   email: 'prospisane@innovaticalab.ru',
   phone: '+7 495 476-43-09',
   address:

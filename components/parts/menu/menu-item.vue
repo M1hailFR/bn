@@ -56,7 +56,7 @@ const styleLinkByTheme = computed(() =>
   }
   &.footer {
     .text {
-      @apply text-[14px] xl:text-[16px] max-w-[200px] leading-[1em] font-semibold;
+      @apply sm:text-right w-full text-[14px] xl:text-[16px] max-w-[200px] leading-[1em] font-semibold;
     }
   }
   &.transparent,

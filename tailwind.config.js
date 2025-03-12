@@ -1,12 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-import plugin from 'tailwindcss/plugin'
 
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,html,js,ts,jsx,tsx}'],
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['Manrope', 'sans-serif'],
+      sans: ['Noto Sans', 'sans-serif'],
     },
     screens: {
       xs: '400px',
@@ -19,10 +18,15 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       none: 'none',
-      primary: '#7fc7ff', //#2A3B4D
-      secondary: '#7fc7ff',
+      primary: '#01294b',
+      secondary: '#85b8df',
       white: 'white',
       black: 'black',
+      additional1: '#00679e',
+      additional2: '#00cad4',
+      additional3: '#2c6eaa',
+      additional4: '#7295dc',
+
       gray: {
         100: '#E0E0E0',
         200: '#E5E5E5',
@@ -48,7 +52,7 @@ module.exports = {
     },
     backgroundImage: {
       'gradient-primary':
-        'linear-gradient(45deg, #0084d1 16%, #00bcff 84%);',
+        'linear-gradient(135deg, #00BFB3 0%, #0095C3 33%, #4B6BE5 66%, #6B7DFF 100%);',
       'gradient-1': 'linear-gradient(45deg, #2A3B4D 0%, rgba(0,59,47) 100%);',
       'gradient-2': 'linear-gradient(45deg, rgba(0,59,47) 0%, #2A3B4D 100%)',
       'gradient-3': 'linear-gradient(45deg, #5C5C5C 0%, #2A3B4D 100%)',
@@ -68,19 +72,19 @@ module.exports = {
       100: '0px 5px 5px rgba(0, 0, 0, 0.05)',
     },
   },
-  plugins: [
-    plugin(function ({ addUtilities, theme }) {
-      addUtilities({
-        '.border-image-1': {
-          borderImageSlice: '1',
-        },
-        '.border-image-2': {
-          borderImageSlice: '2',
-        },
-        '.border-image-primary': {
-          borderImageSource: theme('backgroundImage.gradient-primary'),
-        },
-      })
-    }),
-  ],
+  // plugins: [
+  //   plugin(function ({ addUtilities, theme }) {
+  //     addUtilities({
+  //       '.border-image-1': {
+  //         borderImageSlice: '1',
+  //       },
+  //       '.border-image-2': {
+  //         borderImageSlice: '2',
+  //       },
+  //       '.border-image-primary': {
+  //         borderImageSource: theme('backgroundImage.gradient-primary'),
+  //       },
+  //     })
+  //   }),
+  // ],
 }

@@ -34,7 +34,7 @@ const isExternal =
   props.href.startsWith('http') ||
   props.href.trim().startsWith('mailto') ||
   props.href.trim().startsWith('tel') ||
-  props.href.includes('documents')
+  props?.href?.includes('documents')
 </script>
 
 <template>
