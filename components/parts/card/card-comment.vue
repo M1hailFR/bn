@@ -57,12 +57,12 @@
 			<h5 class="preview">{{ data.text }}</h5>
 		</div>
 		<div class="mt-3">
-			<Button size="normall" class="btn flex items-center text-sm" type="">
+			<Button size="normall" class="btn flex items-center text-sm gap-x-2" type="">
 				{{ data.btn }}
 				<Icon
-					name="chevron-down"
-					size="normal"
-					class="chevron inline-flex rotate-[-90deg]"
+					name="arrow-right"
+					size="small"
+					class="chevron inline-flex"
 				/>
 			</Button>
 		</div>

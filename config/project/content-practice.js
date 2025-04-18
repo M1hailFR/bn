@@ -14,7 +14,7 @@
 export const cases = {
   title: 'Качество подтверждено практикой',
   description: '',
-
+  modal: true,
   cards: [
     {
       image: '/images/cases/2.png',

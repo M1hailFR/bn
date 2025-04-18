@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['Noto Sans', 'sans-serif'],
+      sans: ['Cygre', 'sans-serif'],
     },
     screens: {
       xs: '400px',
@@ -18,7 +18,8 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       none: 'none',
-      primary: '#01294b',
+      // primary: '#01294b',
+      primary: '#85b8df',
       secondary: '#85b8df',
       white: 'white',
       black: 'black',

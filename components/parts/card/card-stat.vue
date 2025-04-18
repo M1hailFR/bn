@@ -19,6 +19,8 @@ const props = defineProps({
 })
 
 const { classes } = setBasicUiProps(props, 'card-component')
+
+
 </script>
 
 <template>

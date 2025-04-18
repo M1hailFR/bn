@@ -68,6 +68,12 @@ const { classes } = setBasicUiProps(props, 'input-component')
         @apply text-white/70;
       }
     }
+    &-primary-outline {
+      @apply text-black bg-transparent border-2 border-primary rounded-lg;
+      &::placeholder {
+        @apply text-black/70;
+      }
+    }
   }
   &.size {
     &-normal {

@@ -35,13 +35,13 @@ const { classes } = setBasicUiProps(props, 'icon-component')
   }
   &.type {
     &-default {
-      @apply p-1 rounded-xl mb-0.5;
+      @apply p-1 rounded-xl;
     }
     &-primary {
-      @apply p-1 text-white bg-primary  rounded-lg mb-0.5;
+      @apply p-1 text-white bg-primary  rounded-lg;
     }
     &-secondary {
-      @apply p-1 text-primary border-2 border-primary  rounded-lg mb-0.5;
+      @apply p-1 text-primary border-2 border-primary  rounded-lg;
     }
   }
   &.size {
@@ -56,6 +56,9 @@ const { classes } = setBasicUiProps(props, 'icon-component')
     }
     &-large {
       @apply w-12 h-12;
+    }
+    &-logo {
+      @apply w-auto;
     }
   }
 }

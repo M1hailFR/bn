@@ -130,9 +130,9 @@ const getStarClass = (index, rate) => {
         {{ data?.btnPopup }} {{ data.fullImage }}
       </h6>
       <Icon
-        name="chevron-down"
-        size="normal"
-        class="chevron inline-flex rotate-[-90deg]" />
+        name="arrow-right"
+        size="small"
+        class="chevron inline-flex ml-2" />
     </Link>
   </div>
 </template>

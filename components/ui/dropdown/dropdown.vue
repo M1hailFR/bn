@@ -61,7 +61,7 @@ const toggle = () => {
       <slot />
       <Icon
         v-if="props.openIndicator"
-        class="chevron translate-x-[-4px] mt-1"
+        class="chevron translate-x-[-4px]"
         name="chevron-down"
         size="normal" />
     </div>

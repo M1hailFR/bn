@@ -40,14 +40,15 @@ const openMenu = () => {
   const payload = {
     classes: 'popup-menu',
     transition: 'fade',
-    icon: '',
+    logo: true,
+    icon: 'logo',
     title: 'Меню',
-    logo: false,
     socials: true,
     link: true,
   }
   popupStore.open('menu', payload)
 }
+
 </script>
 
 <template>
@@ -61,9 +62,9 @@ const openMenu = () => {
             v-if="header.icon"
             class="inline-flex items-center gap-2">
             <Icon
-              name="fire"
-              size="middle"
-              class="cursor-pointer ml-auto inline-flex">
+              :name="header.icon"
+              size="logo"
+              class="cursor-pointer ml-auto inline-flex h-10">
             </Icon>
             <h4
               class="mb-0 leading-[.9em]"
@@ -78,7 +79,7 @@ const openMenu = () => {
           </div>
         </Link>
         <Dropdown
-          class="hidden lg:block translate-x-[14px] px-4 bg-gray-100/30 rounded-lg hover:bg-white/10"
+          class="hidden lg:block translate-x-[14px] py-1 px-4 bg-gray-100/30 rounded-full hover:bg-gray-100/50"
           icon="geo">
           {{ region.city }}
           <template #options>

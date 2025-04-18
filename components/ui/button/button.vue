@@ -37,16 +37,16 @@ const { classes } = setBasicUiProps(props, 'button-component')
   @apply font-semibold transition-colors duration-150;
   &.type {
     &-primary {
-      @apply rounded-lg bg-primary text-white hover:bg-gradient-primary;
+      @apply rounded-full bg-primary text-white hover:bg-gradient-primary;
     }
     &-outline {
-      @apply rounded-lg border-white/80 md:border-gray-100 border hover:bg-gray-400 hover:text-black hover:border-gray-400;
+      @apply rounded-full border-white/80 md:border-gray-100 border  hover:bg-gradient-primary hover:text-white hover:border-gray-400;
     }
     &-secondary {
-      @apply relative text-white rounded-lg overflow-hidden hover:bg-gradient-primary hover:text-white;
+      @apply relative text-white rounded-full overflow-hidden hover:bg-gradient-primary hover:text-white;
       &::after {
         content: '';
-        @apply absolute top-0 left-0 block w-full h-full border-2 border-primary rounded-lg  hover:border-none;
+        @apply absolute top-0 left-0 block w-full h-full border-2 border-primary rounded-full  hover:border-none;
       }
     }
   }

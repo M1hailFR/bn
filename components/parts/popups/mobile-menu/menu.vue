@@ -20,11 +20,11 @@ import { navigation } from '/config/project/content-nav.js'
       :key="nav"
       :cntLng="nav.childs || nav.chls">
       <Link :href="nav.href">
-        <h4 class="flex items-center">
+        <h4 class="flex items-center gap-x-2">
           <Icon
             :name="nav.icon"
             size="small"
-            class="cursor-pointer ml-auto inline-flex" />
+            class="cursor-pointer inline-flex -mt-1" />
           {{ nav.title }}
         </h4>
       </Link>
@@ -35,7 +35,7 @@ import { navigation } from '/config/project/content-nav.js'
             v-for="link in nav?.childs"
             :key="link"
             :href="link.href"
-            class="flex felx-col mb-1 pl-[8px]">
+            class="flex felx-col pl-[12px]">
             {{ link.title }}
           </Link>
         </div>
@@ -47,7 +47,7 @@ import { navigation } from '/config/project/content-nav.js'
             :cntLng="nav.childs"
             class="">
             <Link :href="nav.href">
-              <h4 class="flex items-center pl-[8px]">
+              <h4 class="flex items-center pl-[12px]">
                 <!-- <Icon
                   :name="nav.icon"
                   size="small"
@@ -60,7 +60,7 @@ import { navigation } from '/config/project/content-nav.js'
               <Link
                 v-for="link in nav.childs"
                 :key="link"
-                class="flex felx-col mb-1 pl-[8px]">
+                class="flex felx-col pl-[8px]">
                 {{ link.title }}
               </Link>
             </template>

@@ -29,7 +29,6 @@ const openForm = () => {
       transition: 'fade',
       icon: '',
       title: 'Заявка на получение предложения',
-      logo: true,
       socials: true,
       link: false,
       form: true,

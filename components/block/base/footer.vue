@@ -28,6 +28,18 @@ const el = ref(null)
               :src="`${header.logo}-white.png`"
               class="h-30" />
           </div>
+          <div
+            v-if="header.icon"
+            class="inline-flex items-center gap-2">
+            <Icon
+              :name="header.icon"
+              size="logo"
+              class="cursor-pointer inline-flex h-full">
+            </Icon>
+            <h4
+              class="mb-0 leading-[.9em]"
+              v-html="header.logoText" />
+          </div>
         </Link>
 
         <div class="text-sm">
@@ -88,8 +100,8 @@ const el = ref(null)
 
 <style lang="scss" scoped>
 .footer {
-  @apply text-white;
-  background: linear-gradient(45deg, #bbbbbb 0%, #2a3b4d 100%);
+  @apply text-white bg-gradient-primary;
+  // background: linear-gradient(45deg, #bbbbbb 0%, #2a3b4d 100%);
 
   &::after {
     content: '';

@@ -63,13 +63,13 @@ const isExternal =
       @apply hover:text-primary;
     }
     &-primary {
-      @apply text-white bg-primary rounded-lg hover:bg-gradient-primary;
+      @apply text-white bg-primary rounded-full hover:bg-gradient-primary;
     }
     &-secondary {
-      @apply relative text-primary rounded-lg overflow-hidden hover:bg-gradient-primary hover:text-white;
+      @apply relative text-primary rounded-full overflow-hidden hover:bg-gradient-primary hover:text-white;
       &::after {
         content: '';
-        @apply absolute top-0 left-0 block w-full h-full border-2 border-primary rounded-lg  hover:border-none;
+        @apply absolute top-0 left-0 block w-full h-full border-2 border-primary rounded-full  hover:border-none;
       }
     }
   }

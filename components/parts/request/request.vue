@@ -4,9 +4,9 @@ import Input from '/components/ui/input/input.vue'
 import Select from '/components/ui/select/select.vue'
 import Loader from '/components/ui/loader/modal.vue'
 import { regions } from '/config/project/sources'
-import { usePopup } from '/store/popup.js';
+import { usePopup } from '/store/popup.js'
 
-const popupStore = usePopup();
+const popupStore = usePopup()
 
 const props = defineProps({
   form: {
@@ -33,6 +33,10 @@ const props = defineProps({
     type: String,
     default: 'Ваша заявка в обработке!',
   },
+  compact: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const schema = reactive({
@@ -40,21 +44,41 @@ const schema = reactive({
     type: 'text',
     placeholder: 'Ваше имя',
     require: true,
-    inputType: 'secondary',
+    inputType: 'primary-outline',
     error: '',
   },
   phone: {
     type: 'tel',
     placeholder: 'Телефон',
     require: true,
-    inputType: 'secondary',
+    inputType: 'primary-outline',
     error: '',
   },
   email: {
     type: 'email',
     placeholder: 'Ваша почта',
-    inputType: 'secondary',
+    inputType: 'primary-outline',
     error: '',
+  },
+  message: {
+    type: 'textarea',
+    placeholder: 'Ваше сообщение',
+    inputType: 'primary-outline',
+    error: '',
+  },
+  videocall: {
+    type: 'options',
+    placeholder: 'Оставить заявку на видиеоотзыв',
+    options: [
+      {
+        value: 'true',
+        label: 'Да',
+      },
+      {
+        value: 'false',
+        label: 'Нет',
+      },
+    ],
   },
   reg: {
     type: 'options',
@@ -90,10 +114,9 @@ const formRequested = ref(false)
 const { validate, hasErrors } = setBasicUiValidation(props.form, schema)
 
 const clearForm = () => {
-  Object.keys(props.form).forEach(key => {
+  Object.keys(props.form).forEach((key) => {
     props.form[key] = ''
   })
-  console.log(props.form)
 }
 
 const submit = async () => {
@@ -102,42 +125,50 @@ const submit = async () => {
 
   loading.value = true
   try {
-    const response = await fetch('https://b24-dw0k7p.bitrix24.ru/rest/1/5mh3ta16zfcfhp1a/crm.lead.add', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    const response = await fetch(
+      'https://b24-dw0k7p.bitrix24.ru/rest/1/5mh3ta16zfcfhp1a/crm.lead.add',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fields: {
+            TITLE: props.requestTitle
+              ? props.requestTitle
+              : 'Заявка с сайта для покупателей',
+            NAME: props.form.name,
+            PHONE: [
+              {
+                VALUE: props.form.phone,
+                VALUE_TYPE: 'WORK',
+              },
+            ],
+            EMAIL: [
+              {
+                VALUE: props.form.email || '',
+                VALUE_TYPE: 'WORK',
+              },
+            ],
+            UF_CRM_MESSAGE: props.form.message || '',
+            UF_CRM_VIDEOCALL: props.form.videocall || '',
+            UF_CRM_REGION: props.form.reg || '',
+            UF_CRM_FLOW: props.form.flow || '',
+          },
+        }),
       },
-      body: JSON.stringify({
-        fields: {
-          TITLE: props.requestTitle ? props.requestTitle : 'Заявка с сайта для покупателей',
-          NAME: props.form.name,
-          PHONE: [{
-            VALUE: props.form.phone,
-            VALUE_TYPE: 'WORK'
-          }],
-          EMAIL: [{
-            VALUE: props.form.email || '',
-            VALUE_TYPE: 'WORK'
-          }],
-          UF_CRM_REGION: props.form.reg || '',
-          UF_CRM_FLOW: props.form.flow || ''
-        }
-      })
-    })
-
+    )
+    
     const result = await response.json()
 
     if (result.result > 0) {
       formRequested.value = true
-
       clearForm()
-      popupStore.close();
-
+      popupStore.close()
     } else {
       throw new Error('Ошибка при отправке данных')
     }
   } catch (error) {
-
   } finally {
     loading.value = false
   }
@@ -149,7 +180,7 @@ watch(() => {})
 
 <template>
   <Form
-    class="rounded-xl backdrop-blur-sm p-6 my-5 bg-primary/80"
+    class="rounded-xl backdrop-blur-sm p-6 my-5 bg-gray-100"
     :loading="loading"
     @submit="submit">
     <h2
@@ -163,7 +194,7 @@ watch(() => {})
         v-for="(value, key) in schema"
         :key="key">
         <label
-          v-if="key in form"
+          v-if="key in form && (!compact || (compact && (key === 'name' || key === 'phone')))"
           :class="
             value.type === 'options' ? 'xl:col-span-2 col-span-1' : 'col-span-1'
           ">
@@ -187,7 +218,9 @@ watch(() => {})
       </template>
     </div>
     <template #message>
-      <Loader :loading="loading" class="w-10 h-10 p-0">
+      <Loader
+        :loading="loading"
+        class="w-10 h-10 p-0">
         {{ btnTitle }}
       </Loader>
     </template>

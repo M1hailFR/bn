@@ -1,6 +1,7 @@
 // Arrows
 import chevronUp from '/components/icons/arrow/chevron-up'
 import chevronDown from '/components/icons/arrow/chevron-down'
+import arrowRight from '/components/icons/arrow/arrow-right'
 
 import check from '/components/icons/check'
 import arrowUpward from '/components/icons/arrowUpward'
@@ -38,12 +39,14 @@ import bankruptcy from '/components/icons/suitable/bankruptcy'
 import bank from '/components/icons/suitable/bank'
 import concession from '/components/icons/suitable/concession'
 
+import logo from '/components/icons/logo'
+
 export default {
   // Arrows
   'chevron-down': chevronDown,
   'chevron-up': chevronUp,
   'arrow-upward': arrowUpward,
-
+  'arrow-right': arrowRight,
   check,
   menu,
   login,
@@ -78,4 +81,6 @@ export default {
   bankruptcy,
   bank,
   concession,
+
+  logo,
 }

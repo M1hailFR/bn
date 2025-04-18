@@ -36,9 +36,7 @@ const openForm = () => {
   if (props.data.modal) {
     const payload = {
       transition: 'fade',
-      icon: '',
-      title: 'Получить скидку 20% ',
-      logo: true,
+      title: 'Получить скидку 20% на любую из процедур',
       socials: true,
       link: false,
       form: true,
@@ -49,6 +47,12 @@ const openForm = () => {
     popupStore.open('info', payload)
   }
 }
+
+onMounted(() => {
+  setTimeout(() => {
+    openForm()
+  }, 30000)
+})
 </script>
 
 <template>

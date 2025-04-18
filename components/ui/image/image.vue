@@ -39,6 +39,7 @@ if (isSources) {
     <img
       class="block h-full w-full object-cover"
       :src="src"
+      loading="lazy"
       :alt="alt" />
   </picture>
 </template>

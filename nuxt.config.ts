@@ -32,12 +32,7 @@ export default defineNuxtConfig({
             'Наша команда занимается банкротством и урегулированием долгов',
         },
       ],
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap',
-        },
-      ],
+      link: [],
       script: [
         {
           src: 'https://api-maps.yandex.ru/2.1/?apikey=f29a726a-2ec7-4dec-99e6-bd7ec89f441f&lang=ru_RU',

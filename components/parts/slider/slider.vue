@@ -4,6 +4,8 @@ import Icon from '/components/ui/icon/icon.vue'
 import CardComment from '/components/parts/card/card-comment'
 import CardVideoComment from '/components/parts/card/card-video-comment'
 import CardTeam from '/components/parts/card/card-team'
+import { usePopup } from '/store/popup.js'
+const popupStore = usePopup()
 
 const props = defineProps({
   itemsPerPage: {
@@ -70,6 +72,24 @@ const componentMap = {
 const getComponent = computed(() => {
   return componentMap[props.type] || CardComment
 })
+
+const openForm = () => {
+  if (props.btn.includes('Оставить')) {
+    const payload = {
+      transition: 'fade',
+      icon: '',
+      title: 'Заявка на получение предложения',
+      socials: true,
+      link: false,
+      form: true,
+      hideTitle: true,
+      hideText: false,
+      compact: true,
+      data: {},
+    }
+    popupStore.open('info', payload)
+  }
+}
 </script>
 
 <template>
@@ -83,33 +103,33 @@ const getComponent = computed(() => {
       <div class="flex gap-2 pr-4">
         <Button
           v-if="btn"
-          class="shadow-md p-0 h-8  md:h-10 text-sm px-2"
+          class="shadow-md p-0 h-8 md:h-10 text-sm px-4"
           size=""
-          type="primary"
-          >
+          @click="openForm()"
+          type="primary">
           {{ btn }}
         </Button>
         <Button
-          class="shadow-md p-0 h-8 w-8 md:h-10 md:w-10"
+          class="shadow-md p-0 h-8 w-8 md:h-10 md:w-10 flex items-center justify-center"
           @click="prevSlide"
           size=""
           type="primary"
           :disabled="currentSlide === 0">
           <Icon
-            name="chevron-down"
+            name="arrow-right"
             size=""
-            class="w-6 md:w-8 inline-flex rotate-[90deg]" />
+            class="w-6 md:w-8 inline-flex rotate-[180deg]" />
         </Button>
         <Button
-          class="shadow-md p-0 h-8 w-8 md:h-10 md:w-10"
+          class="shadow-md p-0 h-8 w-8 md:h-10 md:w-10 flex items-center justify-center"
           @click="nextSlide"
           size="normall"
           type="primary"
           :disabled="currentSlide >= totalSlides - props.itemsPerPage">
           <Icon
-            name="chevron-down"
+            name="arrow-right"
             size=""
-            class="w-6 md:w-8 inline-flex rotate-[-90deg]" />
+            class="w-6 md:w-8 inline-flex" />
         </Button>
       </div>
     </div>

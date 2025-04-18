@@ -2,6 +2,7 @@ import { computed } from 'vue'
 
 const TYPES = {
   primary: 'primary',
+  'primary-outline': 'primary-outline',
   secondary: 'secondary',
   outline: 'outline',
   default: 'default',

@@ -47,12 +47,12 @@ const openComment = () => {
       <Button
         @click="nextSlide"
         size=""
-        class="btn-play"
+        class="btn-play flex items-center"
         type="">
         <Icon
-          name="chevron-down"
-          size="large"
-          class="rotate-[-90deg]" />
+          name="arrow-right"
+          size="normal"
+          class="" />
       </Button>
     </div>
 
@@ -65,13 +65,13 @@ const openComment = () => {
       <div class="mt-3">
         <Button
           size="normall"
-          class="btn flex items-center text-sm"
+          class="btn flex items-center text-sm gap-x-2"
           type="">
           Подробнее
           <Icon
-            name="chevron-down"
-            size="normal"
-            class="chevron inline-flex rotate-[-90deg]" />
+            name="arrow-right"
+            size="small"
+            class="chevron inline-flex" />
         </Button>
       </div>
     </div>

@@ -11,7 +11,7 @@ import { onMounted } from 'vue'
 
 const initMap = () => {
   // Координаты локации: Проспект Мира 105с1
-  const coordinates = [55.795154, 37.635324]
+  const coordinates = [55.814007, 37.636033]
 
   const map = new ymaps.Map('map', {
     center: coordinates,
@@ -23,7 +23,7 @@ const initMap = () => {
   const placemark = new ymaps.Placemark(
     coordinates,
     {
-      balloonContent: 'Проспект Мира 105с1',
+      balloonContent: 'Проспект Мира 105, строение 1, БЦ « Московская Типография №2» офис 529, 5 этаж, м. ВДНХ (выход №2)',
       hintContent: 'Наш офис',
     },
     {
