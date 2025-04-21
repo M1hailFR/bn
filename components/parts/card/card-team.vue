@@ -59,7 +59,7 @@ const openComment = () => {
     <div class="p-3 pt-2">
       <div>
         <h4 class="whitespace-nowrap font-semibold mb-0">{{ data.title }}</h4>
-        <h5 class="font-semibold leading-[1.4em] mt-1 max-w-[240px]">{{ data.position }}</h5>
+        <h5 class="font-semibold leading-[1.4em] mt-1 max-w-[260px] h-[42px]">{{ data.position }}</h5>
         <h5 class="preview">{{ data.text }}</h5>
       </div>
       <div class="mt-3">
