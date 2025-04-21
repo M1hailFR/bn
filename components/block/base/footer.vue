@@ -17,30 +17,45 @@ const el = ref(null)
     ref="el">
     <div
       class="container relative mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 z-10">
-      <div class="flex flex-col gap-10 xl:justify-between xl:h-[332px]">
-        <Link
-          href="/"
-          class="flex flex-col">
-          <div
-            v-if="header.logo"
-            class="inline-flex items-center gap-2">
-            <Image
-              :src="`${header.logo}-white.png`"
-              class="h-30" />
-          </div>
-          <div
-            v-if="header.icon"
-            class="inline-flex items-center gap-2">
-            <Icon
-              :name="header.icon"
-              size="logo"
-              class="cursor-pointer inline-flex h-full">
-            </Icon>
-            <h4
-              class="mb-0 leading-[.9em]"
-              v-html="header.logoText" />
-          </div>
-        </Link>
+      <div class="flex flex-col gap-10 xl:justify-between xl:h-[250px]">
+        <div>
+          <Link
+            href="/"
+            class="flex flex-col">
+            <div
+              v-if="header.logo"
+              class="inline-flex items-center gap-2">
+              <Image
+                :src="`${header.logo}-white.png`"
+                class="h-30" />
+            </div>
+            <div
+              v-if="header.icon"
+              class="inline-flex items-center gap-2">
+              <Icon
+                :name="header.icon"
+                size="logo"
+                class="cursor-pointer inline-flex h-full">
+              </Icon>
+              <h4
+                class="mb-0 leading-[.9em]"
+                v-html="header.logoText" />
+            </div>
+          </Link>
+          <Link
+            :href="header.btns[0].href"
+            class="flex flex-col w-max px-4 py-2 mt-4"
+            type="primary">
+            <div class="inline-flex items-center gap-2 ">
+              <Icon
+                name="login"
+                size="normal"
+                class="cursor-pointer inline-flex h-full">
+              </Icon>
+              <h4 class="mb-0 leading-[.9em]">Войти</h4>
+            </div>
+          </Link>
+        </div>
 
         <div class="text-sm">
           ИНН: {{ header.inn }}<br />
@@ -90,11 +105,11 @@ const el = ref(null)
       </div>
     </div>
     <!-- Фоновые элементы -->
-    <div class="footer-flash">
+    <!-- <div class="footer-flash">
       <div class="footer-flash-1"></div>
       <div class="footer-flash-2"></div>
       <div class="footer-flash-3"></div>
-    </div>
+    </div> -->
   </footer>
 </template>
 

@@ -19,7 +19,7 @@ const emit = defineEmits(['submit'])
       @click="emit('submit')">
       <slot name="message"> Оставить заявку </slot>
     </Button>
-    <p>
+    <p class="text-center">
       Нажимая на кнопку вы даете
       <a
         href="/"

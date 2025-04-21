@@ -124,13 +124,15 @@ const openMenu = () => {
               :type="header.btns[0].linkType"
               essence="block"
               :href="header.btns[0].href"
-              class="flex items-center font-medium text-[16px] pl-2 pr-3 py-2">
+              class="flex items-center font-medium text-[14px] pl-2 pr-3 py-2">
               <Icon
                 v-if="header.btns[0].icon"
                 :name="header.btns[0].icon"
                 :size="header.btns[0].iconSize"
                 class="cursor-pointer inline-flex" />
-              {{ header.btns[0].title }}
+                <span class="mt-[4px] pr-1">
+                  {{ header.btns[0].title }}
+                </span>
             </Link>
           </div>
         </div>

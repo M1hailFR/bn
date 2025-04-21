@@ -42,7 +42,7 @@ const resetForm = () => {
 
         <div class="flex flex-col text-white relative xl:left-[148px]">
           <div
-            class="relative left-0 lg:left-[-148px] xl:left-[-148px] h-full pb-11">
+            class="relative left-0 lg:left-[-8px] xl:left-[-148px] h-full pb-11">
             <h2>{{ data.title }}</h2>
             <h3>{{ data.description }}</h3>
             <speak class="absolute left-[-20px] bottom-0" />
@@ -53,24 +53,25 @@ const resetForm = () => {
             btnTitle="Оставить заявку"
             request-title="Заявка на получение предложения"
             title="Бесплатная консультация"
-            class="w-full bg-white/10 max-w-[700px]"
+            class="w-full bg-white/10 ml-auto xl:ml-0 md:max-w-[400px] xl:max-w-[700px]"
             @change="resetForm" />
         </div>
       </div>
     </div>
     <!-- Фоновые элементы -->
-    <div class="request-flash">
+    <!-- <div class="request-flash">
       <div class="request-flash-1"></div>
       <div class="request-flash-2"></div>
       <div class="request-flash-3"></div>
-    </div>
+    </div> -->
   </section>
 </template>
 
 <style lang="scss" scoped>
 .request {
-  @apply relative flex items-center justify-end overflow-hidden py-10 xl:min-h-[calc(60dvh-200px)] bg-gradient-primary;
-
+  @apply relative flex items-center justify-end overflow-hidden py-10 xl:min-h-[calc(60dvh-200px)];
+  // bg-gradient-primary
+  background: linear-gradient(45deg, #bbbbbb 0%, #2a3b4d 100%);
   &::after {
     content: '';
     @apply absolute top-28 right-0 block w-9/12 h-2/5 opacity-50 pointer-events-none bg-gradient-3;

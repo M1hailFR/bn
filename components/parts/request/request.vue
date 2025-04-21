@@ -54,32 +54,32 @@ const schema = reactive({
     inputType: 'primary-outline',
     error: '',
   },
-  email: {
-    type: 'email',
-    placeholder: 'Ваша почта',
-    inputType: 'primary-outline',
-    error: '',
-  },
+  // email: {
+  //   type: 'email',
+  //   placeholder: 'Ваша почта',
+  //   inputType: 'primary-outline',
+  //   error: '',
+  // },
   message: {
     type: 'textarea',
     placeholder: 'Ваше сообщение',
     inputType: 'primary-outline',
     error: '',
   },
-  videocall: {
-    type: 'options',
-    placeholder: 'Оставить заявку на видиеоотзыв',
-    options: [
-      {
-        value: 'true',
-        label: 'Да',
-      },
-      {
-        value: 'false',
-        label: 'Нет',
-      },
-    ],
-  },
+  // videocall: {
+  //   type: 'options',
+  //   placeholder: 'Оставить заявку на видиеоотзыв',
+  //   options: [
+  //     {
+  //       value: 'true',
+  //       label: 'Да',
+  //     },
+  //     {
+  //       value: 'false',
+  //       label: 'Нет',
+  //     },
+  //   ],
+  // },
   reg: {
     type: 'options',
     placeholder: 'Желаемый регион',
@@ -150,15 +150,16 @@ const submit = async () => {
                 VALUE_TYPE: 'WORK',
               },
             ],
-            UF_CRM_MESSAGE: props.form.message || '',
-            UF_CRM_VIDEOCALL: props.form.videocall || '',
+            COMMENTS: props.form.message || '',
+
+            // UF_CRM_VIDEOCALL: props.form.videocall || '',
             UF_CRM_REGION: props.form.reg || '',
             UF_CRM_FLOW: props.form.flow || '',
           },
         }),
       },
     )
-    
+
     const result = await response.json()
 
     if (result.result > 0) {
@@ -185,7 +186,7 @@ watch(() => {})
     @submit="submit">
     <h2
       v-if="title"
-      class="text-left leading-[1em] mb-0">
+      class="text-center leading-[1em] mb-0">
       {{ title }}
     </h2>
     <slot />
@@ -194,9 +195,14 @@ watch(() => {})
         v-for="(value, key) in schema"
         :key="key">
         <label
-          v-if="key in form && (!compact || (compact && (key === 'name' || key === 'phone')))"
+          v-if="
+            key in form &&
+            (!compact || (compact && (key === 'name' || key === 'phone')))
+          "
           :class="
-            value.type === 'options' ? 'xl:col-span-2 col-span-1' : 'col-span-1'
+            value.type === 'options' || value.type === 'textarea'
+              ? 'xl:col-span-2 col-span-1'
+              : 'col-span-1'
           ">
           <Select
             v-if="value.type === 'options'"

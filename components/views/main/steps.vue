@@ -21,7 +21,7 @@ const columnst = computed(() => {
 
 <template>
   <section class="container overflow-x-hidden" id="steps">
-    <div class="lg:w-[50%] xl:w-1/3 block">
+    <div class="lg:w-[50%] xl:w-1/2 block">
       <h2>{{ data.title }}</h2>
     </div>
     <div class="w-full lg:grid grid-cols-2 items-start justify-center mt-8">

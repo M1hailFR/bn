@@ -3,7 +3,7 @@ export const header = {
   type: 'Банкротство и урегулирование долгов',
   // logo: '/images/logo',
   icon: 'logo',
-  email: 'prospisane@innovaticalab.ru',
+  email: 'prospisanie@innovaticalab.ru',
   phone: '+7 495 476-43-09',
   address:
     'г. Москва,  Проспект Мира 105, строение 1, БЦ «Московская Типография»  5 этаж, м. ВДНХ',
@@ -27,8 +27,8 @@ export const header = {
   ],
   btns: [
     {
-      title: 'Личный кабинет',
-      href: '',
+      title: 'Войти',
+      href: 'https://lk.prospisanie.ru/auth',
       icon: 'login',
       linkType: 'primary',
       iconSize: 'small',
@@ -53,9 +53,9 @@ export const header = {
     },
     {
       title: '',
-      text: 'prospisane@innovaticalab.ru',
+      text: 'prospisanie@innovaticalab.ru',
       icon: '',
-      href: 'mailto:prospisane@innovaticalab.ru',
+      href: 'mailto:prospisanie@innovaticalab.ru',
       linkType: '',
       iconSize: 'small',
       class: 'block mb-2',
@@ -89,7 +89,7 @@ export const header = {
     {
       title: '',
       href: '/documents/Общие_условия_лицензионного_договора.PDF',
-      text: 'Пользовательское соглашение',
+      text: 'Общие условия лицензионного договора',
       icon: '',
       linkType: '',
       iconSize: 'small',

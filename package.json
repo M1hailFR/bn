@@ -22,6 +22,8 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "prettier-stylelint": "^0.4.2",
+    "sass": "^1.86.3",
+    "sass-loader": "^16.0.5",
     "typescript": "^5.7.2"
   },
   "dependencies": {

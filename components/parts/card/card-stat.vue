@@ -74,7 +74,7 @@ const { classes } = setBasicUiProps(props, 'card-component')
     <Link
       v-if="variant === 'variant3'"
       :href="data.href"
-      class="inline-flex items-center gap-2 w-full p-3 sm:p-8 bg-white/10 backdrop-blur-sm rounded-lg">
+      class="inline-flex items-center gap-2 w-full p-3 sm:p-6 bg-white/10 backdrop-blur-sm rounded-lg">
       <Icon
         v-if="data.icon"
         :name="data.icon"

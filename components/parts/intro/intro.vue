@@ -111,7 +111,7 @@ onMounted(() => {
 
       <div
         v-if="data.stats"
-        class="flex flex-wrap w-full gap-3 justify-start text-white">
+        class="flex flex-wrap md:grid md:grid-cols-4 w-full gap-3 justify-start text-white md:mt-20">
         <Card
           v-for="stat in data.stats"
           :key="stat"
@@ -137,14 +137,13 @@ onMounted(() => {
     <Image
       v-if="data.bg"
       :src="data.bg"
-      class="object-cover z-[8] absolute inset-0 brightness-[.75]" />
+      class="hidden md:block object-cover z-[8] absolute inset-0 brightness-[.75]" />
   </section>
 </template>
 
 <style lang="scss" scoped>
 .intro {
-  @apply relative flex items-center overflow-hidden py-10;
-  background: linear-gradient(45deg, #00e1ff 0%, #75b1f1 100%);
+  @apply relative flex items-center overflow-hidden py-10 bg-gradient-primary ;
 
   &::after {
     content: '';

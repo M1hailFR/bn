@@ -38,7 +38,7 @@ const popupForm = reactive({
   // reg: '',
   // flow: 'Общий юридический'
   message: '',
-  videocall: '',
+  // videocall: '',
 })
 
 const resetForm = () => {
@@ -48,7 +48,7 @@ const resetForm = () => {
   // form.reg = '';
   // form.flow = 'Общий юридический';
   popupForm.message = ''
-  popupForm.videocall = ''
+  // popupForm.videocall = ''
 }
 </script>
 
@@ -69,7 +69,7 @@ const resetForm = () => {
         <!-- Popup header -->
         <h2
           v-if="popupStore.payload.title"
-          class="flex items-center font-bold justify-center mb-0"
+          class="flex items-center text-center font-bold justify-center mb-0"
           :class="popupStore.payload.logo ? 'mt-12' : 'mt-2 mb-2'">
           
           {{ popupStore.payload.title }}

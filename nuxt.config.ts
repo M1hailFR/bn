@@ -60,6 +60,10 @@ export default defineNuxtConfig({
   },
 
   css: ['@/assets/css/main.css'],
+  build: {
+    transpile: ['@pinia/nuxt'],
+  },
+  vite: {},
   routes: {
     '/': {
       prerender: true,

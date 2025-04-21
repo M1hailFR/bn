@@ -78,7 +78,7 @@ const openForm = () => {
     const payload = {
       transition: 'fade',
       icon: '',
-      title: 'Заявка на получение предложения',
+      title: 'Заявка на отзыв о работе компании',
       socials: true,
       link: false,
       form: true,
