@@ -111,7 +111,7 @@ onMounted(() => {
 
       <div
         v-if="data.stats"
-        class="flex flex-wrap md:grid md:grid-cols-4 w-full gap-3 justify-start text-white md:mt-20">
+        class="grid grid-cols-1 md:grid-cols-4 w-full gap-3 justify-start text-white md:mt-20">
         <Card
           v-for="stat in data.stats"
           :key="stat"

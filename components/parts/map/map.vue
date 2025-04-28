@@ -11,7 +11,7 @@ import { onMounted } from 'vue'
 
 const initMap = () => {
   // Координаты локации: Проспект Мира 105с1
-  const coordinates = [55.814007, 37.636033]
+  const coordinates = [55.815140, 37.637470]
 
   const map = new ymaps.Map('map', {
     center: coordinates,

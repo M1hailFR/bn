@@ -58,7 +58,7 @@ const { classes } = setBasicUiProps(props, 'icon-component')
       @apply w-12 h-12;
     }
     &-logo {
-      @apply w-auto min-h-10;
+      @apply w-auto;
     }
   }
 }

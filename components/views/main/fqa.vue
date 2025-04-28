@@ -13,7 +13,7 @@
 				<h5 class="max-w-[300px]">
 					{{ fqa.description }}
 				</h5>
-				<Chat />
+				<!-- <Chat /> -->
 				<Button v-if="fqa.button1" type="primary" size="normal" class="mt-4">{{
 					fqa.button1
 				}}</Button>

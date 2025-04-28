@@ -101,7 +101,8 @@ const resetForm = () => {
         <!-- Popup component -->
 
         <component
-          class="w-full h-full"
+          class="w-full"
+          :class="{'h-full': popupStore.payload.classes === 'popup-menu'}"
           :is="components[popupStore.type]"
           :data="popupStore.payload.data"
           :hideTitle="popupStore.payload.hideTitle"
@@ -110,7 +111,7 @@ const resetForm = () => {
 
         <RequestForm
           v-if="popupStore.payload.form"
-          class="text-black W-full"
+          class="text-black W-full "
           :form="popupForm"
           :compact="!popupStore.payload.compact"
           btnTitle="Оставить заявку"
@@ -169,7 +170,7 @@ const resetForm = () => {
     @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-w-[500px] max-h-screen shadow-sm border border-white px-8 pt-4 pb-8 bg-white sm:rounded-lg z-50 w-full h-full sm:h-auto;
   }
   &-menu {
-    @apply text-black fixed top-0 right-0 flex flex-col h-dvh px-6 pt-4 pb-4 bg-white sm:rounded-l z-50 w-full h-full sm:max-w-[400px] overflow-auto;
+    @apply text-black fixed top-0 right-0 flex flex-col h-dvh px-6 pt-4 pb-4 bg-white sm:rounded-l z-50 w-full sm:max-w-[400px] overflow-auto;
   }
   &-video {
     @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-w-[900px] max-h-screen shadow-sm border border-white p-8 bg-white sm:rounded-lg z-50 w-full h-full sm:h-auto;
