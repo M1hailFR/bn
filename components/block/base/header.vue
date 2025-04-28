@@ -64,7 +64,7 @@ const openMenu = () => {
             <Icon
               :name="header.icon"
               size="logo"
-              class="cursor-pointer ml-auto inline-flex h-10">
+              class="cursor-pointer ml-auto inline-flex h-14">
             </Icon>
             <h4
               class="mb-0 leading-[.9em]"
