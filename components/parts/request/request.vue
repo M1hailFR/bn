@@ -126,7 +126,7 @@ const submit = async () => {
   loading.value = true
   try {
     const response = await fetch(
-      'https://b24-dw0k7p.bitrix24.ru/rest/1/5mh3ta16zfcfhp1a/crm.lead.add',
+      'https://prospisanie.bitrix24.ru/rest/8/840qmvt6nprf3ch6/crm.lead.add',
       {
         method: 'POST',
         headers: {

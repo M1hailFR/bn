@@ -1,6 +1,7 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 // @ts-ignore
 export default defineNuxtConfig({
+  ssr: false,
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
   pinia: {
     // @ts-ignore
